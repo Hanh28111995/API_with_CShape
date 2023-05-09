@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj": {}
+    "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj": {
+    "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
+        "projectUniqueName": "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
         "projectName": "MyApiNetCore6",
-        "projectPath": "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
+        "projectPath": "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
         "packagesPath": "C:\\Users\\wcl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\obj\\",
+        "outputPath": "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

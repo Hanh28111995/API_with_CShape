@@ -9,3 +9,17 @@ namespace MyApiNetCore6.Repositories
         public Task<string> SignInAsync(SignIn model);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

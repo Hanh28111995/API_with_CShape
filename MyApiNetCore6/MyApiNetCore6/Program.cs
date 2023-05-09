@@ -17,7 +17,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<BookStoreContext>().AddDefaultTokenProviders();
+// Change Validate default by setting Identity
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 4;
+}).AddEntityFrameworkStores<BookStoreContext>().AddDefaultTokenProviders();
+    
 
 
 builder.Services.AddDbContext<BookStoreContext>(option =>
@@ -31,6 +38,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 //life cycle DI : addsingleton , addtransient, addscope
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 
 builder.Services.AddAuthentication(option =>
 {
@@ -44,10 +52,9 @@ builder.Services.AddAuthentication(option =>
     {
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWT:ValiAudience"],
+        ValidAudience = builder.Configuration["JWT:ValidAudience"],
         ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
-        (builder.Configuration["JWT:Secret"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
 });
 
@@ -61,6 +68,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthentication();
 
 app.UseHttpsRedirection();
 

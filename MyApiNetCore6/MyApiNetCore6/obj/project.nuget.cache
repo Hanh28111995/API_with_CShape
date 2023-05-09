@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9xw0G9Hyq39S7FuN2yXaScpqwZ73dZDClF5uLeLBt7bMgWlCkSv5+Kxsxrg+zRbKh3P/mNnzkM3ySznJ+Sru5A==",
+  "dgSpecHash": "zTidz4h3DHKlyIYXa0zIXsARVz23ZgKEpNzFjxWsAebi7dukYnq4irBp3qWxUdHif1hvzJpW959a0SfRcWbXhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wcl\\source\\repos\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
+  "projectFilePath": "C:\\Users\\wcl\\Desktop\\team\\API_with_CShape\\MyApiNetCore6\\MyApiNetCore6\\MyApiNetCore6.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wcl\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\wcl\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
