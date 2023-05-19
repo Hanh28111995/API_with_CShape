@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "wE2Ybx3Zw5LEptQnOm783gqika7I558evTwuDEiFLdg=",
+  "Source": "wcl_employee_admin",
+  "BasePath": "_content/wcl_employee_admin",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "wcl_employee_admin\\wwwroot",
+      "Source": "wcl_employee_admin",
+      "ContentRoot": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarImg\\hanhT_wizard\\IMAGE (5).png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "AvatarImg/hanhT_wizard/IMAGE (5).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\AvatarImg\\hanhT_wizard\\IMAGE (5).png"
+    }
+  ]
+}
