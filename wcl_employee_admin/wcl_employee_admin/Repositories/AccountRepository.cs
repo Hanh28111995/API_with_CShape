@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Security.Claims;
 using System.Text;
 using wcl_employee_admin.Data;
@@ -88,40 +90,55 @@ namespace wcl_employee_admin.Repositories
             var user = new ApplicationUser
             {
                 Id = Guid.NewGuid().ToString(),
-                PhotoUrl = model.Photos.FileName,
-                UserName = model.UserName,
-                FullName = model.FullName,
+                Photourl = (model.Photos != null) ? model.Photos.FileName : null,
+                UserName = model.Username,
+                Fullname = model.Fullname,
                 Phone = model.Phone,
-                ZIPCode = model.ZIPCode,
-                EEO = model.EEO,
+                Zipcode = model.Zipcode,
+                Eeo = model.Eeo,
                 Position = model.Position,
                 Gender = model.Gender,
-                ConfirmNumber = model.ConfirmNumber,
-                CardNumber = model.CardNumber,
-                netSalary = model.netSalary,
-                grossSalary = model.grossSalary,
+                Confirmnumber = model.Confirmnumber,
+                Cardnumber = model.Cardnumber,
+                Netsalary = model.Netsalary,
+                Grosssalary = model.Grosssalary,
                 Note = model.Note,
-                NickName = model.NickName,
+                Nickname = model.Nickname,
                 Email = model.Email,
                 Address = model.Address,
                 Location = model.Location,
                 Department = model.Department,
-                ContractType = model.ContractType,
-                BirthDay = model.BirthDay,
+                Contracttype = model.Contracttype,
+                Birthday = model.Birthday,
                 Marital = model.Marital,
-                DateStart = model.DateStart,
-                Passport = model.Passport,
+                Datestart = model.Datestart,
+                Passport = model.Passport
             };
+
+            if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
+            {
+                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username));
+            }
+            //if (Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName)))
+            //{
+            //    FileUpload.FileUpload.DeleteFile(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", ""));
+            //    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName));
+            //}
+
+            if (model.Photos != null)
+            {
+                FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.Username, ""), model.Photos.FileName);
+            }
+            else
+            {
+                var genderImg = model.Gender == "Female" ? "woman.png" : "man.png";
+                var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
+                File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
+            }
+
             var identityResult = await userManager.CreateAsync(user, model.Password);
 
-                if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "AvatarImg")))
-                {
-                    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "AvatarImg", model.UserName));
-                }
-
-                FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("AvatarImg", model.UserName, ""), model.Photos.FileName);
-
-            return new ResultFeedBack() { Action_Result = identityResult.Succeeded, Message = identityResult.Succeeded ? "SignUp Success." : "SignUp Fail." };
+            return new ResultFeedBack() { Action_Result = identityResult.Succeeded, Message = identityResult.Succeeded ? "SignUp Success." : identityResult.Errors.First().Description };
         }
 
         public async Task<ResultFeedBack> UpdateAcountAsync(ChangePassModel model)

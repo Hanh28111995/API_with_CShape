@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wcl_employee_admin.Data;
 
@@ -11,9 +12,10 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    partial class FormContextModelSnapshot : ModelSnapshot
+    [Migration("20230519181239_DBinit")]
+    partial class DBinit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -330,7 +332,7 @@ namespace wcl_employee_admin.Migrations
 
                     b.HasKey("ReferenceID");
 
-                    b.ToTable("Miss Punch Forms", (string)null);
+                    b.ToTable("Miss Punch Forms");
                 });
 
             modelBuilder.Entity("wcl_employee_admin.Data.TimeOffForm", b =>
@@ -384,7 +386,7 @@ namespace wcl_employee_admin.Migrations
 
                     b.HasKey("ReferenceID");
 
-                    b.ToTable("Time Off Forms", (string)null);
+                    b.ToTable("Time Off Forms");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

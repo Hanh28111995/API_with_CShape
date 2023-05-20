@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarImg\\hanhT_wizard\\IMAGE (5).png",
-      "PackagePath": "staticwebassets\\AvatarImg\\hanhT_wizard\\IMAGE (5).png"
+      "Id": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "PackagePath": "staticwebassets\\avatarDefault\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
+      "PackagePath": "staticwebassets\\avatarDefault\\woman.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.wcl_employee_admin.props",

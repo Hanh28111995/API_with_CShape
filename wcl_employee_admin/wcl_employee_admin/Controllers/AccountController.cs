@@ -30,7 +30,7 @@ namespace wcl_employee_admin.Controllers
         {   
 
             var result = await accountRepo.SignUpAsync(signUpModel);
-            if (string.IsNullOrEmpty(result.Message))
+            if (!result.Action_Result)
             {
                 return Unauthorized();
             }

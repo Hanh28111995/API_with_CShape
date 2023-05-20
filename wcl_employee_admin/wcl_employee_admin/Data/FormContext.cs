@@ -9,9 +9,11 @@ namespace wcl_employee_admin.Data
         {
 
         }
+
+
         #region DBSet
-        public DbSet<TimeOffForm>? TimeOffForms { get; set; }
-        public DbSet<MissPunchForm>? MissPunchForms { get; set; }
+        public DbSet<TimeOffForm> TimeOffForms { get; set; }
+        public DbSet<MissPunchForm> MissPunchForms { get; set; }
         #endregion
     }
 }
