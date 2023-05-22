@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230518230641_DBInitFIX")]
-    partial class DBInitFIX
+    [Migration("20230522044505_DBInit")]
+    partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -168,29 +168,29 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BirthDay")
+                    b.Property<string>("Birthday")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CardNumber")
+                    b.Property<string>("Cardnumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ConfirmNumber")
+                    b.Property<string>("Confirmnumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContractType")
+                    b.Property<string>("Contracttype")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DateStart")
+                    b.Property<string>("Datestart")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EEO")
+                    b.Property<string>("Eeo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -200,11 +200,14 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Grosssalary")
+                        .HasColumnType("int");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -218,7 +221,10 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Marital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("NickName")
+                    b.Property<int?>("Netsalary")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nickname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -247,13 +253,16 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("PhotoUrl")
+                    b.Property<string>("Photourl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Position")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -263,14 +272,8 @@ namespace wcl_employee_admin.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("ZIPCode")
+                    b.Property<string>("Zipcode")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("grossSalary")
-                        .HasColumnType("int");
-
-                    b.Property<int>("netSalary")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

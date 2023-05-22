@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
@@ -17,6 +18,8 @@ namespace wcl_employee_admin.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
+        private readonly FormContext _context;
+        private readonly IMapper _mapper;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IConfiguration configuration;
@@ -24,6 +27,7 @@ namespace wcl_employee_admin.Repositories
         private readonly IWebHostEnvironment _hostingEnvironment;
         public AccountRepository
         (
+            FormContext context, IMapper mapper,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IConfiguration configuration,
@@ -33,8 +37,13 @@ namespace wcl_employee_admin.Repositories
             this.signInManager = signInManager;
             this.configuration = configuration;
             _hostingEnvironment = hostingEnvironment;
-            
+            _context = context;
+            _mapper = mapper;
+
         }
+
+
+
 
         public async Task<ResultFeedBack> SignInAsync(SignInModel model)
         {
@@ -55,7 +64,6 @@ namespace wcl_employee_admin.Repositories
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Role, user.Position),
-                new Claim(ClaimTypes.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 
@@ -112,7 +120,8 @@ namespace wcl_employee_admin.Repositories
                 Birthday = model.Birthday,
                 Marital = model.Marital,
                 Datestart = model.Datestart,
-                Passport = model.Passport
+                Passport = model.Passport,
+                Status = model.Status,
             };
 
             if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
@@ -131,9 +140,10 @@ namespace wcl_employee_admin.Repositories
             }
             else
             {
-                var genderImg = model.Gender == "Female" ? "woman.png" : "man.png";
+                var genderImg = (model.Gender == "Female") ? "woman.png" : "man.png";
                 var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
                 File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
+                user.Photourl = genderImg;
             }
 
             var identityResult = await userManager.CreateAsync(user, model.Password);
@@ -141,7 +151,7 @@ namespace wcl_employee_admin.Repositories
             return new ResultFeedBack() { Action_Result = identityResult.Succeeded, Message = identityResult.Succeeded ? "SignUp Success." : identityResult.Errors.First().Description };
         }
 
-        public async Task<ResultFeedBack> UpdateAcountAsync(ChangePassModel model)
+        public async Task<ResultFeedBack> UserChangePasswordAsync(ChangePassModel model)
         {
             var user = await userManager.FindByNameAsync(model.Username);
             if (user == null)
@@ -150,16 +160,20 @@ namespace wcl_employee_admin.Repositories
             }
             if (model.NewPassword == model.ConfirmNewPassword)
             {
-                var result2 = await userManager.CheckPasswordAsync(user, model.CurrentPassword);
-                if (result2 == true)
-                {
-                    var result = await userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
-                    if (result.Succeeded) return new ResultFeedBack() { Action_Result = true, Message = "This User's Password has been changed." };
-                }
+                var result = await userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+                if (result.Succeeded) return new ResultFeedBack() { Action_Result = true, Message = "This User's Password has been changed." };
+                else return new ResultFeedBack() { Action_Result = false, Message = "Change password fail." };
             }
-            return new ResultFeedBack() { Action_Result = false, Message = "Change password fail." };
+            else
+                return new ResultFeedBack() { Action_Result = false, Message = "Confirm New Password not correct." };
+
         }
 
+        public async Task<List<UserForm>> GetAllAccountAsync()
+        {
+            var forms = await userManager.Users.ToListAsync();
+            return _mapper.Map<List<UserForm>>(forms);
+        }
 
         public async Task<ResultFeedBack> DeleteAcountAsync(DisableAccModel model)
         {
@@ -168,7 +182,8 @@ namespace wcl_employee_admin.Repositories
             {
                 return new ResultFeedBack() { Action_Result = false };
             }
-            else {
+            else
+            {
                 var delacc = await userManager.DeleteAsync(user);
                 if (delacc.Succeeded)
                 {

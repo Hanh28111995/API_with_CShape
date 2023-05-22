@@ -1,12 +1,11 @@
-﻿using Microsoft.Build.Framework;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace wcl_employee_admin.Models
 {
     public class SignUpModel
     {
-        public IFormFile Photos { set; get; }
-
         public string Username { get; set; }
+        public IFormFile Photos { set; get; }
 
         public string Fullname { get; set; } 
 
@@ -19,8 +18,8 @@ namespace wcl_employee_admin.Models
         public string Confirmnumber { get; set; } 
         public string Cardnumber { get; set; } 
         public int? Netsalary { get; set; } = 0;
-        public int? Grosssalary { get; set; } = 0; 
-
+        public int? Grosssalary { get; set; } = 0;
+        public string Status { get; set; }
         public string Note { get; set; } 
         public string Nickname { get; set; } 
 

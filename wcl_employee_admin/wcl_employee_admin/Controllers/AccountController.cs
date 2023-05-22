@@ -24,10 +24,25 @@ namespace wcl_employee_admin.Controllers
             accountRepo = repo;
         }
 
+        [HttpGet("GetUserList")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> GetAllAccount()
+        {
+            try
+            {
+                var list = await accountRepo.GetAllAccountAsync();
+                return Ok(list);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPost("SignUp")]
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
-        {   
+        {
 
             var result = await accountRepo.SignUpAsync(signUpModel);
             if (!result.Action_Result)
@@ -49,18 +64,18 @@ namespace wcl_employee_admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("ChangePassWord")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> ChangePassword(ChangePassModel model)
-        {
-            var result = await accountRepo.UpdateAcountAsync(model);
+        //[HttpPost("ChangePassWord")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        //public async Task<IActionResult> ChangePassword(ChangePassModel model)
+        //{
+        //    var result = await accountRepo.UserChangePasswordAsync(model);
 
-            if (string.IsNullOrEmpty(result.Message) == false)
-            {
-                return NotFound(result);
-            }
-            return Ok(result);
-        }
+        //    if (string.IsNullOrEmpty(result.Message) == false)
+        //    {
+        //        return NotFound(result);
+        //    }
+        //    return Ok(result);
+        //}
 
         [HttpPost("UserChangePassWord")]
         [Authorize]
@@ -71,7 +86,7 @@ namespace wcl_employee_admin.Controllers
             {
                 if (UserNameClaim == model.Username)
                 {
-                    var result = await accountRepo.UpdateAcountAsync(model);
+                    var result = await accountRepo.UserChangePasswordAsync(model);
                     if (string.IsNullOrEmpty(result.Message) == false)
                     {
                         return Unauthorized();

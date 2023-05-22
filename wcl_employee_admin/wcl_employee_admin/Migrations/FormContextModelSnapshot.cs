@@ -260,6 +260,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -330,7 +333,7 @@ namespace wcl_employee_admin.Migrations
 
                     b.HasKey("ReferenceID");
 
-                    b.ToTable("Miss Punch Forms", (string)null);
+                    b.ToTable("Miss Punch Forms");
                 });
 
             modelBuilder.Entity("wcl_employee_admin.Data.TimeOffForm", b =>
@@ -384,7 +387,7 @@ namespace wcl_employee_admin.Migrations
 
                     b.HasKey("ReferenceID");
 
-                    b.ToTable("Time Off Forms", (string)null);
+                    b.ToTable("Time Off Forms");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -10349,24 +10349,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wcl\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\gmtra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
+      "projectUniqueName": "C:\\Users\\gmtra\\OneDrive\\Desktop\\fix\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
       "projectName": "wcl_employee_admin",
-      "projectPath": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
-      "packagesPath": "C:\\Users\\wcl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wcl\\source\\repos\\wcl_employee_admin\\wcl_employee_admin\\obj\\",
+      "projectPath": "C:\\Users\\gmtra\\OneDrive\\Desktop\\fix\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
+      "packagesPath": "C:\\Users\\gmtra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gmtra\\OneDrive\\Desktop\\fix\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\wcl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\gmtra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10374,9 +10369,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.nuget.org/api/v2": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -10440,24 +10433,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

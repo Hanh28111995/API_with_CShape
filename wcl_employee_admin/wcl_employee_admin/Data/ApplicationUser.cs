@@ -18,6 +18,8 @@ public class ApplicationUser : IdentityUser
     public int? Netsalary { get; set; } = 0;
     public int? Grosssalary { get; set; } = 0;
 
+    public string Status { get; set; }
+
     public string Note { get; set; } 
     public string Nickname { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using wcl_employee_admin.Models;
 
 namespace wcl_employee_admin.Data
 {
@@ -7,7 +8,6 @@ namespace wcl_employee_admin.Data
     {
         public FormContext(DbContextOptions<FormContext> options): base(options) 
         {
-
         }
 
 
