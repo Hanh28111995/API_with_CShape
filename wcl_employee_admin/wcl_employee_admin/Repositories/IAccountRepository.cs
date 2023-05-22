@@ -13,6 +13,7 @@ namespace wcl_employee_admin.Repositories
         public Task<ResultFeedBack> DeleteAcountAsync(DisableAccModel model);
 
         public Task<List<UserForm>> GetAllAccountAsync();
+        public Task<UserDetail> GetAccountAsync( string Username);
 
 
     }

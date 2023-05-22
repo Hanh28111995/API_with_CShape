@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient.Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.IdentityModel.Tokens;
@@ -174,6 +175,14 @@ namespace wcl_employee_admin.Repositories
             var forms = await userManager.Users.ToListAsync();
             return _mapper.Map<List<UserForm>>(forms);
         }
+
+        public async Task<UserDetail> GetAccountAsync(string Username)
+        {
+            var form = await userManager.FindByNameAsync(Username);
+
+            return _mapper.Map<UserDetail>(form);
+        }
+
 
         public async Task<ResultFeedBack> DeleteAcountAsync(DisableAccModel model)
         {

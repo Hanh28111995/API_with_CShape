@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230522064027_DBfix2")]
-    partial class DBfix2
+    [Migration("20230522155112_DBInitFix")]
+    partial class DBInitFix
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

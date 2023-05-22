@@ -39,6 +39,21 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpGet("GetUserDetail")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> GetAccountByUsername(string Username)
+        {
+            try
+            {
+                var userDetail = await accountRepo.GetAccountAsync(Username);
+                return Ok(userDetail);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPost("SignUp")]
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
