@@ -7,6 +7,7 @@
 
         public string Phone { get; set; }
         public string Photourl { get; set; }
+        //public string Photos { get; set; }
         public string Zipcode { get; set; }
         public string Eeo { get; set; }
 

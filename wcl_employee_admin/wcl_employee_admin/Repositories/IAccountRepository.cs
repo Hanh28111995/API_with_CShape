@@ -15,6 +15,10 @@ namespace wcl_employee_admin.Repositories
         public Task<List<UserForm>> GetAllAccountAsync();
         public Task<UserDetail> GetAccountAsync( string Username);
 
+        public Task<ResultFeedBack> UpdateAccountAsync( SignUpModel model);
+
+
+
 
     }
 }

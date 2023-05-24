@@ -32,7 +32,8 @@ namespace wcl_employee_admin.Repositories
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IConfiguration configuration,
-            IWebHostEnvironment hostingEnvironment)
+            IWebHostEnvironment hostingEnvironment
+        )
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -42,8 +43,6 @@ namespace wcl_employee_admin.Repositories
             _mapper = mapper;
 
         }
-
-
 
 
         public async Task<ResultFeedBack> SignInAsync(SignInModel model)
@@ -179,8 +178,45 @@ namespace wcl_employee_admin.Repositories
         public async Task<UserDetail> GetAccountAsync(string Username)
         {
             var form = await userManager.FindByNameAsync(Username);
-
             return _mapper.Map<UserDetail>(form);
+        }
+
+        public async Task UpdateAccountAsync(string username, SignUpModel model)
+        {
+            if (username == model.Username)
+            {   
+                var user = new ApplicationUser
+                {
+                    Photourl = (model.Photos != null) ? model.Photos.FileName : null,
+                    UserName = model.Username,
+                    Fullname = model.Fullname,
+                    Phone = model.Phone,
+                    Zipcode = model.Zipcode,
+                    Eeo = model.Eeo,
+                    Position = model.Position,
+                    Gender = model.Gender,
+                    Confirmnumber = model.Confirmnumber,
+                    Cardnumber = model.Cardnumber,
+                    Netsalary = model.Netsalary,
+                    Grosssalary = model.Grosssalary,
+                    Note = model.Note,
+                    Nickname = model.Nickname,
+                    Email = model.Email,
+                    Address = model.Address,
+                    Location = model.Location,
+                    Department = model.Department,
+                    Contracttype = model.Contracttype,
+                    Birthday = model.Birthday,
+                    Marital = model.Marital,
+                    Datestart = model.Datestart,
+                    Passport = model.Passport,
+                    Status = model.Status,
+                }
+                var updateUserInfor = _mapper.Map<UserDetail>(model);
+                
+                userManager.UpdateAsync(updateForm);
+                await _context.SaveChangesAsync();
+            }
         }
 
 

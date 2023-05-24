@@ -2,27 +2,33 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
 using System.Security.Claims;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.Repositories;
-
-
+using Microsoft.Extensions.Configuration;
 
 namespace wcl_employee_admin.Controllers
+
+
 {
     [Route("api/[controller]")]
     [ApiController]
 
 
-
     public class AccountController : BaseController
     {
+
+        private readonly IConfiguration configuration;
         private readonly IAccountRepository accountRepo;
 
-        public AccountController(IAccountRepository repo)
+        public AccountController(IAccountRepository repo, IConfiguration iConfig)
         {
             accountRepo = repo;
+            configuration = iConfig;
         }
+
+
 
         [HttpGet("GetUserList")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
@@ -39,13 +45,19 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("GetUserDetail")]
+        [HttpGet("GetUserDetail/{Username}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> GetAccountByUsername(string Username)
         {
             try
             {
                 var userDetail = await accountRepo.GetAccountAsync(Username);
+                if (userDetail.Photourl != null)
+                {
+                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                    //userDetail.Photos = userDetail.Photourl ;
+                    userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
+                }
                 return Ok(userDetail);
             }
             catch
@@ -53,6 +65,28 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+
+        [HttpPut("UpdateUserDetail/{Username}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> UpdateAccountByUsername(string username , SignUpModel model)
+        {
+            try
+            {
+                if (username != model.Username)
+                {
+                    return NotFound();
+                }
+                await accountRepo.UpdateAccountAsync( model);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+
 
         [HttpPost("SignUp")]
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
