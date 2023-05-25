@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wcl_employee_admin.Migrations
 {
-    public partial class DBInit : Migration
+    public partial class InitDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

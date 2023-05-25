@@ -57,6 +57,7 @@ namespace wcl_employee_admin.Controllers
                     string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
                     //userDetail.Photos = userDetail.Photourl ;
                     userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
+
                 }
                 return Ok(userDetail);
             }
@@ -69,16 +70,12 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPut("UpdateUserDetail/{Username}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateAccountByUsername(string username , SignUpModel model)
+        public async Task<IActionResult> UpdateAccountByUsername([FromForm] SignUpModel editmodal, string Username)
         {
             try
             {
-                if (username != model.Username)
-                {
-                    return NotFound();
-                }
-                await accountRepo.UpdateAccountAsync( model);
-                return Ok();
+                var result = await accountRepo.UpdateAccountAsync(editmodal, Username);
+                return Ok(result);
             }
             catch
             {
@@ -92,13 +89,13 @@ namespace wcl_employee_admin.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
         {
-
-            var result = await accountRepo.SignUpAsync(signUpModel);
-            if (!result.Action_Result)
-            {
-                return Unauthorized();
-            }
-            return Ok(result);
+           
+                var result = await accountRepo.SignUpAsync(signUpModel);
+                if (!result.Action_Result)
+                {
+                    return Unauthorized();
+                }
+                return Ok(result);
         }
 
         [HttpPost("SignIn")]

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.Data.SqlClient.Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
@@ -9,6 +10,9 @@ using System.Collections;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
+using System.Net;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Text;
 using wcl_employee_admin.Data;
@@ -100,28 +104,28 @@ namespace wcl_employee_admin.Repositories
                 Id = Guid.NewGuid().ToString(),
                 Photourl = (model.Photos != null) ? model.Photos.FileName : null,
                 UserName = model.Username,
-                Fullname = model.Fullname,
-                Phone = model.Phone,
-                Zipcode = model.Zipcode,
-                Eeo = model.Eeo,
-                Position = model.Position,
-                Gender = model.Gender,
-                Confirmnumber = model.Confirmnumber,
-                Cardnumber = model.Cardnumber,
-                Netsalary = model.Netsalary,
-                Grosssalary = model.Grosssalary,
-                Note = model.Note,
-                Nickname = model.Nickname,
-                Email = model.Email,
-                Address = model.Address,
-                Location = model.Location,
-                Department = model.Department,
-                Contracttype = model.Contracttype,
-                Birthday = model.Birthday,
-                Marital = model.Marital,
-                Datestart = model.Datestart,
-                Passport = model.Passport,
-                Status = model.Status,
+                Fullname = model.Fullname ?? "",
+                Phone = model.Phone ?? "",
+                Zipcode = model.Zipcode ?? "",
+                Eeo = model.Eeo ?? "",
+                Position = model.Position ?? "",
+                Gender = model.Gender ?? "",
+                Confirmnumber = model.Confirmnumber ?? "",
+                Cardnumber = model.Cardnumber ?? "",
+                Netsalary = model.Netsalary ?? 0,
+                Grosssalary = model.Grosssalary ?? 0,
+                Note = model.Note ?? "",
+                Nickname = model.Nickname ?? "",
+                Email = model.Email ?? "",
+                Address = model.Address ?? "",
+                Location = model.Location ?? "",
+                Department = model.Department ?? "",
+                Contracttype = model.Contracttype ?? "",
+                Birthday = model.Birthday ?? "",
+                Marital = model.Marital ?? "",
+                Datestart = model.Datestart ?? "",
+                Passport = model.Passport ?? "",
+                Status = model.Status ?? "",
             };
 
             if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
@@ -181,42 +185,34 @@ namespace wcl_employee_admin.Repositories
             return _mapper.Map<UserDetail>(form);
         }
 
-        public async Task UpdateAccountAsync(string username, SignUpModel model)
+        public async Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string username)
         {
-            if (username == model.Username)
-            {   
-                var user = new ApplicationUser
-                {
-                    Photourl = (model.Photos != null) ? model.Photos.FileName : null,
-                    UserName = model.Username,
-                    Fullname = model.Fullname,
-                    Phone = model.Phone,
-                    Zipcode = model.Zipcode,
-                    Eeo = model.Eeo,
-                    Position = model.Position,
-                    Gender = model.Gender,
-                    Confirmnumber = model.Confirmnumber,
-                    Cardnumber = model.Cardnumber,
-                    Netsalary = model.Netsalary,
-                    Grosssalary = model.Grosssalary,
-                    Note = model.Note,
-                    Nickname = model.Nickname,
-                    Email = model.Email,
-                    Address = model.Address,
-                    Location = model.Location,
-                    Department = model.Department,
-                    Contracttype = model.Contracttype,
-                    Birthday = model.Birthday,
-                    Marital = model.Marital,
-                    Datestart = model.Datestart,
-                    Passport = model.Passport,
-                    Status = model.Status,
-                }
-                var updateUserInfor = _mapper.Map<UserDetail>(model);
-                
-                userManager.UpdateAsync(updateForm);
-                await _context.SaveChangesAsync();
-            }
+            var form = await userManager.FindByNameAsync(username);
+            form.Fullname = model.Fullname ?? "";
+            form.Phone = model.Phone ?? "";
+            form.Zipcode = model.Zipcode ?? "";
+            form.Eeo = model.Eeo ?? "";
+            form.Position = model.Position ?? "";
+            form.Gender = model.Gender ?? "";
+            form.Confirmnumber = model.Confirmnumber ?? "";
+            form.Cardnumber = model.Cardnumber ?? "";
+            form.Netsalary = model.Netsalary ?? 0;
+            form.Grosssalary = model.Grosssalary ?? 0;
+            form.Note = model.Note ?? "";
+            form.Nickname = model.Nickname ?? "";
+            form.Email = model.Email ?? "";
+            form.Address = model.Address ?? "";
+            form.Location = model.Location ?? "";
+            form.Department = model.Department ?? "";
+            form.Contracttype = model.Contracttype ?? "";
+            form.Birthday = model.Birthday ?? "";
+            form.Marital = model.Marital ?? "";
+            form.Datestart = model.Datestart ?? "";
+            form.Passport = model.Passport ?? "";
+            form.Status = model.Status ?? "";
+           
+            var result = await userManager.UpdateAsync(form);
+            return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "SignUp Success." : result.Errors.First().Description };
         }
 
 
