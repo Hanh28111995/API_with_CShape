@@ -21,6 +21,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequiredLength = 3;
+
+    //fix Role Authenticate
+
+}).AddRoles<IdentityRole>().AddEntityFrameworkStores<FormContext>().AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication(option =>
 {
@@ -41,17 +52,7 @@ builder.Services.AddAuthentication(option =>
         (builder.Configuration["JWT:Secret"]))
     };
 });
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-{
-    options.Password.RequireDigit = false;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequiredLength = 3;
 
-    //fix Role Authenticate
-
-}).AddRoles<IdentityRole>().AddEntityFrameworkStores<FormContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddDbContext<FormContext>(option =>

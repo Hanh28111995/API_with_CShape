@@ -20,7 +20,8 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpGet("getMissPunchForm/All")]
-        [Authorize]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+
         public async Task<IActionResult> GetAllForms()
         {
             try
@@ -35,7 +36,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpGet("getMissPunchForm/user")]
         [Authorize]
-        public async Task<IActionResult> UserGetAllForms(MissPunchFormModal model)
+        public async Task<IActionResult> UserGetAllForms()
         {
             try
             {

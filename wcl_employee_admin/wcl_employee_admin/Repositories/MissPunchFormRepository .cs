@@ -31,7 +31,7 @@ namespace wcl_employee_admin.Repositories
         public async Task<int> AddFormAsync(MissPunchFormModal model)
         {
             var newForm = _mapper.Map<MissPunchForm>(model);
-            _context.MissPunchForms!.Add(newForm);
+             _context.MissPunchForms!.Add(newForm);
             await _context.SaveChangesAsync();
             return newForm.ReferenceID;
         }

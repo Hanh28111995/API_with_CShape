@@ -89,13 +89,19 @@ namespace wcl_employee_admin.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
         {
-           
+            try
+            {
                 var result = await accountRepo.SignUpAsync(signUpModel);
                 if (!result.Action_Result)
                 {
                     return Unauthorized();
                 }
                 return Ok(result);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost("SignIn")]
@@ -110,18 +116,7 @@ namespace wcl_employee_admin.Controllers
             return Ok(result);
         }
 
-        //[HttpPost("ChangePassWord")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        //public async Task<IActionResult> ChangePassword(ChangePassModel model)
-        //{
-        //    var result = await accountRepo.UserChangePasswordAsync(model);
 
-        //    if (string.IsNullOrEmpty(result.Message) == false)
-        //    {
-        //        return NotFound(result);
-        //    }
-        //    return Ok(result);
-        //}
 
         [HttpPost("UserChangePassWord")]
         [Authorize]
@@ -133,7 +128,7 @@ namespace wcl_employee_admin.Controllers
                 if (UserNameClaim == model.Username)
                 {
                     var result = await accountRepo.UserChangePasswordAsync(model);
-                    if (string.IsNullOrEmpty(result.Message) == false)
+                    if ((result.Action_Result) == false)
                     {
                         return Unauthorized();
                     }
@@ -153,32 +148,6 @@ namespace wcl_employee_admin.Controllers
             return Ok(result);
         }
 
-        //[HttpPost("UpFile")]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> UploadFile([FromForm] UploadAvatarCreateRequest request)
-        //{
-        //    try
-        //    {   
-        //        //var userID = GetUserId(request.UserName);
-        //        var check = request;
-        //        if (request.UserName != null)
-        //        {
-        //            //request.UserName = userID;
-        //            var result = await accountRepo.UpPhotoAcountAsync(request);
-        //            if (!result)
-        //            {
-        //                return NotFound(result);
-        //            }
 
-        //            return Ok(result);
-
-        //        }
-        //        return Unauthorized();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
     }
 }
