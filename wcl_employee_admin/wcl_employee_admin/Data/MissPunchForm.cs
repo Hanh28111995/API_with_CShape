@@ -7,27 +7,35 @@ namespace wcl_employee_admin.Data
     public class MissPunchForm
     {
         [Key]
-        public int ReferenceID { get; set; }
+        public int ID { get; set; }
+
+        public string Reference { get; set; }
 
         public string Username { get; set; }
-
-        [Required]
+        
         public string Location { get; set; }
-        [Required]
+        
         public string PunchIn { get; set; }
-        [Required]
+        
         public string PunchOut { get; set; }
-        [Required]
+        
         public string LunchIn { get; set; }
-        [Required]
+        
         public string LunchOut { get; set; }
-        [Required]
+        
         public string Manager { get; set; }
-        [Required]
+        
         public string Reason { get; set; }
 
+        public string SubmitDate { get; set; }
+
         public bool? ManagerStatus { get; set; }
+
+        public string ManagerDate { get; set; }
+
         public bool? HRStatus { get; set; }
+
+        public string HrDate { get; set; }
 
     }
 }

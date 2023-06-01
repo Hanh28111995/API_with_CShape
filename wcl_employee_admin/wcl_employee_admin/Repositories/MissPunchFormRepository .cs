@@ -33,12 +33,12 @@ namespace wcl_employee_admin.Repositories
             var newForm = _mapper.Map<MissPunchForm>(model);
              _context.MissPunchForms!.Add(newForm);
             await _context.SaveChangesAsync();
-            return newForm.ReferenceID;
+            return newForm.ID;
         }
 
         public async Task DeleteFormAsync(int ReferenceID)
         {
-            var deletedForm = _context.MissPunchForms!.SingleOrDefault(x => x.ReferenceID == ReferenceID);
+            var deletedForm = _context.MissPunchForms!.SingleOrDefault(x => x.ID == ReferenceID);
             if (deletedForm != null)
             {
                 _context.MissPunchForms!.Remove(deletedForm);
@@ -47,7 +47,7 @@ namespace wcl_employee_admin.Repositories
         }
         public async Task UpdateFormAsync(int ReferenceID, MissPunchFormModal model)
         {
-            if (ReferenceID == model.ReferenceID)
+            if (ReferenceID == model.ID)
             {
                 var updateForm = _mapper.Map<MissPunchForm>(model);
                 _context.MissPunchForms!.Update(updateForm);

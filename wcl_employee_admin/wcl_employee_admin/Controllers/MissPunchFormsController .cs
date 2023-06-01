@@ -79,6 +79,7 @@ namespace wcl_employee_admin.Controllers
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
+                model.Reference = DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
 
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);
@@ -96,7 +97,7 @@ namespace wcl_employee_admin.Controllers
         {
             try 
             { 
-            if (ReferenceID != model.ReferenceID)
+            if (ReferenceID != model.ID)
             {
                 return NotFound();
             }

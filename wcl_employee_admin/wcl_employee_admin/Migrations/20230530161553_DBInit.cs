@@ -74,22 +74,26 @@ namespace wcl_employee_admin.Migrations
                 name: "Miss Punch Forms",
                 columns: table => new
                 {
-                    ReferenceID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PunchIn = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PunchOut = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LunchIn = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LunchOut = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PunchIn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PunchOut = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LunchIn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LunchOut = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ManagerStatus = table.Column<bool>(type: "bit", nullable: true),
-                    HRStatus = table.Column<bool>(type: "bit", nullable: true)
+                    ManagerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Miss Punch Forms", x => x.ReferenceID);
+                    table.PrimaryKey("PK_Miss Punch Forms", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(

@@ -12,7 +12,7 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230529022910_DBInit")]
+    [Migration("20230530161553_DBInit")]
     partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -290,50 +290,55 @@ namespace wcl_employee_admin.Migrations
 
             modelBuilder.Entity("wcl_employee_admin.Data.MissPunchForm", b =>
                 {
-                    b.Property<int>("ReferenceID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReferenceID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LunchIn")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LunchOut")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manager")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
 
                     b.Property<string>("PunchIn")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PunchOut")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reason")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ReferenceID");
+                    b.HasKey("ID");
 
                     b.ToTable("Miss Punch Forms");
                 });
