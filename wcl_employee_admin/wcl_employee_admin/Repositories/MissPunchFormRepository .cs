@@ -16,9 +16,9 @@ namespace wcl_employee_admin.Repositories
             _mapper = mapper;
         }
 
-        public async Task<MissPunchFormModal> getFormAsync(int ReferenceID)
+        public async Task<MissPunchFormModal> getFormAsync(int ID)
         {
-            var form = await _context.MissPunchForms!.FindAsync(ReferenceID);
+            var form = await _context.MissPunchForms!.FindAsync(ID);
             return _mapper.Map<MissPunchFormModal>(form);
         }
 
@@ -36,23 +36,20 @@ namespace wcl_employee_admin.Repositories
             return newForm.ID;
         }
 
-        public async Task DeleteFormAsync(int ReferenceID)
+        public async Task DeleteFormAsync(int ID)
         {
-            var deletedForm = _context.MissPunchForms!.SingleOrDefault(x => x.ID == ReferenceID);
+            var deletedForm = _context.MissPunchForms!.SingleOrDefault(x => x.ID == ID);
             if (deletedForm != null)
             {
                 _context.MissPunchForms!.Remove(deletedForm);
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task UpdateFormAsync(int ReferenceID, MissPunchFormModal model)
+        public async Task UpdateFormAsync(MissPunchFormModal model)
         {
-            if (ReferenceID == model.ID)
-            {
                 var updateForm = _mapper.Map<MissPunchForm>(model);
                 _context.MissPunchForms!.Update(updateForm);
                 await _context.SaveChangesAsync();
-            }
         }
     }
 }

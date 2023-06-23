@@ -10,15 +10,15 @@ namespace wcl_employee_admin.Repositories
         private readonly FormContext _context;
         private readonly IMapper _mapper;
 
-        public TimeOffFormRepository(FormContext context, IMapper mapper) 
+        public TimeOffFormRepository(FormContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<TimeOffFormModal> getFormAsync(int ReferenceID)
+        public async Task<TimeOffFormModal> getFormAsync(int ID)
         {
-            var form = await _context.TimeOffForms!.FindAsync(ReferenceID);
+            var form = await _context.TimeOffForms!.FindAsync(ID);
             return _mapper.Map<TimeOffFormModal>(form);
         }
 
@@ -33,26 +33,23 @@ namespace wcl_employee_admin.Repositories
             var newForm = _mapper.Map<TimeOffForm>(model);
             _context.TimeOffForms!.Add(newForm);
             await _context.SaveChangesAsync();
-            return newForm.ReferenceID;
+            return newForm.ID;
         }
 
-        public async Task DeleteFormAsync(int ReferenceID)
+        public async Task DeleteFormAsync(int ID)
         {
-            var deletedForm = _context.TimeOffForms!.SingleOrDefault(x => x.ReferenceID == ReferenceID);
+            var deletedForm = _context.TimeOffForms!.SingleOrDefault(x => x.ID == ID);
             if (deletedForm != null)
             {
                 _context.TimeOffForms!.Remove(deletedForm);
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task UpdateFormAsync(int ReferenceID, TimeOffFormModal model)
+        public async Task UpdateFormAsync(TimeOffFormModal model)
         {
-            if (ReferenceID == model.ReferenceID)
-            {
-                var updateForm = _mapper.Map<TimeOffForm>(model);
-                _context.TimeOffForms!.Update(updateForm);
-                await _context.SaveChangesAsync();
-            }
+            var updateForm = _mapper.Map<TimeOffForm>(model);
+            _context.TimeOffForms!.Update(updateForm);
+            await _context.SaveChangesAsync();
         }
     }
 }

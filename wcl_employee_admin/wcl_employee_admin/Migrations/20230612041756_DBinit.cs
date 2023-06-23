@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wcl_employee_admin.Migrations
 {
-    public partial class DBInit : Migration
+    public partial class DBinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -89,7 +89,8 @@ namespace wcl_employee_admin.Migrations
                     ManagerStatus = table.Column<bool>(type: "bit", nullable: true),
                     ManagerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HRStatus = table.Column<bool>(type: "bit", nullable: true),
-                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -100,23 +101,28 @@ namespace wcl_employee_admin.Migrations
                 name: "Time Off Forms",
                 columns: table => new
                 {
-                    ReferenceID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TimeOffStart = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TimeOffEnd = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CoverWorker = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PayTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ShiftDay = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TimeOffStart = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TimeOffEnd = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CoverWorker = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PayTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ShiftDay = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ManagerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ManagerStatus = table.Column<bool>(type: "bit", nullable: true),
+                    CoworkerDate = table.Column<bool>(type: "bit", nullable: false),
                     CoworkerStatus = table.Column<bool>(type: "bit", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HRStatus = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Time Off Forms", x => x.ReferenceID);
+                    table.PrimaryKey("PK_Time Off Forms", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(

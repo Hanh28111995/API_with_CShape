@@ -37,6 +37,8 @@ namespace wcl_employee_admin.Data
 
         public string HrDate { get; set; }
 
+        public string Note { get; set; }
+
     }
 }
 

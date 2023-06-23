@@ -57,11 +57,11 @@ namespace wcl_employee_admin.Controllers
 
         [HttpGet("getMissPunchForm/{Reference}")]
         [Authorize]
-        public async Task<IActionResult> GetFormbyId(int ReferenceID)
+        public async Task<IActionResult> GetFormbyId(int ID)
         {
             try
             {
-                var Forms = await _formRepo.getFormAsync(ReferenceID);
+                var Forms = await _formRepo.getFormAsync(ID);
                 return Forms == null ? NotFound() : Ok(Forms);
             }
             catch
@@ -79,7 +79,8 @@ namespace wcl_employee_admin.Controllers
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
-                model.Reference = DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.Reference = "MP" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
 
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);
@@ -93,15 +94,15 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPut("editMissPunchForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateBook(int ReferenceID, MissPunchFormModal model)
+        public async Task<IActionResult> UpdateForm(MissPunchFormModal model)
         {
             try 
             { 
-            if (ReferenceID != model.ID)
+            if (model.ID == null)
             {
                 return NotFound();
             }
-            await _formRepo.UpdateFormAsync(ReferenceID, model);
+            await _formRepo.UpdateFormAsync(model);
             return Ok();
             }
             catch
@@ -112,11 +113,11 @@ namespace wcl_employee_admin.Controllers
 
         [HttpDelete("deleteMissPunchForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> DeleteForm([FromRoute] int ReferenceID)
+        public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {
             try 
             { 
-            await _formRepo.DeleteFormAsync(ReferenceID);
+            await _formRepo.DeleteFormAsync(ID);
             return Ok();
             }
             catch

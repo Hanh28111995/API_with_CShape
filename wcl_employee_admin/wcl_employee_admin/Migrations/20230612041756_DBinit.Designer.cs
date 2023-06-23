@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230530161553_DBInit")]
-    partial class DBInit
+    [Migration("20230612041756_DBinit")]
+    partial class DBinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -320,6 +320,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PunchIn")
                         .HasColumnType("nvarchar(max)");
 
@@ -345,15 +348,17 @@ namespace wcl_employee_admin.Migrations
 
             modelBuilder.Entity("wcl_employee_admin.Data.TimeOffForm", b =>
                 {
-                    b.Property<int>("ReferenceID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReferenceID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<string>("CoverWorker")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("CoworkerDate")
+                        .HasColumnType("bit");
 
                     b.Property<bool?>("CoworkerStatus")
                         .HasColumnType("bit");
@@ -361,38 +366,43 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manager")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
 
                     b.Property<string>("PayTime")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reason")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShiftDay")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TimeOffEnd")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TimeOffStart")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ReferenceID");
+                    b.HasKey("ID");
 
                     b.ToTable("Time Off Forms");
                 });

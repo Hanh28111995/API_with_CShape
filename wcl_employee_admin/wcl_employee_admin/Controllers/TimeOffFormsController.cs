@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.Repositories;
 
@@ -19,7 +20,8 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpGet("getTimeOffForm/All")]
-        //[Authorize]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+
         public async Task<IActionResult> GetAllForms()
         {
             try
@@ -31,13 +33,35 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
-        [HttpGet("getTimeOffForm/{Reference}")]
-        //[Authorize]
-        public async Task<IActionResult> GetFormbyId(int ReferenceID)
+
+        [HttpGet("getTimeOffForm/user")]
+        [Authorize]
+        public async Task<IActionResult> UserGetAllForms()
         {
             try
             {
-                var Forms = await _formRepo.getFormAsync(ReferenceID);
+                var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
+                if (UserNameClaim != null)
+                {
+                    var allforms = await _formRepo.getAllFormsAsync();
+                    var userform = allforms.Where(model => model.Username == UserNameClaim).ToList();
+                    return Ok(userform);
+                }
+                return NoContent();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("getTimeOffForm/{Reference}")]
+        [Authorize]
+        public async Task<IActionResult> GetFormbyId(int ID)
+        {
+            try
+            {
+                var Forms = await _formRepo.getFormAsync(ID);
                 return Forms == null ? NotFound() : Ok(Forms);
             }
             catch
@@ -45,36 +69,41 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+
         [HttpPost("addTimeOffForm")]
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> AddNewForm(TimeOffFormModal model)
         {
             try
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
+                model.Reference = "TO" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
+
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);
                 return form == null ? NotFound() : Ok(form);
             }
             catch
             {
-                return Ok();
+                return BadRequest();
             }
         }
 
         [HttpPut("editTimeOffForm/{ReferenceID}")]
-        //[Authorize]
-        public async Task<IActionResult> UpdateBook(int ReferenceID, TimeOffFormModal model)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> UpdateForm(TimeOffFormModal model)
         {
-            try 
-            { 
-            if (ReferenceID != model.ReferenceID)
+            try
             {
-                return NotFound();
-            }
-            await _formRepo.UpdateFormAsync(ReferenceID, model);
-            return Ok();
+                if (model.ID == null)
+                {
+                    return NotFound();
+                }
+                await _formRepo.UpdateFormAsync(model);
+                return Ok();
             }
             catch
             {
@@ -83,13 +112,13 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpDelete("deleteTimeOffForm/{ReferenceID}")]
-        //[Authorize]
-        public async Task<IActionResult> DeleteForm([FromRoute] int ReferenceID)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {
-            try 
-            { 
-            await _formRepo.DeleteFormAsync(ReferenceID);
-            return Ok();
+            try
+            {
+                await _formRepo.DeleteFormAsync(ID);
+                return Ok();
             }
             catch
             {

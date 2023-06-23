@@ -7,9 +7,9 @@ namespace wcl_employee_admin.Repositories
 
     {
        public Task<List<MissPunchFormModal>> getAllFormsAsync();
-       public Task<MissPunchFormModal> getFormAsync(int ReferenceID);
+       public Task<MissPunchFormModal> getFormAsync(int ID);
        public Task<int> AddFormAsync(MissPunchFormModal model);
-       public Task UpdateFormAsync(int ReferenceID, MissPunchFormModal model);
-       public Task DeleteFormAsync(int ReferenceID);
+       public Task UpdateFormAsync(MissPunchFormModal model);
+       public Task DeleteFormAsync(int ID);
     }
 }

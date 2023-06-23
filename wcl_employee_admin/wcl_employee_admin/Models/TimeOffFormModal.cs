@@ -5,7 +5,8 @@ namespace wcl_employee_admin.Models
     public class TimeOffFormModal
     {
         [Key]
-        public int ReferenceID { get; set; }
+        public int ID { get; set; }
+        public string Reference { get; set; }
         public string Username { get; set; }
         [Required]
         public string Location { get; set; }
@@ -24,8 +25,17 @@ namespace wcl_employee_admin.Models
         [Required]
         public string Reason { get; set; }
 
+        public string SubmitDate { get; set; }
+        public string ManagerDate { get; set; }
+
         public bool? ManagerStatus { get; set; }
+
+        public bool CoworkerDate { get; set; }
+
         public bool? CoworkerStatus { get; set; }
+
+        public string HrDate { get; set; }
+
         public bool? HRStatus { get; set; }
     }
 }
