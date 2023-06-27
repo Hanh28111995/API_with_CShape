@@ -5,7 +5,6 @@ namespace wcl_employee_admin.Data;
 public class ApplicationUser : IdentityUser
 {
     public string Fullname { get; set; }
-
     public string Phone { get; set; } 
     public string Photourl { get; set; } 
     public string Zipcode { get; set; }

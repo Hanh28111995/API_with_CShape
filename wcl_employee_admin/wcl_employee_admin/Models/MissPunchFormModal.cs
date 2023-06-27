@@ -34,5 +34,6 @@ namespace wcl_employee_admin.Models
         public bool? HRStatus { get; set; }
 
         public string HrDate { get; set; }
+        public string Note { get; set; }
     }
 }

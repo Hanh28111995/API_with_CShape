@@ -1,5 +1,6 @@
 ﻿using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
+using wcl_employee_admin.ViewModel;
 
 namespace wcl_employee_admin.Repositories
 {
@@ -9,7 +10,7 @@ namespace wcl_employee_admin.Repositories
        public Task<List<MissPunchFormModal>> getAllFormsAsync();
        public Task<MissPunchFormModal> getFormAsync(int ID);
        public Task<int> AddFormAsync(MissPunchFormModal model);
-       public Task UpdateFormAsync(MissPunchFormModal model);
-       public Task DeleteFormAsync(int ID);
+       public Task<int>  UpdateFormAsync(MissPunchFormModal model);
+       public Task  DeleteFormAsync(int ID);
     }
 }

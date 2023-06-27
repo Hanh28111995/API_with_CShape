@@ -94,7 +94,7 @@ namespace wcl_employee_admin.Controllers
                 var result = await accountRepo.SignUpAsync(signUpModel);
                 if (!result.Action_Result)
                 {
-                    return Unauthorized();
+                    return Unauthorized(result);
                 }
                 return Ok(result);
             }

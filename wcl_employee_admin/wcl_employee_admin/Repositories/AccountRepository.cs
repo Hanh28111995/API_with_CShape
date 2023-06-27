@@ -128,29 +128,25 @@ namespace wcl_employee_admin.Repositories
                 Status = model.Status ?? "",
             };
 
-            if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
-            {
-                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username));
-            }
-            //if (Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName)))
-            //{
-            //    FileUpload.FileUpload.DeleteFile(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", ""));
-            //    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName));
-            //}
-
-            if (model.Photos != null)
-            {
-                FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.Username, ""), model.Photos.FileName);
-            }
-            else
-            {
-                var genderImg = (model.Gender == "Female") ? "woman.png" : "man.png";
-                var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
-                File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
-                user.Photourl = genderImg;
-            }
-
             var identityResult = await userManager.CreateAsync(user, model.Password);
+            if (identityResult.Succeeded)
+            {
+                if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
+                {
+                    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username));
+                }
+                if (model.Photos != null)
+                {
+                    FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.Username, ""), model.Photos.FileName);
+                }
+                else
+                {
+                    var genderImg = (model.Gender == "Female") ? "woman.png" : "man.png";
+                    var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
+                    File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
+                    user.Photourl = genderImg;
+                }
+            }
 
             return new ResultFeedBack() { Action_Result = identityResult.Succeeded, Message = identityResult.Succeeded ? "SignUp Success." : identityResult.Errors.First().Description };
         }
@@ -210,7 +206,7 @@ namespace wcl_employee_admin.Repositories
             form.Datestart = model.Datestart ?? "";
             form.Passport = model.Passport ?? "";
             form.Status = model.Status ?? "";
-           
+
             var result = await userManager.UpdateAsync(form);
             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "SignUp Success." : result.Errors.First().Description };
         }

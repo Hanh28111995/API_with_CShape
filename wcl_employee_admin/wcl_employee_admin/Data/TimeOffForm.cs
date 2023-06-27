@@ -10,7 +10,8 @@ namespace wcl_employee_admin.Data
         public int ID { get; set; }
 
         public string Reference { get; set; }
-        
+        public string Username { get; set; }
+
         public string Location { get; set; }
         
         public string TimeOffStart { get; set; }
@@ -40,6 +41,7 @@ namespace wcl_employee_admin.Data
         public string HrDate { get; set; }
 
         public bool? HRStatus { get; set; }
+        public string Note { get; set; }
 
     }
 }

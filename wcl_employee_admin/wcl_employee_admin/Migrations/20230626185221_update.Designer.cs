@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230612041756_DBinit")]
-    partial class DBinit
+    [Migration("20230626185221_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -381,6 +381,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PayTime")
                         .HasColumnType("nvarchar(max)");
 
@@ -400,6 +403,9 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TimeOffStart")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
+using wcl_employee_admin.ViewModel;
 
 namespace wcl_employee_admin.Repositories
 {
@@ -10,7 +11,7 @@ namespace wcl_employee_admin.Repositories
         private readonly FormContext _context;
         private readonly IMapper _mapper;
 
-        public  MissPunchFormRepository(FormContext context, IMapper mapper) 
+        public MissPunchFormRepository(FormContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -31,7 +32,7 @@ namespace wcl_employee_admin.Repositories
         public async Task<int> AddFormAsync(MissPunchFormModal model)
         {
             var newForm = _mapper.Map<MissPunchForm>(model);
-             _context.MissPunchForms!.Add(newForm);
+            _context.MissPunchForms!.Add(newForm);
             await _context.SaveChangesAsync();
             return newForm.ID;
         }
@@ -45,11 +46,12 @@ namespace wcl_employee_admin.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task UpdateFormAsync(MissPunchFormModal model)
+        public async Task<int> UpdateFormAsync(MissPunchFormModal model)
         {
-                var updateForm = _mapper.Map<MissPunchForm>(model);
-                _context.MissPunchForms!.Update(updateForm);
-                await _context.SaveChangesAsync();
+            var updateForm = _mapper.Map<MissPunchForm>(model);
+             _context.MissPunchForms!.Update(updateForm);
+            var result = await _context.SaveChangesAsync();
+            return result;
         }
     }
 }
