@@ -6,20 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.Repositories;
 
+
 namespace wcl_employee_admin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MissPunchFormsController : ControllerBase
+    public class IncidentReportController : ControllerBase
     {
-        private readonly IMissPunchFormRepository _formRepo;
+        private readonly IIncidentReportFormRepository _formRepo;
 
-        public MissPunchFormsController(IMissPunchFormRepository repo)
+        public IncidentReportController(IIncidentReportFormRepository repo)
         {
             _formRepo = repo;
         }
 
-        [HttpGet("getMissPunchForm/All")]
+        [HttpGet("getIncidentReportForm/All")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
 
         public async Task<IActionResult> GetAllForms()
@@ -34,7 +35,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getMissPunchForm/user")]
+        [HttpGet("getIncidentReportForm/user")]
         [Authorize]
         public async Task<IActionResult> UserGetAllForms()
         {
@@ -55,7 +56,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getMissPunchForm/{Reference}")]
+        [HttpGet("getIncidentReportForm/{Reference}")]
         [Authorize]
         public async Task<IActionResult> GetFormbyId(int ID)
         {
@@ -71,15 +72,15 @@ namespace wcl_employee_admin.Controllers
         }
 
 
-        [HttpPost("addMissPunchForm")]
+        [HttpPost("addIncidentReportForm")]
         [Authorize]
-        public async Task<IActionResult> AddNewForm(MissPunchFormModal model)
-        { 
+        public async Task<IActionResult> AddNewForm(IncidentReportFormModal model)
+        {
             try
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
-                model.Reference = "MP" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.Reference = "TO" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
                 model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
 
                 var newForm = await _formRepo.AddFormAsync(model);
@@ -92,18 +93,18 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("editMissPunchForm/{ReferenceID}")]
+        [HttpPut("editIncidentReportForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(MissPunchFormModal model)
+        public async Task<IActionResult> UpdateForm(IncidentReportFormModal model)
         {
-            try 
-            { 
-            if (model.ID == null)
+            try
             {
-                return NotFound();
-            }
-            var result = await _formRepo.UpdateFormAsync(model);
-            return Ok(result);
+                if (model.ID == null)
+                {
+                    return NotFound();
+                }
+                var result = await _formRepo.UpdateFormAsync(model);
+                return Ok(result);
             }
             catch
             {
@@ -111,14 +112,14 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteMissPunchForm/{ReferenceID}")]
+        [HttpDelete("deleteIncidentReportForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {
-            try 
-            { 
-            await _formRepo.DeleteFormAsync(ID);
-            return Ok();
+            try
+            {
+                await _formRepo.DeleteFormAsync(ID);
+                return Ok();
             }
             catch
             {

@@ -12,6 +12,8 @@ namespace wcl_employee_admin.Data
 
 
         #region DBSet
+        public DbSet<IncidentReportForm> IncidentReportForms { get; set; }
+        public DbSet<VTO_Form> vtoForms { get; set; }
         public DbSet<TimeOffForm> TimeOffForms { get; set; }
         public DbSet<MissPunchForm> MissPunchForms { get; set; }
         #endregion

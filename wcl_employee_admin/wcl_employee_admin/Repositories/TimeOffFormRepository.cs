@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
+using wcl_employee_admin.ViewModel;
 
 namespace wcl_employee_admin.Repositories
 {
@@ -45,11 +46,16 @@ namespace wcl_employee_admin.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task UpdateFormAsync(TimeOffFormModal model)
+        public async Task<ResultFeedBack> UpdateFormAsync(TimeOffFormModal model)
         {
             var updateForm = _mapper.Map<TimeOffForm>(model);
-            _context.TimeOffForms!.Update(updateForm);
-            await _context.SaveChangesAsync();
+            var result_Update =  _context.TimeOffForms!.Update(updateForm);
+            var result_saveChange = await _context.SaveChangesAsync();
+            if(result_saveChange != null)
+            {
+                return new ResultFeedBack() { Action_Result = true, Message = "Edit Note Success." };
+            }
+            else return new ResultFeedBack() { Action_Result = false, Message = "Edit Note Fail." };
         }
     }
 }

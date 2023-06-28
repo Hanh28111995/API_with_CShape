@@ -151,7 +151,7 @@ namespace wcl_employee_admin.Repositories
             return new ResultFeedBack() { Action_Result = identityResult.Succeeded, Message = identityResult.Succeeded ? "SignUp Success." : identityResult.Errors.First().Description };
         }
 
-        public async Task<ResultFeedBack> UserChangePasswordAsync(ChangePassModel model)
+        public async Task<ResultFeedBack> UserChangePasswordAsync(ChangePassModal model)
         {
             var user = await userManager.FindByNameAsync(model.Username);
             if (user == null)
@@ -212,7 +212,7 @@ namespace wcl_employee_admin.Repositories
         }
 
 
-        public async Task<ResultFeedBack> DeleteAcountAsync(DisableAccModel model)
+        public async Task<ResultFeedBack> DeleteAcountAsync(DisableAccModal model)
         {
             var user = await userManager.FindByNameAsync(model.Username);
             if (user == null)

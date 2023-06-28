@@ -2,7 +2,7 @@
 
 namespace wcl_employee_admin.Models
 {
-    public class ChangePassModel
+    public class ChangePassModal
     {
         //[Required]
         public string Username { get; set; }

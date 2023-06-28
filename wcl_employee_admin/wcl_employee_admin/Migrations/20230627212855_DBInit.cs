@@ -119,11 +119,33 @@ namespace wcl_employee_admin.Migrations
                     CoworkerDate = table.Column<bool>(type: "bit", nullable: false),
                     CoworkerStatus = table.Column<bool>(type: "bit", nullable: true),
                     HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    HRStatus = table.Column<bool>(type: "bit", nullable: true)
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Time Off Forms", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "VTO Forms",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateRequest = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VTO Forms", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -294,6 +316,9 @@ namespace wcl_employee_admin.Migrations
 
             migrationBuilder.DropTable(
                 name: "Time Off Forms");
+
+            migrationBuilder.DropTable(
+                name: "VTO Forms");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

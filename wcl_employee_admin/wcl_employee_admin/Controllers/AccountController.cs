@@ -120,7 +120,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("UserChangePassWord")]
         [Authorize]
-        public async Task<IActionResult> UserChangePassword(ChangePassModel model)
+        public async Task<IActionResult> UserChangePassword(ChangePassModal model)
         {
             var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
             if (UserNameClaim != null)
@@ -141,7 +141,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpDelete("DeletePassWord")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> DeletePassword(DisableAccModel model)
+        public async Task<IActionResult> DeletePassword(DisableAccModal model)
         {
             var result = await accountRepo.DeleteAcountAsync(model);
 

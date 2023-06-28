@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230626184544_DBInit")]
-    partial class DBInit
+    [Migration("20230627233349_DBAddIncindentReport")]
+    partial class DBAddIncindentReport
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -288,6 +288,52 @@ namespace wcl_employee_admin.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("wcl_employee_admin.Data.IncidentReportForm", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("DateOfIncident")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Witness")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("IncidentReport Forms");
+                });
+
             modelBuilder.Entity("wcl_employee_admin.Data.MissPunchForm", b =>
                 {
                     b.Property<int>("ID")
@@ -381,6 +427,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PayTime")
                         .HasColumnType("nvarchar(max)");
 
@@ -408,6 +457,46 @@ namespace wcl_employee_admin.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Time Off Forms");
+                });
+
+            modelBuilder.Entity("wcl_employee_admin.Data.VTO_Form", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("DateRequest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("VTO Forms");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

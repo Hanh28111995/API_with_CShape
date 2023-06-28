@@ -46,12 +46,16 @@ namespace wcl_employee_admin.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task<int> UpdateFormAsync(MissPunchFormModal model)
+        public async Task<ResultFeedBack> UpdateFormAsync(MissPunchFormModal model)
         {
             var updateForm = _mapper.Map<MissPunchForm>(model);
-             _context.MissPunchForms!.Update(updateForm);
-            var result = await _context.SaveChangesAsync();
-            return result;
+            var result_Update = _context.MissPunchForms!.Update(updateForm);
+            var result_saveChange = await _context.SaveChangesAsync();
+            if(result_saveChange != null)
+            {
+                return new ResultFeedBack() { Action_Result = true, Message = "Edit Note Success." };
+            }
+            else return new ResultFeedBack() { Action_Result = false, Message = "Edit Note Fail." };
         }
     }
 }

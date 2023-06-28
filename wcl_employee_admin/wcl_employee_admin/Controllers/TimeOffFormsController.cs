@@ -102,8 +102,8 @@ namespace wcl_employee_admin.Controllers
                 {
                     return NotFound();
                 }
-                await _formRepo.UpdateFormAsync(model);
-                return Ok();
+                var result = await _formRepo.UpdateFormAsync(model);
+                return Ok(result);
             }
             catch
             {

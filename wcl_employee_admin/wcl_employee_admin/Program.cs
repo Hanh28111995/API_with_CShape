@@ -67,6 +67,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IMissPunchFormRepository, MissPunchFormRepository>();
 builder.Services.AddScoped<ITimeOffFormRepository, TimeOffFormRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IVTOFormRepository, VTOFormRepository>();
+builder.Services.AddScoped<IIncidentReportFormRepository, IncidentReportFormRepository>();
 
 builder.Services.AddSwaggerGen(c =>
 {
