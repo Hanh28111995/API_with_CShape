@@ -80,7 +80,7 @@ namespace wcl_employee_admin.Controllers
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
-                model.Reference = "TO" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.Reference = "IR" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
                 model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
 
                 var newForm = await _formRepo.AddFormAsync(model);
