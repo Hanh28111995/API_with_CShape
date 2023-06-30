@@ -309,6 +309,12 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ManagerDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ManagerStatus")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");
 
@@ -329,7 +335,101 @@ namespace wcl_employee_admin.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("IncidentReport Forms");
+                    b.ToTable("Incident Report Forms");
+                });
+
+            modelBuilder.Entity("wcl_employee_admin.Data.InjuryReportForm", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("AccountNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BodyAffected_Left")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BodyAffected_Right")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CareProvided")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CauseBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateOfAccident")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DesOfInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Doctor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Hospital")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Insurance")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NatureOfInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nickname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherIncident")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInvolved")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonOccur")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Injury Report Forms");
                 });
 
             modelBuilder.Entity("wcl_employee_admin.Data.MissPunchForm", b =>

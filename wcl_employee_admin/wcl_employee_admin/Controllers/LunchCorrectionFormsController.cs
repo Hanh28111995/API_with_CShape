@@ -4,22 +4,23 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
-using wcl_employee_admin.Repositories.TimeOffRepository;
+using wcl_employee_admin.Repositories.VTOformRepository;
+using wcl_employee_admin.Repositories.MissPunchRepository;
 
 namespace wcl_employee_admin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TimeOffFormsController : ControllerBase
+    public class LunchCorrectionFormsController : ControllerBase
     {
-        private readonly ITimeOffFormRepository _formRepo;
+        private readonly ILunchCorrectionFormRepository _formRepo;
 
-        public TimeOffFormsController(ITimeOffFormRepository repo)
+        public LunchCorrectionFormsController(ILunchCorrectionFormRepository repo)
         {
             _formRepo = repo;
         }
 
-        [HttpGet("getTimeOffForm/All")]
+        [HttpGet("getLunchCorrectionForm/All")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
 
         public async Task<IActionResult> GetAllForms()
@@ -34,7 +35,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getTimeOffForm/user")]
+        [HttpGet("getLunchCorrectionForm/user")]
         [Authorize]
         public async Task<IActionResult> UserGetAllForms()
         {
@@ -55,7 +56,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getTimeOffForm/{Reference}")]
+        [HttpGet("getLunchCorrectionForm/{Reference}")]
         [Authorize]
         public async Task<IActionResult> GetFormbyId(int ID)
         {
@@ -71,15 +72,15 @@ namespace wcl_employee_admin.Controllers
         }
 
 
-        [HttpPost("addTimeOffForm")]
+        [HttpPost("addLunchCorrectionForm")]
         [Authorize]
-        public async Task<IActionResult> AddNewForm(TimeOffFormModal model)
+        public async Task<IActionResult> AddNewForm(LunchCorrectionFormModal model)
         {
             try
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
-                model.Reference = "TO" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.Reference = "LC" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
                 model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
 
                 var newForm = await _formRepo.AddFormAsync(model);
@@ -92,9 +93,9 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("editTimeOffForm/{ReferenceID}")]
+        [HttpPut("editLunchCorrectionForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(TimeOffFormModal model)
+        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
         {
             try
             {
@@ -111,7 +112,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteTimeOffForm/{ReferenceID}")]
+        [HttpDelete("deleteVTOForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

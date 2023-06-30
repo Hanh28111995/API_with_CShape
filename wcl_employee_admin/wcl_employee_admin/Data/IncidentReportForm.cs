@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace wcl_employee_admin.Data
 {
-    [Table("IncidentReport Forms")]
+    [Table("Incident Report Forms")]
     public class IncidentReportForm
     {
         [Key]
@@ -16,6 +16,8 @@ namespace wcl_employee_admin.Data
         public string DateOfIncident { get; set; }
         public string Witness { get; set; }
         public string Manager { get; set; }
+        public string ManagerDate { get; set; }
+        public bool?  ManagerStatus { get; set; }
         public string SubmitDate { get; set; }
         public string HrDate { get; set; }
         public bool? HRStatus { get; set; }

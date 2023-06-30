@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wcl_employee_admin.Migrations
 {
-    public partial class DBInit : Migration
+    public partial class DBinit1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,6 +68,70 @@ namespace wcl_employee_admin.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Incident Report Forms",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateOfIncident = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Witness = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ManagerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ManagerStatus = table.Column<bool>(type: "bit", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Incident Report Forms", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Injury Report Forms",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nickname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateOfAccident = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReasonOccur = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OtherInvolved = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CauseBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OtherIncident = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DesOfInjury = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NatureOfInjury = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OtherInjury = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BodyAffected_Right = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BodyAffected_Left = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Doctor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Hospital = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Insurance = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AccountNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CareProvided = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Injury Report Forms", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -310,6 +374,12 @@ namespace wcl_employee_admin.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Incident Report Forms");
+
+            migrationBuilder.DropTable(
+                name: "Injury Report Forms");
 
             migrationBuilder.DropTable(
                 name: "Miss Punch Forms");

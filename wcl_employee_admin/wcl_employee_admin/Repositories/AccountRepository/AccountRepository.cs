@@ -19,7 +19,7 @@ using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories
+namespace wcl_employee_admin.Repositories.AccountRepository
 {
     public class AccountRepository : IAccountRepository
     {
@@ -77,7 +77,7 @@ namespace wcl_employee_admin.Repositories
             var token = new JwtSecurityToken(
                 issuer: configuration["JWT:ValidIssuer"],
                 audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddMinutes(60),
+                expires: DateTime.Now.AddMinutes(4 * 60),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authenKey, SecurityAlgorithms.HmacSha512Signature)
                 );
@@ -102,7 +102,7 @@ namespace wcl_employee_admin.Repositories
             var user = new ApplicationUser
             {
                 Id = Guid.NewGuid().ToString(),
-                Photourl = (model.Photos != null) ? model.Photos.FileName : null,
+                Photourl = model.Photos != null ? model.Photos.FileName : null,
                 UserName = model.Username,
                 Fullname = model.Fullname ?? "",
                 Phone = model.Phone ?? "",
@@ -141,7 +141,7 @@ namespace wcl_employee_admin.Repositories
                 }
                 else
                 {
-                    var genderImg = (model.Gender == "Female") ? "woman.png" : "man.png";
+                    var genderImg = model.Gender == "Female" ? "woman.png" : "man.png";
                     var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
                     File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
                     user.Photourl = genderImg;

@@ -13,6 +13,8 @@ namespace wcl_employee_admin.Models
         public string DateOfIncident { get; set; }
         public string Witness { get; set; }
         public string Manager { get; set; }
+        public string ManagerDate { get; set; }
+        public bool? ManagerStatus { get; set; }
         public string SubmitDate { get; set; }
         public string HrDate { get; set; }
         public bool? HRStatus { get; set; }

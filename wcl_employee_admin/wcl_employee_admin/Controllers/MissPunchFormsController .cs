@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
-using wcl_employee_admin.Repositories;
+using wcl_employee_admin.Repositories.MissPunchRepository;
 
 namespace wcl_employee_admin.Controllers
 {
@@ -12,9 +12,9 @@ namespace wcl_employee_admin.Controllers
     [ApiController]
     public class MissPunchFormsController : ControllerBase
     {
-        private readonly IMissPunchFormRepository _formRepo;
+        private readonly ILunchCorrectionFormRepository _formRepo;
 
-        public MissPunchFormsController(IMissPunchFormRepository repo)
+        public MissPunchFormsController(ILunchCorrectionFormRepository repo)
         {
             _formRepo = repo;
         }
@@ -73,7 +73,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("addMissPunchForm")]
         [Authorize]
-        public async Task<IActionResult> AddNewForm(MissPunchFormModal model)
+        public async Task<IActionResult> AddNewForm(LunchCorrectionFormModal model)
         { 
             try
             {
@@ -94,7 +94,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPut("editMissPunchForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(MissPunchFormModal model)
+        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
         {
             try 
             { 

@@ -4,7 +4,7 @@ using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories
+namespace wcl_employee_admin.Repositories.IncidentReportRepository
 {
     public class IncidentReportFormRepository : IIncidentReportFormRepository
     {

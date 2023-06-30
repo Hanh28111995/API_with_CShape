@@ -4,7 +4,7 @@ using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories
+namespace wcl_employee_admin.Repositories.TimeOffRepository
 {
     public class TimeOffFormRepository : ITimeOffFormRepository
     {
@@ -49,9 +49,9 @@ namespace wcl_employee_admin.Repositories
         public async Task<ResultFeedBack> UpdateFormAsync(TimeOffFormModal model)
         {
             var updateForm = _mapper.Map<TimeOffForm>(model);
-            var result_Update =  _context.TimeOffForms!.Update(updateForm);
+            var result_Update = _context.TimeOffForms!.Update(updateForm);
             var result_saveChange = await _context.SaveChangesAsync();
-            if(result_saveChange != null)
+            if (result_saveChange != null)
             {
                 return new ResultFeedBack() { Action_Result = true, Message = "Edit Note Success." };
             }

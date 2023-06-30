@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Configuration;
 using System.Security.Claims;
 using wcl_employee_admin.Models;
-using wcl_employee_admin.Repositories;
 using Microsoft.Extensions.Configuration;
+using wcl_employee_admin.Repositories.AccountRepository;
 
 namespace wcl_employee_admin.Controllers
 

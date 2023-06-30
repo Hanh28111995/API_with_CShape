@@ -3,12 +3,17 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using wcl_employee_admin.Data;
-using wcl_employee_admin.Repositories;
 using System.Text;
 using AutoMapper;
 using System.Net;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using wcl_employee_admin.Repositories.AccountRepository;
+using wcl_employee_admin.Repositories.MissPunchRepository;
+using wcl_employee_admin.Repositories.VTOformRepository;
+using wcl_employee_admin.Repositories.TimeOffRepository;
+using wcl_employee_admin.Repositories.IncidentReportRepository;
+using wcl_employee_admin.Repositories.InjuryReportRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,6 +74,8 @@ builder.Services.AddScoped<ITimeOffFormRepository, TimeOffFormRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IVTOFormRepository, VTOFormRepository>();
 builder.Services.AddScoped<IIncidentReportFormRepository, IncidentReportFormRepository>();
+builder.Services.AddScoped<IInjuryReportFormRepository, InjuryReportFormRepository>();
+builder.Services.AddScoped<ILunchCorrectionFormRepository, LunchCorrectionFormRepository>();
 
 builder.Services.AddSwaggerGen(c =>
 {

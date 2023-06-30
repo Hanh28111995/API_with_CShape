@@ -3,7 +3,7 @@ using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories
+namespace wcl_employee_admin.Repositories.AccountRepository
 {
     public interface IAccountRepository
     {
@@ -12,8 +12,8 @@ namespace wcl_employee_admin.Repositories
         public Task<ResultFeedBack> UserChangePasswordAsync(ChangePassModal model);
         public Task<ResultFeedBack> DeleteAcountAsync(DisableAccModal model);
         public Task<List<UserForm>> GetAllAccountAsync();
-        public Task<UserDetail> GetAccountAsync( string Username);
-        public Task<ResultFeedBack> UpdateAccountAsync( SignUpModel model, string username);
+        public Task<UserDetail> GetAccountAsync(string Username);
+        public Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string username);
 
     }
 }

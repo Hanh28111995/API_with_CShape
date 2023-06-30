@@ -4,7 +4,7 @@ using wcl_employee_admin.Data;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories
+namespace wcl_employee_admin.Repositories.MissPunchRepository
 {
     public class MissPunchFormRepository : IMissPunchFormRepository
     {
@@ -51,7 +51,7 @@ namespace wcl_employee_admin.Repositories
             var updateForm = _mapper.Map<MissPunchForm>(model);
             var result_Update = _context.MissPunchForms!.Update(updateForm);
             var result_saveChange = await _context.SaveChangesAsync();
-            if(result_saveChange != null)
+            if (result_saveChange != null)
             {
                 return new ResultFeedBack() { Action_Result = true, Message = "Edit Note Success." };
             }
