@@ -29,6 +29,13 @@ namespace wcl_employee_admin.Repositories.MissPunchRepository
             return _mapper.Map<List<MissPunchFormModal>>(forms);
         }
 
+        public async Task<List<MissPunchFormModal>> getGroupFormsAsync(string group)
+        {
+            var forms = await _context.MissPunchForms!.ToListAsync();
+            
+            return _mapper.Map<List<MissPunchFormModal>>(forms);
+        }
+
         public async Task<int> AddFormAsync(MissPunchFormModal model)
         {
             var newForm = _mapper.Map<MissPunchForm>(model);

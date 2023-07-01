@@ -7,6 +7,7 @@ using System.Security.Claims;
 using wcl_employee_admin.Models;
 using Microsoft.Extensions.Configuration;
 using wcl_employee_admin.Repositories.AccountRepository;
+using NuGet.Common;
 
 namespace wcl_employee_admin.Controllers
 
@@ -67,14 +68,39 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpGet("GetUserDetail_notHR/{Username}")]
+        [Authorize]
+        public async Task<IActionResult> GetAccountByUsername_user(string Username)
+        {
+            try
+            {   
+                if (Username == User.FindFirst(ClaimTypes.Name)?.Value)
+                {
+                    var userDetail = await accountRepo.GetAccountAsync(Username);
+                    if (userDetail.Photourl != null)
+                    {
+                        string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                        //userDetail.Photos = userDetail.Photourl ;
+                        userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
+                    }
+                    return Ok(userDetail);
+                }
+                else return BadRequest();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
 
-        [HttpPut("UpdateUserDetail/{Username}")]
+
+        [HttpPut("UpdateUserDetail/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateAccountByUsername([FromForm] SignUpModel editmodal, string Username)
+        public async Task<IActionResult> UpdateAccountByID([FromForm] SignUpModel editmodal, string ID)
         {
             try
             {
-                var result = await accountRepo.UpdateAccountAsync(editmodal, Username);
+                var result = await accountRepo.UpdateAccountAsync(editmodal, ID);
                 return Ok(result);
             }
             catch

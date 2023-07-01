@@ -68,6 +68,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Role, user.Position),
+                new Claim(ClaimTypes.GroupSid, user.Department),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 
@@ -103,7 +104,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             {
                 Id = Guid.NewGuid().ToString(),
                 Photourl = model.Photos != null ? model.Photos.FileName : null,
-                UserName = model.Username,
+                UserName = model.UserName,
                 Fullname = model.Fullname ?? "",
                 Phone = model.Phone ?? "",
                 Zipcode = model.Zipcode ?? "",
@@ -131,19 +132,19 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var identityResult = await userManager.CreateAsync(user, model.Password);
             if (identityResult.Succeeded)
             {
-                if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username)))
+                if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName)))
                 {
-                    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username));
+                    Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName));
                 }
                 if (model.Photos != null)
                 {
-                    FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.Username, ""), model.Photos.FileName);
+                    FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.UserName, ""), model.Photos.FileName);
                 }
                 else
                 {
                     var genderImg = model.Gender == "Female" ? "woman.png" : "man.png";
                     var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
-                    File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.Username, genderImg));
+                    File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName, genderImg));
                     user.Photourl = genderImg;
                 }
             }
@@ -181,9 +182,10 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             return _mapper.Map<UserDetail>(form);
         }
 
-        public async Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string username)
+
+        public async Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string ID)
         {
-            var form = await userManager.FindByNameAsync(username);
+            var form = await userManager.FindByIdAsync(ID);
             form.Fullname = model.Fullname ?? "";
             form.Phone = model.Phone ?? "";
             form.Zipcode = model.Zipcode ?? "";
@@ -206,6 +208,10 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             form.Datestart = model.Datestart ?? "";
             form.Passport = model.Passport ?? "";
             form.Status = model.Status ?? "";
+            if (form.UserName != model.UserName)
+            {
+
+            }
 
             var result = await userManager.UpdateAsync(form);
             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "SignUp Success." : result.Errors.First().Description };

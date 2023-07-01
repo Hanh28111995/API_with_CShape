@@ -8,6 +8,7 @@ namespace wcl_employee_admin.Repositories.MissPunchRepository
 
     {
         public Task<List<MissPunchFormModal>> getAllFormsAsync();
+        public Task<List<MissPunchFormModal>> getGroupFormsAsync(string group);
         public Task<MissPunchFormModal> getFormAsync(int ID);
         public Task<int> AddFormAsync(MissPunchFormModal model);
         public Task<ResultFeedBack> UpdateFormAsync(MissPunchFormModal model);

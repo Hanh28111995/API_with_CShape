@@ -13,6 +13,8 @@ namespace wcl_employee_admin.Data
         public string Location { get; set; }
         public string DateRequest { get; set; }
         public string Manager { get; set; }
+        public bool? ManagerStatus { get; set; }
+        public string ManagerDate { get; set; }
         public string SubmitDate { get; set; }
         public string HrDate { get; set; }
         public bool? HRStatus { get; set; }

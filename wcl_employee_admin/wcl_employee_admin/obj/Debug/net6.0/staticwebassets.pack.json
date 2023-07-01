@@ -1,12 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\man.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\man.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HuyN\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HuyN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\KhanhN\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\KhanhN\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",
       "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\woman.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdfsdf\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\sdfsdfsdf\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",

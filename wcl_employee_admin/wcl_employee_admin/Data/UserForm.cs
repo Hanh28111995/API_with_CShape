@@ -2,6 +2,7 @@
 {
     public class UserForm
     {
+        public string Id { get; set; }
         public string Username { get; set; }
 
         public string Fullname { get; set; }

@@ -12,9 +12,9 @@ namespace wcl_employee_admin.Controllers
     [ApiController]
     public class MissPunchFormsController : ControllerBase
     {
-        private readonly ILunchCorrectionFormRepository _formRepo;
+        private readonly IMissPunchFormRepository _formRepo;
 
-        public MissPunchFormsController(ILunchCorrectionFormRepository repo)
+        public MissPunchFormsController(IMissPunchFormRepository repo)
         {
             _formRepo = repo;
         }
@@ -33,6 +33,23 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet("getMissPunchForm/Manager")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+
+        public async Task<IActionResult> GetGroupForms()
+        {
+            try
+            {
+                var group = User.FindFirst(ClaimTypes.GroupSid)?.Value;
+                return Ok(await _formRepo.getGroupFormsAsync(group));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
 
         [HttpGet("getMissPunchForm/user")]
         [Authorize]
@@ -73,7 +90,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("addMissPunchForm")]
         [Authorize]
-        public async Task<IActionResult> AddNewForm(LunchCorrectionFormModal model)
+        public async Task<IActionResult> AddNewForm(MissPunchFormModal model)
         { 
             try
             {
@@ -94,7 +111,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPut("editMissPunchForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
+        public async Task<IActionResult> UpdateForm(MissPunchFormModal model)
         {
             try 
             { 

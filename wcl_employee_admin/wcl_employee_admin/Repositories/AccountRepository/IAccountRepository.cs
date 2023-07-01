@@ -13,7 +13,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
         public Task<ResultFeedBack> DeleteAcountAsync(DisableAccModal model);
         public Task<List<UserForm>> GetAllAccountAsync();
         public Task<UserDetail> GetAccountAsync(string Username);
-        public Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string username);
+        public Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string ID);
 
     }
 }

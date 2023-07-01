@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230629214342_DBinit1")]
-    partial class DBinit1
+    [Migration("20230630161820_DBinit")]
+    partial class DBinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -434,6 +434,82 @@ namespace wcl_employee_admin.Migrations
                     b.ToTable("Injury Report Forms");
                 });
 
+            modelBuilder.Entity("wcl_employee_admin.Data.LunchCorrection_Form", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<bool>("A_Option")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("A_Option_1")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("A_Option_LunchIn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("A_Option_LunchOut")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("A_Option_Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("B_Option")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("B_Option_1")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("B_Option_2")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("B_Option_3")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("B_Option_4")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("B_Option_5")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("B_Option_other_reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateRequest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Lunch Correction Forms");
+                });
+
             modelBuilder.Entity("wcl_employee_admin.Data.MissPunchForm", b =>
                 {
                     b.Property<int>("ID")
@@ -581,6 +657,12 @@ namespace wcl_employee_admin.Migrations
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ManagerStatus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");

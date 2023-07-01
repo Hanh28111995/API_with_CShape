@@ -4,7 +4,7 @@ namespace wcl_employee_admin.Models
 {
     public class SignUpModel
     {
-        public string Username { get; set; }
+        public string UserName { get; set; }
         public IFormFile Photos { set; get; }
 
         public string Fullname { get; set; } 

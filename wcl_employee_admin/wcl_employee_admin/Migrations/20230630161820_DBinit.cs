@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wcl_employee_admin.Migrations
 {
-    public partial class DBinit1 : Migration
+    public partial class DBinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -135,6 +135,39 @@ namespace wcl_employee_admin.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Lunch Correction Forms",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Reference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    A_Option = table.Column<bool>(type: "bit", nullable: false),
+                    A_Option_1 = table.Column<bool>(type: "bit", nullable: false),
+                    A_Option_LunchIn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    A_Option_LunchOut = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    A_Option_Reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    B_Option = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_1 = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_2 = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_3 = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_4 = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_5 = table.Column<bool>(type: "bit", nullable: false),
+                    B_Option_other_reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateRequest = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HRStatus = table.Column<bool>(type: "bit", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lunch Correction Forms", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Miss Punch Forms",
                 columns: table => new
                 {
@@ -202,6 +235,8 @@ namespace wcl_employee_admin.Migrations
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateRequest = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Manager = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ManagerStatus = table.Column<bool>(type: "bit", nullable: true),
+                    ManagerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SubmitDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HrDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HRStatus = table.Column<bool>(type: "bit", nullable: true),
@@ -380,6 +415,9 @@ namespace wcl_employee_admin.Migrations
 
             migrationBuilder.DropTable(
                 name: "Injury Report Forms");
+
+            migrationBuilder.DropTable(
+                name: "Lunch Correction Forms");
 
             migrationBuilder.DropTable(
                 name: "Miss Punch Forms");
