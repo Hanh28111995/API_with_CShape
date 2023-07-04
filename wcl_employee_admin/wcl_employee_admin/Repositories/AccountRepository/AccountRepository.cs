@@ -1,18 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
-using Microsoft.Data.SqlClient.Server;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.IdentityModel.Tokens;
-using System.Collections;
-using System.Data;
 using System.IdentityModel.Tokens.Jwt;
-using System.IO;
-using System.Net;
-using System.Reflection.Emit;
-using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Text;
 using wcl_employee_admin.Data;
@@ -208,10 +198,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             form.Datestart = model.Datestart ?? "";
             form.Passport = model.Passport ?? "";
             form.Status = model.Status ?? "";
-            if (form.UserName != model.UserName)
-            {
-
-            }
+          
 
             var result = await userManager.UpdateAsync(form);
             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "SignUp Success." : result.Errors.First().Description };

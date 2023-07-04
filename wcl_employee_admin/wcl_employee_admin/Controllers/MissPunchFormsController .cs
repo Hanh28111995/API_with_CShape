@@ -50,6 +50,21 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpGet("getMissPunchForm/CoWorker")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+
+        //public async Task<IActionResult> GetGroupForms()
+        //{
+        //    try
+        //    {
+        //        var group = User.FindFirst(Co);
+        //        return Ok(await _formRepo.getGroupFormsAsync(group));
+        //    }
+        //    catch
+        //    {
+        //        return BadRequest();
+        //    }
+        //}
 
         [HttpGet("getMissPunchForm/user")]
         [Authorize]
@@ -110,7 +125,7 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpPut("editMissPunchForm/{ReferenceID}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        [Authorize]
         public async Task<IActionResult> UpdateForm(MissPunchFormModal model)
         {
             try 
@@ -127,6 +142,9 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+
+
 
         [HttpDelete("deleteMissPunchForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]

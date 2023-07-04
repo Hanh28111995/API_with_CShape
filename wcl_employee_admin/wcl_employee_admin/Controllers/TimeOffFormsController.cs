@@ -34,6 +34,23 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpGet("getTimeOffForm/Manager")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+
+        public async Task<IActionResult> GetGroupForms()
+        {
+            try
+            {
+                var group = User.FindFirst(ClaimTypes.GroupSid)?.Value;
+                return Ok(await _formRepo.getGroupFormsAsync(group));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+
         [HttpGet("getTimeOffForm/user")]
         [Authorize]
         public async Task<IActionResult> UserGetAllForms()
@@ -93,7 +110,7 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpPut("editTimeOffForm/{ReferenceID}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager")]
         public async Task<IActionResult> UpdateForm(TimeOffFormModal model)
         {
             try

@@ -17,6 +17,13 @@ namespace wcl_employee_admin.Repositories.VTOformRepository
             _mapper = mapper;
         }
 
+        public async Task<List<VTO_FormModal>> getGroupFormsAsync(string group)
+        {
+            var forms = await _context.vtoForms!.ToListAsync();
+
+            return _mapper.Map<List<VTO_FormModal>>(forms);
+        }
+
         public async Task<VTO_FormModal> getFormAsync(int ID)
         {
             var form = await _context.vtoForms!.FindAsync(ID);

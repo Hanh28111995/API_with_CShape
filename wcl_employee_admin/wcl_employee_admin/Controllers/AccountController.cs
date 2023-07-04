@@ -112,7 +112,7 @@ namespace wcl_employee_admin.Controllers
 
 
         [HttpPost("SignUp")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
         {
             try

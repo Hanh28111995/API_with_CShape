@@ -8,6 +8,8 @@ namespace wcl_employee_admin.Repositories.TimeOffRepository
 
     {
         public Task<List<TimeOffFormModal>> getAllFormsAsync();
+        public Task<List<TimeOffFormModal>> getGroupFormsAsync(string group);
+
         public Task<TimeOffFormModal> getFormAsync(int ID);
         public Task<int> AddFormAsync(TimeOffFormModal model);
         public Task<ResultFeedBack> UpdateFormAsync(TimeOffFormModal model);

@@ -23,6 +23,13 @@ namespace wcl_employee_admin.Repositories.TimeOffRepository
             return _mapper.Map<TimeOffFormModal>(form);
         }
 
+        public async Task<List<TimeOffFormModal>> getGroupFormsAsync(string group)
+        {
+            var forms = await _context.TimeOffForms!.ToListAsync();
+
+            return _mapper.Map<List<TimeOffFormModal>>(forms);
+        }
+
         public async Task<List<TimeOffFormModal>> getAllFormsAsync()
         {
             var forms = await _context.TimeOffForms!.ToListAsync();
