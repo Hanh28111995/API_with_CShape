@@ -50,8 +50,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getMissPunchForm/CoWorker")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+        
 
         //public async Task<IActionResult> GetGroupForms()
         //{
