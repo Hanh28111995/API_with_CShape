@@ -12,7 +12,7 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230705085140_DBInit")]
+    [Migration("20230705181340_DBInit")]
     partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -442,45 +442,6 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<bool>("A_Option")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("A_Option_1")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("A_Option_LunchIn")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("A_Option_LunchOut")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("A_Option_Reason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("B_Option")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("B_Option_1")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("B_Option_2")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("B_Option_3")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("B_Option_4")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("B_Option_5")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("B_Option_other_reason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateRequest")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
@@ -490,11 +451,14 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("HrDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ManagerStatus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Reference")
                         .HasColumnType("nvarchar(max)");
@@ -503,6 +467,24 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("lunchCorrectionForgot")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("lunchCorrection_end")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("lunchCorrection_start")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("other_Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("reason_Options")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");

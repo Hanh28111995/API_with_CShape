@@ -44,7 +44,7 @@ namespace wcl_employee_admin.Repositories.MissPunchRepository
             return newForm.ID;
         }
 
-        public async Task DeleteFormAsync(int ID)
+        public async Task DeleteFormAsync(int ID )
         {
             var deletedForm = _context.MissPunchForms!.SingleOrDefault(x => x.ID == ID);
             if (deletedForm != null)

@@ -50,20 +50,6 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        
-
-        //public async Task<IActionResult> GetGroupForms()
-        //{
-        //    try
-        //    {
-        //        var group = User.FindFirst(Co);
-        //        return Ok(await _formRepo.getGroupFormsAsync(group));
-        //    }
-        //    catch
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
 
         [HttpGet("getMissPunchForm/user")]
         [Authorize]
@@ -145,7 +131,7 @@ namespace wcl_employee_admin.Controllers
 
 
 
-        [HttpDelete("deleteMissPunchForm/{ReferenceID}")]
+        [HttpDelete("deleteMissPunchForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

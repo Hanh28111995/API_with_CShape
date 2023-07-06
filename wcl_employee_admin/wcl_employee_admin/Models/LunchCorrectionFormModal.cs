@@ -11,32 +11,24 @@ namespace wcl_employee_admin.Models
         public string Fullname { get; set; }
         public string Manager { get; set; }
 
-        public bool A_Option { get; set; }
-        public bool A_Option_1 { get; set; }
-        public string A_Option_LunchIn { get; set; }
-        public string A_Option_LunchOut { get; set; }
-        public string A_Option_Reason { get; set; }
+        public bool? lunchCorrectionForgot { get; set; }
+        public string lunchCorrection_start { get; set; }
+        public string lunchCorrection_end { get; set; }
+        public string reason { get; set; }
 
 
 
-        public bool B_Option { get; set; }
-        public bool B_Option_1 { get; set; }
-        public bool B_Option_2 { get; set; }
-        public bool B_Option_3 { get; set; }
-        public bool B_Option_4 { get; set; }
-        public bool B_Option_5 { get; set; }
-        public string B_Option_other_reason { get; set; }
-
-
-
-        public string Location { get; set; }
-        public string DateRequest { get; set; }
+        public string reason_Options { get; set; }
+        public string other_Reason { get; set; }
 
 
         
+        public string ManagerDate { get; set; }
+        public bool? ManagerStatus { get; set; }
         public string SubmitDate { get; set; }
         public string HrDate { get; set; }
         public bool? HRStatus { get; set; }
-        
+        public string Note { get; set; }
+
     }
 }

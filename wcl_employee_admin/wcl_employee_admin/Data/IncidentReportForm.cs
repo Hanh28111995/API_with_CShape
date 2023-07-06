@@ -22,6 +22,7 @@ namespace wcl_employee_admin.Data
         public string HrDate { get; set; }
         public bool? HRStatus { get; set; }
         public string Reason { get; set; }
+        public string Note { get; set; }
 
     }
 }
