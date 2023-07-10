@@ -2,7 +2,7 @@
 using wcl_employee_admin.Models;
 using wcl_employee_admin.ViewModel;
 
-namespace wcl_employee_admin.Repositories.MissPunchRepository
+namespace wcl_employee_admin.Repositories.LunchCorrectionRepository
 {
     public interface ILunchCorrectionFormRepository
 

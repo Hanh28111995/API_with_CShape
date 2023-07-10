@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
-using wcl_employee_admin.Repositories.VTOformRepository;
-using wcl_employee_admin.Repositories.MissPunchRepository;
+using wcl_employee_admin.Repositories.LunchCorrectionRepository;
 
 namespace wcl_employee_admin.Controllers
 {
