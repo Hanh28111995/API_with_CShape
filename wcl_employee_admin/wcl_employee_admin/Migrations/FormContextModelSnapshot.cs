@@ -286,6 +286,64 @@ namespace wcl_employee_admin.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("wcl_employee_admin.Data.EmployeeComplaintForm", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("DateSubmit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescribeComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescribeDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescribeSolution")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescribeWitness")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("HrDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ManagerStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Employee Complaint Forms");
+                });
+
             modelBuilder.Entity("wcl_employee_admin.Data.IncidentReportForm", b =>
                 {
                     b.Property<int>("ID")
@@ -435,7 +493,7 @@ namespace wcl_employee_admin.Migrations
                     b.ToTable("Injury Report Forms");
                 });
 
-            modelBuilder.Entity("wcl_employee_admin.Data.LunchCorrection_Form", b =>
+            modelBuilder.Entity("wcl_employee_admin.Data.LunchCorrectionForm", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -619,6 +677,58 @@ namespace wcl_employee_admin.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Time Off Forms");
+                });
+
+            modelBuilder.Entity("wcl_employee_admin.Data.TimeSheetForm", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("DateSubmit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_Break_End")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_Break_Start")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_End")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_Start")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_TimeOff_45Day")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_TimeOff_Holiday")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_TimeOff_Vacation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_TimeOff_noWork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeSheet_TimeOff_note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TimeSheet Forms");
                 });
 
             modelBuilder.Entity("wcl_employee_admin.Data.VTO_Form", b =>

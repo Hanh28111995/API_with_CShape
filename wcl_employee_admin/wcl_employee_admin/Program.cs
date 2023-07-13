@@ -14,6 +14,9 @@ using wcl_employee_admin.Repositories.VTOformRepository;
 using wcl_employee_admin.Repositories.TimeOffRepository;
 using wcl_employee_admin.Repositories.IncidentReportRepository;
 using wcl_employee_admin.Repositories.InjuryReportRepository;
+using wcl_employee_admin.Repositories.LunchCorrectionRepository;
+using wcl_employee_admin.Repositories.EmployeeComplaintRepository;
+using wcl_employee_admin.Repositories.TimeSheetRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,6 +79,8 @@ builder.Services.AddScoped<IVTOFormRepository, VTOFormRepository>();
 builder.Services.AddScoped<IIncidentReportFormRepository, IncidentReportFormRepository>();
 builder.Services.AddScoped<IInjuryReportFormRepository, InjuryReportFormRepository>();
 builder.Services.AddScoped<ILunchCorrectionFormRepository, LunchCorrectionFormRepository>();
+builder.Services.AddScoped<IEmployeeComplaintRepository, EmployeeComplaintRepository>();
+builder.Services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
 
 builder.Services.AddSwaggerGen(c =>
 {

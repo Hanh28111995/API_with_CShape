@@ -128,7 +128,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteTimeOffForm/{ReferenceID}")]
+        [HttpDelete("deleteTimeOffForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

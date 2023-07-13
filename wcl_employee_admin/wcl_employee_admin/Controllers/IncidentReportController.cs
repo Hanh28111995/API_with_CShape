@@ -111,7 +111,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteIncidentReportForm/{ReferenceID}")]
+        [HttpDelete("deleteIncidentReportForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

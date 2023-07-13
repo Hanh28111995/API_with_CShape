@@ -17,7 +17,10 @@ namespace wcl_employee_admin.Data
         public DbSet<VTO_Form> vtoForms { get; set; }
         public DbSet<TimeOffForm> TimeOffForms { get; set; }
         public DbSet<MissPunchForm> MissPunchForms { get; set; }
-        public DbSet<LunchCorrection_Form> LunchCorrectionForms { get; set; }
+        public DbSet<LunchCorrectionForm> LunchCorrectionForms { get; set; }
+        public DbSet<EmployeeComplaintForm> employeeComplaintForms { get; set; }
+        public DbSet<TimeSheetForm> timeSheetForm { get; set; }
+
         #endregion
     }
 }

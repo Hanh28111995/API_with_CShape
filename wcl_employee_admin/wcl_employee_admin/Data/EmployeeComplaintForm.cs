@@ -3,20 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace wcl_employee_admin.Data
 {
-    [Table("Lunch Correction Forms")]
-    public class EmployeeComplaint_Form
+    [Table("Employee Complaint Forms")]
+    public class EmployeeComplaintForm
     {
         [Key]
         public int ID { get; set; }
         public string Reference { get; set; }
         public string Username { get; set; }
         public string Fullname { get; set; }
-        
-        public string DateComplain { get; set; }
-        public string Manager { get; set; }
-        public string DescribeDetail { get; set; }
-        public string DescribeWitness { get; set; }
 
+        public string DateSubmit { get; set; }
+        public string Manager { get; set; }
+        public string DescribeWitness { get; set; }
+        public string DescribeDetail { get; set; }
+        public string DescribeSolution { get; set; }
+        public string DescribeComment { get; set; }
 
 
         public string ManagerDate { get; set; }

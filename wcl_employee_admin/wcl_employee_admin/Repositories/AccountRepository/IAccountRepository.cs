@@ -12,6 +12,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
         public Task<ResultFeedBack> UserChangePasswordAsync(ChangePassModal model);
         public Task<ResultFeedBack> DeleteAcountAsync(DisableAccModal model);
         public Task<List<UserForm>> GetAllAccountAsync();
+        public Task<List<GroupUserForm>> GetGroupAccountAsync(string Group);
         public Task<UserDetail> GetAccountAsync(string Username);
         public Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string ID);
 

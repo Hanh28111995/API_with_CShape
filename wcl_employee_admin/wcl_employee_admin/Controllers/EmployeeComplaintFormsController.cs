@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
-using wcl_employee_admin.Repositories.VTOformRepository;
-using wcl_employee_admin.Repositories.MissPunchRepository;
+using wcl_employee_admin.Repositories.EmployeeComplaintRepository;
+
 
 namespace wcl_employee_admin.Controllers
 {
@@ -13,9 +13,9 @@ namespace wcl_employee_admin.Controllers
     [ApiController]
     public class EmployeeComplaintFormsController : ControllerBase
     {
-        private readonly IEmployeeComplaintFormRepository _formRepo;
+        private readonly IEmployeeComplaintRepository _formRepo;
 
-        public EmployeeComplaintFormsController(IEmployeeComplaintFormRepository repo)
+        public EmployeeComplaintFormsController(IEmployeeComplaintRepository repo)
         {
             _formRepo = repo;
         }
@@ -56,7 +56,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getEmployeeComplaintForm/{Reference}")]
+        [HttpGet("getEmployeeComplaintForm/{ID}")]
         [Authorize]
         public async Task<IActionResult> GetFormbyId(int ID)
         {
@@ -74,13 +74,13 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("addEmployeeComplaintForm")]
         [Authorize]
-        public async Task<IActionResult> AddNewForm(LunchCorrectionFormModal model)
+        public async Task<IActionResult> AddNewForm(EmployeeComplaintModal model)
         {
             try
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
-                model.Reference = "LC" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.Reference = "EC" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
                 model.SubmitDate = DateTime.Now.ToString("MM/dd/yyyy");
 
                 var newForm = await _formRepo.AddFormAsync(model);
@@ -93,9 +93,9 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("editLunchCorrectionForm/{ReferenceID}")]
+        [HttpPut("editEmployeeComplaintForm/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
+        public async Task<IActionResult> UpdateForm(EmployeeComplaintModal model)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteLunchCorrectionForm/{ID}")]
+        [HttpDelete("deleteEmployeeComplaintForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

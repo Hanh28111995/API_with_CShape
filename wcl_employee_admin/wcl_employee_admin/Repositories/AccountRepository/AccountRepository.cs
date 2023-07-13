@@ -166,6 +166,14 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             return _mapper.Map<List<UserForm>>(forms);
         }
 
+        public async Task<List<GroupUserForm>> GetGroupAccountAsync(string Group)
+        {
+            var forms = await userManager.Users.Where(u => u.Position == Group).ToListAsync();
+
+            return _mapper.Map<List<GroupUserForm>>(forms);
+        }
+
+
         public async Task<UserDetail> GetAccountAsync(string Username)
         {
             var form = await userManager.FindByNameAsync(Username);

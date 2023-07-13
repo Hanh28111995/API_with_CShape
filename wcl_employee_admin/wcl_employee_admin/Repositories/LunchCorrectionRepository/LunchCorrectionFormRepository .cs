@@ -31,7 +31,7 @@ namespace wcl_employee_admin.Repositories.LunchCorrectionRepository
 
         public async Task<int> AddFormAsync(LunchCorrectionFormModal model)
         {
-            var newForm = _mapper.Map<LunchCorrection_Form>(model);
+            var newForm = _mapper.Map<LunchCorrectionForm>(model);
             _context.LunchCorrectionForms!.Add(newForm);
             await _context.SaveChangesAsync();
             return newForm.ID;
@@ -48,7 +48,7 @@ namespace wcl_employee_admin.Repositories.LunchCorrectionRepository
         }
         public async Task<ResultFeedBack> UpdateFormAsync(LunchCorrectionFormModal model)
         {
-            var updateForm = _mapper.Map<LunchCorrection_Form>(model);
+            var updateForm = _mapper.Map<LunchCorrectionForm>(model);
             var result_Update = _context.LunchCorrectionForms!.Update(updateForm);
             var result_saveChange = await _context.SaveChangesAsync();
             if (result_saveChange != null)
