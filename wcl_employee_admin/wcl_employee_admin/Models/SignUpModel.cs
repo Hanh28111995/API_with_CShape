@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace wcl_employee_admin.Models
 {
@@ -28,10 +29,10 @@ namespace wcl_employee_admin.Models
         public string Location { get; set; } 
 
         public string Department { get; set; }
-        public string Contracttype { get; set; } 
-        public string Birthday { get; set; } 
+        public string Contracttype { get; set; }
+        public DateTime? Birthday { get; set; } 
         public string Marital { get; set; } 
-        public string Datestart { get; set; } 
+        public DateTime? Datestart { get; set; }
 
         public string Passport { get; set; } 
 

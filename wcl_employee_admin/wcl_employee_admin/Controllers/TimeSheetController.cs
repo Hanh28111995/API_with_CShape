@@ -1,22 +1,32 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+//using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using wcl_employee_admin.Models;
 using wcl_employee_admin.Repositories.TimeSheetRepository;
+using wcl_employee_admin.Repositories.TimeOffRepository;
+using System.Text.RegularExpressions;
+//using System.Data.Linq;
+//using System.Data.Linq.SqlClient;
 
 namespace wcl_employee_admin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class TimeSheetController : ControllerBase
     {
         private readonly ITimeSheetRepository _formRepo;
+        private readonly ITimeOffFormRepository _formTimeOffRepo;
 
-        public TimeSheetController(ITimeSheetRepository repo)
+        public TimeSheetController(ITimeSheetRepository repo
+            , ITimeOffFormRepository formTimeOffRepo
+            )
         {
             _formRepo = repo;
+            //_formTimeOffRepo = formTimeOffRepo;
         }
 
         [HttpGet("getTimeSheet/All")]
@@ -97,7 +107,11 @@ namespace wcl_employee_admin.Controllers
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 model.Username = UserNameClaim ?? "";
                 model.TimeSheet_Reference = "TS" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
-                model.DateSubmit = DateTime.Now.ToString("MM/dd/yyyy");
+                model.DateSubmit = DateTime.Now;
+                var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
+                var filterByUser = Timeoff_All.Where(dayoff => dayoff.Username == model.Username).ToList();
+                //var filterByDate = filterByUser.Where(p => p.TimeOffStart).ToList();
+                //var filterByTime = filterByUser.Where(dayoff => dayoff. == model.DateSubmit).ToList();
 
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);

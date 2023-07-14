@@ -112,9 +112,9 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 Location = model.Location ?? "",
                 Department = model.Department ?? "",
                 Contracttype = model.Contracttype ?? "",
-                Birthday = model.Birthday ?? "",
+                Birthday = model.Birthday ,
                 Marital = model.Marital ?? "",
-                Datestart = model.Datestart ?? "",
+                Datestart = model.Datestart ,
                 Passport = model.Passport ?? "",
                 Status = model.Status ?? "",
             };
@@ -201,9 +201,9 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             form.Location = model.Location ?? "";
             form.Department = model.Department ?? "";
             form.Contracttype = model.Contracttype ?? "";
-            form.Birthday = model.Birthday ?? "";
+            form.Birthday = model.Birthday ;
             form.Marital = model.Marital ?? "";
-            form.Datestart = model.Datestart ?? "";
+            form.Datestart = model.Datestart ;
             form.Passport = model.Passport ?? "";
             form.Status = model.Status ?? "";
           

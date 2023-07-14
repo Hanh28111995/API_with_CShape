@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace wcl_employee_admin.Data
@@ -13,13 +14,13 @@ namespace wcl_employee_admin.Data
         public string Username { get; set; }
         public string Location { get; set; }
         public string Type { get; set; }
-        public string DateOfIncident { get; set; }
+        public DateTime DateOfIncident { get; set; }
         public string Witness { get; set; }
         public string Manager { get; set; }
-        public string ManagerDate { get; set; }
-        public bool?  ManagerStatus { get; set; }
-        public string SubmitDate { get; set; }
-        public string HrDate { get; set; }
+        public DateTime ManagerDate { get; set; }
+        public bool? ManagerStatus { get; set; }
+        public DateTime DateSubmit { get; set; }
+        public DateTime HrDate { get; set; }
         public bool? HRStatus { get; set; }
         public string Reason { get; set; }
         public string Note { get; set; }

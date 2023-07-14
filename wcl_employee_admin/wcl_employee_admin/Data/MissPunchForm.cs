@@ -15,27 +15,27 @@ namespace wcl_employee_admin.Data
         
         public string Location { get; set; }
         
-        public string PunchIn { get; set; }
+        public DateTime PunchIn { get; set; }
         
-        public string PunchOut { get; set; }
+        public DateTime PunchOut { get; set; }
         
-        public string LunchIn { get; set; }
+        public DateTime LunchIn { get; set; }
         
-        public string LunchOut { get; set; }
+        public DateTime LunchOut { get; set; }
         
         public string Manager { get; set; }
         
         public string Reason { get; set; }
 
-        public string SubmitDate { get; set; }
+        public DateTime DateSubmit { get; set; }
 
         public bool? ManagerStatus { get; set; }
 
-        public string ManagerDate { get; set; }
+        public DateTime ManagerDate { get; set; }
 
         public bool? HRStatus { get; set; }
 
-        public string HrDate { get; set; }
+        public DateTime HrDate { get; set; }
 
         public string Note { get; set; }
 

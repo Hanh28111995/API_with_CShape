@@ -19,20 +19,20 @@ namespace wcl_employee_admin.Repositories.TimeSheetRepository
 
         public async Task<List<TimeSheetModal>> getGroupFormsAsync(string group)
         {
-            var forms = await _context.vtoForms!.ToListAsync();
+            var forms = await _context.timeSheetForm!.ToListAsync();
 
             return _mapper.Map<List<TimeSheetModal>>(forms);
         }
 
         public async Task<TimeSheetModal> getFormAsync(int ID)
         {
-            var form = await _context.vtoForms!.FindAsync(ID);
+            var form = await _context.timeSheetForm!.FindAsync(ID);
             return _mapper.Map<TimeSheetModal>(form);
         }
 
         public async Task<List<TimeSheetModal>> getAllFormsAsync()
         {
-            var forms = await _context.vtoForms!.ToListAsync();
+            var forms = await _context.timeSheetForm!.ToListAsync();
             return _mapper.Map<List<TimeSheetModal>>(forms);
         }
 
@@ -46,10 +46,10 @@ namespace wcl_employee_admin.Repositories.TimeSheetRepository
 
         public async Task DeleteFormAsync(int ID)
         {
-            var deletedForm = _context.vtoForms!.SingleOrDefault(x => x.ID == ID);
+            var deletedForm = _context.timeSheetForm!.SingleOrDefault(x => x.ID == ID);
             if (deletedForm != null)
             {
-                _context.vtoForms!.Remove(deletedForm);
+                _context.timeSheetForm!.Remove(deletedForm);
                 await _context.SaveChangesAsync();
             }
         }

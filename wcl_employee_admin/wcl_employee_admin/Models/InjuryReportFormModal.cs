@@ -9,8 +9,6 @@ namespace wcl_employee_admin.Models
         public string Reference { get; set; }
         public string Username { get; set; }
 
-        /// ////////////////////////////////
-
         public string Fullname { get; set; }
 
         public string Nickname { get; set; }
@@ -23,9 +21,7 @@ namespace wcl_employee_admin.Models
 
         public string Gender { get; set; }
 
-        /// ////////////////////////////////
-
-        public string DateOfAccident { get; set; }
+        public DateTime DateOfAccident { get; set; }
 
         public string ReasonOccur { get; set; }
 
@@ -35,29 +31,20 @@ namespace wcl_employee_admin.Models
 
         public string OtherIncident { get; set; }
 
-        /// ////////////////////////////////
-
         public string DesOfInjury { get; set; }
 
         public string NatureOfInjury { get; set; }
 
         public string OtherInjury { get; set; }
-
-        /// //////////////////////////////// <body-affected>
         public string BodyAffected_Right { get; set; }
         public string BodyAffected_Left { get; set; }
-
-        /// //////////////////////////////// <Care>
-
         public string Doctor { get; set; }
         public string Hospital { get; set; }
         public string Insurance { get; set; }
         public string AccountNo { get; set; }
         public string CareProvided { get; set; }
-
-        
-        public string SubmitDate { get; set; }
-        public string HrDate { get; set; }
+        public DateTime DateSubmit { get; set; }
+        public DateTime HrDate { get; set; }
         public bool? HRStatus { get; set; }
         public string Note { get; set; }
     }

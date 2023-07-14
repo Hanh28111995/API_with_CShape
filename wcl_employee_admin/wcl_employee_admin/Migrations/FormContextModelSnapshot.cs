@@ -166,8 +166,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Birthday")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("Birthday")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Cardnumber")
                         .HasColumnType("nvarchar(max)");
@@ -182,8 +182,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Contracttype")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Datestart")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("Datestart")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
@@ -294,8 +294,8 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("DateSubmit")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DescribeComment")
                         .HasColumnType("nvarchar(max)");
@@ -315,14 +315,14 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ManagerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
@@ -331,9 +331,6 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
@@ -352,14 +349,17 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("DateOfIncident")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateOfIncident")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -367,8 +367,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ManagerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
@@ -380,9 +380,6 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
@@ -422,8 +419,11 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("CauseBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DateOfAccident")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateOfAccident")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
@@ -449,8 +449,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Hospital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Insurance")
                         .HasColumnType("nvarchar(max)");
@@ -482,9 +482,6 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Reference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SubmitDate")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
@@ -501,52 +498,85 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<string>("AccountNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BodyAffected_Left")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BodyAffected_Right")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CareProvided")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CauseBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfAccident")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DesOfInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Doctor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
+                    b.Property<string>("Hospital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Manager")
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Insurance")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
+                    b.Property<string>("NatureOfInjury")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("ManagerStatus")
-                        .HasColumnType("bit");
+                    b.Property<string>("Nickname")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherIncident")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInvolved")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonOccur")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SubmitDate")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("lunchCorrectionForgot")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("lunchCorrection_end")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lunchCorrection_start")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("other_Reason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("reason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("reason_Options")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -562,26 +592,29 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LunchIn")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("LunchIn")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("LunchOut")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("LunchOut")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ManagerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
@@ -589,19 +622,16 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PunchIn")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("PunchIn")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("PunchOut")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("PunchOut")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
@@ -623,17 +653,20 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("CoverWorker")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("CoworkerDate")
-                        .HasColumnType("bit");
+                    b.Property<DateTime>("CoworkerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("CoworkerStatus")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -641,8 +674,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ManagerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
@@ -662,14 +695,11 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("ShiftDay")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SubmitDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeOffEnd")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TimeOffEnd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TimeOffStart")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeOffStart")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
@@ -687,38 +717,38 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("DateSubmit")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TimeSheet_Break_End")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeSheet_Break_End")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TimeSheet_Break_Start")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeSheet_Break_Start")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("TimeSheet_Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TimeSheet_End")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeSheet_End")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("TimeSheet_Reference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TimeSheet_Start")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TimeSheet_Start")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TimeSheet_TimeOff_45Day")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TimeSheet_TimeOff_45Day")
+                        .HasColumnType("int");
 
-                    b.Property<string>("TimeSheet_TimeOff_Holiday")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TimeSheet_TimeOff_Holiday")
+                        .HasColumnType("int");
 
-                    b.Property<string>("TimeSheet_TimeOff_Vacation")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TimeSheet_TimeOff_Vacation")
+                        .HasColumnType("int");
 
-                    b.Property<string>("TimeSheet_TimeOff_noWork")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TimeSheet_TimeOff_noWork")
+                        .HasColumnType("int");
 
                     b.Property<string>("TimeSheet_TimeOff_note")
                         .HasColumnType("nvarchar(max)");
@@ -739,14 +769,14 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("DateRequest")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateSubmit")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("HrDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("HrDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -754,8 +784,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ManagerDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ManagerDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
                         .HasColumnType("bit");
@@ -764,9 +794,6 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SubmitDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
