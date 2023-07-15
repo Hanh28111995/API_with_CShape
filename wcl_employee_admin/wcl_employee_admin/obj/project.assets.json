@@ -10392,11 +10392,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
+      "projectUniqueName": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
       "projectName": "wcl_employee_admin",
-      "projectPath": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
+      "projectPath": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
       "packagesPath": "C:\\Users\\wcl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\obj\\",
+      "outputPath": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

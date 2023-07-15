@@ -23,7 +23,7 @@ namespace wcl_employee_admin.Data
 
         public string Gender { get; set; }
 
-        public DateTime DateOfAccident { get; set; }
+        public DateTime? DateOfAccident { get; set; }
 
         public string ReasonOccur { get; set; }
 
@@ -45,8 +45,8 @@ namespace wcl_employee_admin.Data
         public string Insurance { get; set; }
         public string AccountNo { get; set; }
         public string CareProvided { get; set; }
-        public DateTime DateSubmit { get; set; }
-        public DateTime HrDate { get; set; }
+        public DateTime? DateSubmit { get; set; }
+        public DateTime? HrDate { get; set; }
         public bool? HRStatus { get; set; }
         public string Note { get; set; }
 

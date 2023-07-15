@@ -1,19 +1,59 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\findcolor.png",
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AAAAAAAAAA\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\AAAAAAAAAA\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\BBBBBBBBBB\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\BBBBBBBBBB\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HoangN\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HoangN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\SADFA\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\SADFA\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ccccccccccccccccc\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\ccccccccccccccccc\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\findcolor.png",
       "PackagePath": "staticwebassets\\ProfileImg\\hanhT\\findcolor.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\meo.jpg",
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\meo.jpg",
       "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\meo.jpg"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\woman.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\huyN\\findcolor.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\huyN\\findcolor.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\rwer\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\rwer\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdfsdfsadf\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\sdfsdfsdfsadf\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
       "PackagePath": "staticwebassets\\avatarDefault\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
       "PackagePath": "staticwebassets\\avatarDefault\\woman.png"
     },
     {

@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230714003128_DBadd")]
-    partial class DBadd
+    [Migration("20230714160301_DBInit")]
+    partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -296,7 +296,7 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DescribeComment")
@@ -317,13 +317,13 @@ namespace wcl_employee_admin.Migrations
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ManagerDate")
+                    b.Property<DateTime?>("ManagerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
@@ -351,16 +351,16 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateOfIncident")
+                    b.Property<DateTime?>("DateOfIncident")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
@@ -369,7 +369,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ManagerDate")
+                    b.Property<DateTime?>("ManagerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
@@ -421,10 +421,10 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("CauseBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfAccident")
+                    b.Property<DateTime?>("DateOfAccident")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
@@ -451,7 +451,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Hospital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Insurance")
@@ -515,10 +515,10 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("CauseBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfAccident")
+                    b.Property<DateTime?>("DateOfAccident")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
@@ -545,7 +545,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Hospital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Insurance")
@@ -594,28 +594,28 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LunchIn")
+                    b.Property<DateTime?>("LunchIn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("LunchOut")
+                    b.Property<DateTime?>("LunchOut")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ManagerDate")
+                    b.Property<DateTime?>("ManagerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
@@ -624,10 +624,10 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PunchIn")
+                    b.Property<DateTime?>("PunchIn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("PunchOut")
+                    b.Property<DateTime?>("PunchOut")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Reason")
@@ -655,19 +655,19 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("CoverWorker")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CoworkerDate")
+                    b.Property<DateTime?>("CoworkerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("CoworkerStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
@@ -676,7 +676,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ManagerDate")
+                    b.Property<DateTime?>("ManagerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")
@@ -697,10 +697,10 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("ShiftDay")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TimeOffEnd")
+                    b.Property<DateTime?>("TimeOffEnd")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TimeOffStart")
+                    b.Property<DateTime?>("TimeOffStart")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
@@ -719,25 +719,25 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TimeSheet_Break_End")
+                    b.Property<DateTime?>("TimeSheet_Break_End")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TimeSheet_Break_Start")
+                    b.Property<DateTime?>("TimeSheet_Break_Start")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TimeSheet_Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TimeSheet_End")
+                    b.Property<DateTime?>("TimeSheet_End")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TimeSheet_Reference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TimeSheet_Start")
+                    b.Property<DateTime?>("TimeSheet_Start")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("TimeSheet_TimeOff_45Day")
@@ -771,13 +771,13 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateSubmit")
+                    b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrDate")
+                    b.Property<DateTime?>("HrDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
@@ -786,7 +786,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ManagerDate")
+                    b.Property<DateTime?>("ManagerDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("ManagerStatus")

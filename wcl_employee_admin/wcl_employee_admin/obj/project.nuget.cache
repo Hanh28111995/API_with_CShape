@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PHuiKKvR07NXa1vBNZq41gP/DcrZMJ+fOIgK4mfqmI+M2yusQcU4Rx/p6K8iUnxAk+d5uu8MxUms/6N9n7DWlg==",
+  "dgSpecHash": "qfuP9LUDgt6boYfUXjzSwZx1tswsL0fBHlKGwkFSSaM1ac553pieWwNJbo12CY02vcmVt+Y8aarosTr6iODrzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wcl\\Desktop\\backup\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
+  "projectFilePath": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wcl_employee_admin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wcl\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\wcl\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

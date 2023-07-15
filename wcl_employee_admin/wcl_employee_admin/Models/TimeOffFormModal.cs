@@ -12,9 +12,9 @@ namespace wcl_employee_admin.Models
 
         public string Location { get; set; }
 
-        public DateTime TimeOffStart { get; set; }
+        public DateTime? TimeOffStart { get; set; }
 
-        public DateTime TimeOffEnd { get; set; }
+        public DateTime? TimeOffEnd { get; set; }
 
         public string CoverWorker { get; set; }
 
@@ -26,17 +26,17 @@ namespace wcl_employee_admin.Models
 
         public string Reason { get; set; }
 
-        public DateTime DateSubmit { get; set; }
+        public DateTime? DateSubmit { get; set; }
 
-        public DateTime ManagerDate { get; set; }
+        public DateTime? ManagerDate { get; set; }
 
         public bool? ManagerStatus { get; set; }
 
-        public DateTime CoworkerDate { get; set; }
+        public DateTime? CoworkerDate { get; set; }
 
         public bool? CoworkerStatus { get; set; }
 
-        public DateTime HrDate { get; set; }
+        public DateTime? HrDate { get; set; }
 
         public bool? HRStatus { get; set; }
         public string Note { get; set; }
