@@ -110,7 +110,10 @@ namespace wcl_employee_admin.Controllers
                 model.DateSubmit = DateTime.Now;
                 var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
                 var filterByUser = Timeoff_All.Where(dayoff => dayoff.Username == model.Username).ToList();
-                //var filterByDate = filterByUser.Where(p => p.TimeOffStart).ToList();
+                var filterByDate = filterByUser.Where(p => (DateTime.Compare(p.TimeOffStart, model.DateSubmit ) <= 0)&&(DateTime.Compare( model.DateSubmit, p.TimeOffEnd) >= 0)).ToList();
+
+
+
                 //var filterByTime = filterByUser.Where(dayoff => dayoff. == model.DateSubmit).ToList();
 
                 var newForm = await _formRepo.AddFormAsync(model);

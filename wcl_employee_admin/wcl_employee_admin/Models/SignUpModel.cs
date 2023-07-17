@@ -26,6 +26,7 @@ namespace wcl_employee_admin.Models
         public string Departmentroles { get; set; }
         public string Gender { get; set; }
         public string Confirmnumber { get; set; }
+        
         public DateTime? Birthday { get; set; }
         public string Cardnumber { get; set; }
         public DateTime? Datestart { get; set; }
