@@ -26,7 +26,7 @@ namespace wcl_employee_admin.Controllers
             )
         {
             _formRepo = repo;
-            //_formTimeOffRepo = formTimeOffRepo;
+            _formTimeOffRepo = formTimeOffRepo;
         }
 
         [HttpGet("getTimeSheet/All")]
@@ -36,7 +36,8 @@ namespace wcl_employee_admin.Controllers
         {
             try
             {
-                return Ok(await _formRepo.getAllFormsAsync());
+                var result = await _formRepo.getAllFormsAsync();
+                return Ok(result);
             }
             catch
             {
@@ -98,24 +99,35 @@ namespace wcl_employee_admin.Controllers
         //}
 
 
-        [HttpPost("addTimeSheet")]
+        
+
+        [HttpPost("addTimeSheet/addTimeSheetOn")]               
         [Authorize]
-        public async Task<IActionResult> AddNewForm(TimeSheetModal model)
+        public async Task<IActionResult> AddNewFormOn(TimeSheetModal model)
         {
             try
             {
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
-                model.Username = UserNameClaim ?? "";
+                var UserNameDepartment = User.FindFirst(ClaimTypes.Role)?.Value;
+                model.Username = UserNameClaim;
+                model.TimeSheet_Department = UserNameDepartment;
                 model.TimeSheet_Reference = "TS" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.ToString("HHmmss");
+                model.TimeSheet_Start = DateTime.Now; ////// YYYY-MM-DD
                 model.DateSubmit = DateTime.Now;
+
+
+
                 var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
                 var filterByUser = Timeoff_All.Where(dayoff => dayoff.Username == model.Username).ToList();
-                var filterByDate = filterByUser.Where(p => (DateTime.Compare(p.TimeOffStart, model.DateSubmit ) <= 0)&&(DateTime.Compare( model.DateSubmit, p.TimeOffEnd) >= 0)).ToList();
-
-
-
-                //var filterByTime = filterByUser.Where(dayoff => dayoff. == model.DateSubmit).ToList();
-
+                var filterByDate = filterByUser.Where(p => (DateTime.Compare(p.TimeOffStart.Value, model.DateSubmit.Value) <= 0) && (DateTime.Compare(p.TimeOffEnd.Value, model.DateSubmit.Value) >= 0) && (p.HRStatus == false)).ToList();
+                if (filterByDate.Count() > 0)
+                {                
+                    if(filterByDate[1].ShiftDay == "Full Day")
+                    {
+                        return Ok();
+                    }
+                }
+                
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);
                 return form == null ? NotFound() : Ok(form);
@@ -125,6 +137,24 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+
+        [HttpPost("addTimeSheet/addTimeSheetOff")]
+        [Authorize]
+        public async Task<IActionResult> AddNewFormOff(TimeSheetModal model)
+        {
+            try
+            {
+                var newForm = await _formRepo.AddFormAsync(model);
+                var form = await _formRepo.getFormAsync(newForm);
+                return form == null ? NotFound() : Ok(form);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
 
         [HttpPut("editTimeSheet/{ReferenceID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager")]
@@ -145,7 +175,8 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpDelete("deleteVTOForm/{ID}")]
+
+        [HttpDelete("deleteTimesheet/deleteTimeSheetOff/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {

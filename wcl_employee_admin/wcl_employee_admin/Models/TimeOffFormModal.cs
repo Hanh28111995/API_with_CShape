@@ -12,15 +12,15 @@ namespace wcl_employee_admin.Models
 
         public string Location { get; set; }
 
-        public DateTime TimeOffStart { get; set; }
+        public DateTime? TimeOffStart { get; set; }
 
-        public DateTime TimeOffEnd { get; set; }
+        public DateTime? TimeOffEnd { get; set; }
 
         public string CoverWorker { get; set; }
 
         public string Manager { get; set; }
 
-        public string PayTime { get; set; }
+        public string PayType { get; set; }
 
         public string ShiftDay { get; set; }
 

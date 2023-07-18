@@ -22,7 +22,7 @@ namespace wcl_employee_admin.Data
         
         public string Manager { get; set; }
         
-        public string PayTime { get; set; }
+        public string PayType { get; set; }
         
         public string ShiftDay { get; set; }
         

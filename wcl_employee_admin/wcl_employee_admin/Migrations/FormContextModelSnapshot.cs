@@ -683,7 +683,7 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PayTime")
+                    b.Property<string>("PayType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reason")

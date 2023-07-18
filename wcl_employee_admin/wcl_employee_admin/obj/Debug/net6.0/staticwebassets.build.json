@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eNeZR5jegpeezI7wJJ7Apb7BqOcQrMxMl9GoD0+Wm84=",
+  "Hash": "vFM/8up3ifwWDbvNGZwzIOjR1N0svGK0IOL8XvgTUrw=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "wcl_employee_admin\\wwwroot",
       "Source": "wcl_employee_admin",
-      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "avatarDefault/man.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\avatarDefault\\man.png"
     },
     {
-      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "avatarDefault/woman.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\avatarDefault\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/hanhT/man.png",
       "AssetKind": "All",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImg\\hanhT\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/hannaTrinh/woman.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\hannaTrinh\\woman.png"
     }
   ]
 }
