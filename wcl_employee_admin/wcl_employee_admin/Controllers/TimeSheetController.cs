@@ -110,6 +110,8 @@ namespace wcl_employee_admin.Controllers
         {
             try
             {
+                var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
+
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 var UserNameDepartment = User.FindFirst(ClaimTypes.Role)?.Value;
                 model.Username = UserNameClaim;
@@ -118,9 +120,6 @@ namespace wcl_employee_admin.Controllers
                 //model.TimeSheet_Start = DateTime.Now;
                 model.DateSubmit = model.TimeSheet_Start;
 
-
-
-                var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
                 var filterByUser = Timeoff_All.Where(dayoff => dayoff.Username == model.Username).ToList();
                 var filterByDate = filterByUser.Where(p => (DateTime.Compare(p.TimeOffStart.Value, model.DateSubmit.Value) <= 0) && (DateTime.Compare(p.TimeOffEnd.Value, model.DateSubmit.Value) >= 0) && (p.HRStatus == false)).ToList();
                 if (filterByDate.Count() > 0)
@@ -148,34 +147,55 @@ namespace wcl_employee_admin.Controllers
         {
             var newForm = 0;
             var TimeSheet_All = await _formRepo.getAllFormsAsync();
-            var filterByUser = TimeSheet_All.Where(ts => ts.Username == model.Username).ToList();
-            var filterByDate = filterByUser.Where(ts => ts.DateSubmit == model.TimeOffStart).ToList();
-            if (filterByDate.Count() > 0)
+            var checkExist = TimeSheet_All.Where(ts => ts.TimeSheet_Reference == ("TS" + model.TimeOffStart.Value.ToString("yyyyMMdd") + "OFF")).ToList();
+            if (checkExist.Count == 0)
             {
-                return Ok();
-            }
 
-            try
-            {
-                int OffHour;
-                if (model.ShiftDay == "Full Day") { OffHour = 8; }
-                else { OffHour = 4; }
-
-                if (model.TimeOffStart != model.TimeOffEnd)
+                var filterByUser = TimeSheet_All.Where(ts => ts.Username == model.Username).ToList();
+                var filterByDate = filterByUser.Where(ts => ts.DateSubmit == model.TimeOffStart).ToList();
+                if (filterByDate.Count() > 0)
                 {
+                    return Ok();
+                }
 
-                    int numDays = (model.TimeOffEnd.Value - model.TimeOffStart.Value).Days + 1;
-                    DateTime[] dates = new DateTime[numDays];
-                    for (int i = 0; i < numDays; i++)
+                try
+                {
+                    int OffHour;
+                    if (model.ShiftDay == "Full Day") { OffHour = 8; }
+                    else { OffHour = 4; }
+
+                    if (model.TimeOffStart != model.TimeOffEnd)
                     {
-                        dates[i] = model.TimeOffStart.Value.AddDays(i);
 
+                        int numDays = (model.TimeOffEnd.Value - model.TimeOffStart.Value).Days + 1;
+                        DateTime[] dates = new DateTime[numDays];
+                        for (int i = 0; i < numDays; i++)
+                        {
+                            dates[i] = model.TimeOffStart.Value.AddDays(i);
+
+                            var TimeSheetOff = new TimeSheetModal
+                            {
+                                Username = model.Username,
+                                DateSubmit = dates[i],
+                                TimeSheet_Department = User.FindFirst(ClaimTypes.GroupSid).Value,
+                                TimeSheet_Reference = "TS" + dates[i].ToString("yyyyMMdd") + "OFF",
+                                TimeSheet_TimeOff_Vacation = ((model.PayType == "Vacation") ? 1 : 0) * OffHour,
+                                TimeSheet_TimeOff_Holiday = ((model.PayType == "Holiday") ? 1 : 0) * OffHour,
+                                TimeSheet_TimeOff_45Day = ((model.PayType == "45Day") ? 1 : 0) * OffHour,
+                                TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
+                                TimeSheet_TimeOff_note = model.Note,
+                            };
+                            newForm = await _formRepo.AddFormAsync(TimeSheetOff);
+                        }
+                    }
+                    else
+                    {
                         var TimeSheetOff = new TimeSheetModal
                         {
                             Username = model.Username,
-                            DateSubmit = dates[i],
+                            DateSubmit = model.TimeOffStart,
                             TimeSheet_Department = User.FindFirst(ClaimTypes.GroupSid).Value,
-                            TimeSheet_Reference = "TS" + dates[i].ToString("yyyyMMdd") + "OFF",
+                            TimeSheet_Reference = "TS" + model.TimeOffStart.Value.ToString("yyyyMMdd") + "OFF",
                             TimeSheet_TimeOff_Vacation = ((model.PayType == "Vacation") ? 1 : 0) * OffHour,
                             TimeSheet_TimeOff_Holiday = ((model.PayType == "Holiday") ? 1 : 0) * OffHour,
                             TimeSheet_TimeOff_45Day = ((model.PayType == "45Day") ? 1 : 0) * OffHour,
@@ -183,32 +203,17 @@ namespace wcl_employee_admin.Controllers
                             TimeSheet_TimeOff_note = model.Note,
                         };
                         newForm = await _formRepo.AddFormAsync(TimeSheetOff);
-                    }
-                }
-                else
-                {
-                    var TimeSheetOff = new TimeSheetModal
-                    {
-                        Username = model.Username,
-                        DateSubmit = model.TimeOffStart,
-                        TimeSheet_Department = User.FindFirst(ClaimTypes.GroupSid).Value,
-                        TimeSheet_Reference = "TS" + model.TimeOffStart.Value.ToString("yyyyMMdd") + "OFF",
-                        TimeSheet_TimeOff_Vacation = ((model.PayType == "Vacation") ? 1 : 0) * OffHour,
-                        TimeSheet_TimeOff_Holiday = ((model.PayType == "Holiday") ? 1 : 0) * OffHour,
-                        TimeSheet_TimeOff_45Day = ((model.PayType == "45Day") ? 1 : 0) * OffHour,
-                        TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
-                        TimeSheet_TimeOff_note = model.Note,
-                    };
-                    newForm = await _formRepo.AddFormAsync(TimeSheetOff);
 
+                    }
+                    var form = await _formRepo.getFormAsync(newForm);
+                    return form == null ? NotFound() : Ok(form);
                 }
-                var form = await _formRepo.getFormAsync(newForm);
-                return form == null ? NotFound() : Ok(form);
+                catch
+                {
+                    return BadRequest();
+                }
             }
-            catch
-            {
-                return BadRequest();
-            }
+            return Ok();
         }
 
         [HttpPost("deleteTimeSheet/deleteTimeSheetRejectOff")]
@@ -217,30 +222,39 @@ namespace wcl_employee_admin.Controllers
         {
             var TimeSheet_All = await _formRepo.getAllFormsAsync();
             var filterByUser = TimeSheet_All.Where(ts => ts.Username == model.Username).ToList();
-
-            if (model.TimeOffStart != model.TimeOffEnd)
+            try
             {
-                int numDays = (model.TimeOffEnd.Value - model.TimeOffStart.Value).Days + 1;
-                DateTime[] dates = new DateTime[numDays];
-                for (int i = 0; i < numDays; i++)
+                if (model.TimeOffStart != model.TimeOffEnd)
                 {
-                    dates[i] = model.TimeOffStart.Value.AddDays(i);
+                    int numDays = (model.TimeOffEnd.Value - model.TimeOffStart.Value).Days + 1;
+                    DateTime[] dates = new DateTime[numDays];
+                    for (int i = 0; i < numDays; i++)
+                    {
+                        dates[i] = model.TimeOffStart.Value.AddDays(i);
+                    }
+                    var filterByDate = filterByUser.Where(ts => dates.Contains(ts.DateSubmit.Value)).ToList();
+
+                    foreach (var item in filterByDate)
+                    {
+                        await _formRepo.DeleteFormAsync(item.ID);
+                    }
                 }
-                var filterByDate = filterByUser.Where(ts => dates.Contains(ts.DateSubmit.Value));
-                //await _formRepo.DeleteFormAsync();
+                else
+                {
+                    DateTime date = model.TimeOffStart.Value;
+                    var filterByDate = filterByUser.Where(ts => date == ts.DateSubmit.Value).ToList();
 
+                    foreach (var item in filterByDate)
+                    {
+                        await _formRepo.DeleteFormAsync(item.ID);
+                    }
+                }
+                return Ok();
             }
-            else
+            catch
             {
-                DateTime date = model.TimeOffStart.Value;
-                var filterByDate = filterByUser.Where(ts => date == ts.DateSubmit.Value);
-                //await _formRepo.DeleteFormAsync(filterByDate);
+                return BadRequest();
             }
-
-
-
-
-            return Ok();
         }
 
 
