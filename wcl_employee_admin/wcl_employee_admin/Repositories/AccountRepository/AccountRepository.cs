@@ -76,7 +76,8 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var dataUser = new DataUser()
             {
                 Username = user.UserName,
-                Position = user.Position
+                Position = user.Position,
+                Department = user.Department
             };
             var resultData = new ResultFeedBack()
             {

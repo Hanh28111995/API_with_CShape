@@ -13,5 +13,6 @@
     {
         public string Username { get; set; }
         public string Position { get; set; }
+        public string Department { get; set; }
     }
 }

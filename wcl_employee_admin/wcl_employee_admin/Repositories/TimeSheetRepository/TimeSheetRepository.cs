@@ -55,8 +55,9 @@ namespace wcl_employee_admin.Repositories.TimeSheetRepository
         }
         public async Task<ResultFeedBack> UpdateFormAsync(TimeSheetModal model)
         {
-            var updateForm = _mapper.Map<TimeSheetForm>(model);
-            var result_Update = _context.timeSheetForm!.Update(updateForm);
+            var data = await _context.timeSheetForm.FindAsync(model.ID);
+            data = _mapper.Map<TimeSheetForm>(model);
+            var result_Update = _context.timeSheetForm!.Update(data);
             var result_saveChange = await _context.SaveChangesAsync();
             if (result_saveChange != null)
             {
