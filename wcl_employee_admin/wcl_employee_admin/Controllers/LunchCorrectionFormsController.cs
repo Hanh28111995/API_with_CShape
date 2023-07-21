@@ -92,24 +92,24 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("editLunchCorrectionForm/{ReferenceID}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
-        {
-            try
-            {
-                if (model.ID == null)
-                {
-                    return NotFound();
-                }
-                var result = await _formRepo.UpdateFormAsync(model);
-                return Ok(result);
-            }
-            catch
-            {
-                return BadRequest();
-            }
-        }
+        //[HttpPut("editLunchCorrectionForm/{ReferenceID}")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        //public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
+        //{
+        //    try
+        //    {
+        //        if (model.ID == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        var result = await _formRepo.UpdateFormAsync(model);
+        //        return Ok(result);
+        //    }
+        //    catch
+        //    {
+        //        return BadRequest();
+        //    }
+        //}
 
         [HttpDelete("deleteLunchCorrectionForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]

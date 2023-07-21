@@ -210,7 +210,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
           
 
             var result = await userManager.UpdateAsync(form);
-            return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "SignUp Success." : result.Errors.First().Description };
+             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
         }
 
 

@@ -10,7 +10,7 @@ namespace wcl_employee_admin.Repositories.TimeSheetRepository
         public Task<List<TimeSheetModal>> getAllFormsAsync();
         public Task<List<TimeSheetModal>> getGroupFormsAsync(string group);
         public Task<TimeSheetModal> getFormAsync(int ID);
-        public Task<int> AddFormAsync(TimeSheetModal model);
+        public Task<ResultFeedBack> AddFormAsync(TimeSheetModal model);
         public Task<ResultFeedBack> UpdateFormAsync(TimeSheetModal model);
         public Task DeleteFormAsync(int ID);
     }
