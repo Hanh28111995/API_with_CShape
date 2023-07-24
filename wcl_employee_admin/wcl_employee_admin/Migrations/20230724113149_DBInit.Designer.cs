@@ -12,7 +12,7 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230719093035_DBInit")]
+    [Migration("20230724113149_DBInit")]
     partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -184,10 +184,19 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Contracttype")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("Datecreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("Datestart")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Departmentroles")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Dkp")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Eeo")
@@ -241,6 +250,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Passport")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -262,6 +274,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Sha")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
@@ -271,6 +286,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Vha")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Zipcode")
                         .HasColumnType("nvarchar(max)");
