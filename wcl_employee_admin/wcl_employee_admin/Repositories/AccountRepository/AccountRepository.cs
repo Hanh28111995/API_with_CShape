@@ -94,7 +94,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var user = new ApplicationUser
             {
                 Id = Guid.NewGuid().ToString(),
-                Photourl = model.Photos != null ? model.Photos.FileName : null,
+                Photourl = model.Photos != null ? model.Photos.FileName : ((model.Gender == "Male") ? "man.png" : "woman.png"),
                 UserName = model.UserName,
                 Fullname = model.Fullname ?? "",
                 Phone = model.Phone ?? "",
@@ -113,9 +113,9 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 Location = model.Location ?? "",
                 Department = model.Department ?? "",
                 Contracttype = model.Contracttype ?? "",
-                Birthday = model.Birthday ,
+                Birthday = model.Birthday,
                 Marital = model.Marital ?? "",
-                Datestart = model.Datestart ,
+                Datestart = model.Datestart,
                 Passport = model.Passport ?? "",
                 Status = model.Status ?? "",
             };
@@ -202,15 +202,23 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             form.Location = model.Location ?? "";
             form.Department = model.Department ?? "";
             form.Contracttype = model.Contracttype ?? "";
-            form.Birthday = model.Birthday ;
+            form.Birthday = model.Birthday;
             form.Marital = model.Marital ?? "";
-            form.Datestart = model.Datestart ;
+            form.Datestart = model.Datestart;
             form.Passport = model.Passport ?? "";
             form.Status = model.Status ?? "";
-          
-
+            form.Dkp = model.Dkp ?? 0;
+            form.Vha = model.Vha ?? 0;
+            form.Sha = model.Sha ?? 0;
+            form.Photourl = model.Photos != null ? model.Photos.FileName : ((model.Gender == "Male") ? "man.png" : "woman.png");
+            if (model.Photos != null)
+            {
+                Directory.Delete(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName), true);
+                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName));
+                FileUpload.FileUpload.SingleFileCurrentProject(model.Photos, _hostingEnvironment.WebRootPath, Path.Combine("ProfileImg", model.UserName, ""), model.Photos.FileName);
+            }
             var result = await userManager.UpdateAsync(form);
-             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
+            return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
         }
 
 

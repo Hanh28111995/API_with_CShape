@@ -12,8 +12,8 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    [Migration("20230724113149_DBInit")]
-    partial class DBInit
+    [Migration("20230724223900_updatedb2")]
+    partial class updatedb2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -196,8 +196,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Departmentroles")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Dkp")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Dkp")
+                        .HasColumnType("int");
 
                     b.Property<string>("Eeo")
                         .HasColumnType("nvarchar(max)");
@@ -274,8 +274,8 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sha")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Sha")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -287,8 +287,8 @@ namespace wcl_employee_admin.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("Vha")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Vha")
+                        .HasColumnType("int");
 
                     b.Property<string>("Zipcode")
                         .HasColumnType("nvarchar(max)");

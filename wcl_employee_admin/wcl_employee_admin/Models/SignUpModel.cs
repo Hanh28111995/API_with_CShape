@@ -26,13 +26,12 @@ namespace wcl_employee_admin.Models
         public string Departmentroles { get; set; }
         public string Gender { get; set; }
         public string Confirmnumber { get; set; }
-        
         public DateTime? Birthday { get; set; }
         public string Cardnumber { get; set; }
         public DateTime? Datestart { get; set; }
-        public string Sha { get; set; }
-        public string Vha { get; set; }
-        public string Dkp { get; set; }
+        public int? Sha { get; set; } = 0;
+        public int? Vha { get; set; } = 0;
+        public int? Dkp { get; set; } = 0;
         public int? Netsalary { get; set; } = 0;
         public int? Grosssalary { get; set; } = 0;
         public DateTime? Datecreated { get; set; }
