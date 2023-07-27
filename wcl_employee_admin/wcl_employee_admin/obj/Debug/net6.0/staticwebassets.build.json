@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1LMdSh7xiICQ6o3b8aYBVrDp+pye84NKXJBX66r+RpU=",
+  "Hash": "9etF0rB/oJOwfgSq5swBL/0QSSBIbgCUEhLUw0wNN24=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "wwwroot\\avatarDefault\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\fsdf\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/fsdf/man.png",
+      "RelativePath": "ProfileImg/HanhT/man.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,41 +65,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\fsdf\\man.png"
-    },
-    {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\man.png",
-      "SourceId": "wcl_employee_admin",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
-      "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/hanhT/man.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\hanhT\\man.png"
-    },
-    {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\man.png",
-      "SourceId": "wcl_employee_admin",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
-      "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/hannaTrinh/man.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\hannaTrinh\\man.png"
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\HanhT\\man.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\huyN\\man.png",
@@ -168,6 +134,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdasdasd\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfa\\man.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/sdfa/man.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfa\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasfsdf\\man.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/sdfasfsdf/man.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfasfsdf\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\user_demo\\man.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/user_demo/man.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\user_demo\\man.png"
     }
   ]
 }

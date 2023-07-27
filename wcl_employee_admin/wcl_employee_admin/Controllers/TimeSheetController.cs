@@ -186,8 +186,7 @@ namespace wcl_employee_admin.Controllers
                                 TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
                                 TimeSheet_TimeOff_note = model.Note,
                             };
-                            newForm = await _formRepo.AddFormAsync(TimeSheetOff);
-                            return Ok(newForm);
+                            newForm = await _formRepo.AddFormAsync(TimeSheetOff);                            
                         }
                     }
                     else
@@ -204,10 +203,9 @@ namespace wcl_employee_admin.Controllers
                             TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
                             TimeSheet_TimeOff_note = model.Note,
                         };
-                        newForm = await _formRepo.AddFormAsync(TimeSheetOff);
-                        return Ok(newForm);
+                        newForm = await _formRepo.AddFormAsync(TimeSheetOff);                        
                     }
-
+                    return Ok();
                 }
                 catch
                 {

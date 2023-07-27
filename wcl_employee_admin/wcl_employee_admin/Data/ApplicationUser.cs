@@ -5,12 +5,7 @@ namespace wcl_employee_admin.Data;
 public class ApplicationUser : IdentityUser
 {
 
-
-
     //public string UserName { get; set; }
-    
-    
-    
     
     public string Photourl { get; set; }
     public string Fullname { get; set; }

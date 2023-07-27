@@ -25,6 +25,7 @@ namespace wcl_employee_admin.Models
         public string ShiftDay { get; set; }
 
         public string Reason { get; set; }
+        public string Department { get; set; }
 
         public DateTime? DateSubmit { get; set; }
 

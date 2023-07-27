@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HanhT\\man.png"
+    },
+    {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\KhanhN1\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\KhanhN1\\man.png"
     },
@@ -9,24 +13,24 @@
       "PackagePath": "staticwebassets\\ProfileImg\\KhanhN\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\fsdf\\man.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\fsdf\\man.png"
-    },
-    {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\man.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\hanhT\\man.png"
-    },
-    {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\man.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\hannaTrinh\\man.png"
-    },
-    {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\huyN\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\huyN\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdasdasd\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\sdasdasd\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfa\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\sdfa\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasfsdf\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\sdfasfsdf\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\user_demo\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\user_demo\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
