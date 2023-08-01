@@ -7,6 +7,7 @@
         public string Fullname { get; set; }
         public string Phone { get; set; }
         public string Photourl { get; set; }
+        public string Avatarurl { get; set; }
         public string Zipcode { get; set; }
         public string Eeo { get; set; }
         public string Position { get; set; }

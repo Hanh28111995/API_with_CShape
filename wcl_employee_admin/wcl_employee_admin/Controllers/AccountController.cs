@@ -53,7 +53,7 @@ namespace wcl_employee_admin.Controllers
             try
             {
                 var list = await accountRepo.GetAllAccountAsync();
-                var userList = list.Select((acc, index) => new { username = acc.Username, mail = acc.Email });
+                var userList = list.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
                 return Ok(userList.OrderBy(ob => ob.username));
             }
             catch
@@ -102,12 +102,15 @@ namespace wcl_employee_admin.Controllers
                 var userDetail = await accountRepo.GetAccountAsync(Username);
                 if (userDetail.Photourl != null)
                 {
-                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
-                    //userDetail.Photos = userDetail.Photourl ;
-                    userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
-
+                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;                    
+                    userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;                  
                 }
-                return Ok(userDetail);
+                if (userDetail.Avatarurl != null)
+                {
+                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                    userDetail.Avatarurl = baseURL + "/Avatar/" + userDetail.Username + "/" + userDetail.Avatarurl;
+                }
+                    return Ok(userDetail);
             }
             catch
             {
@@ -127,8 +130,12 @@ namespace wcl_employee_admin.Controllers
                     if (userDetail.Photourl != null)
                     {
                         string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
-                        //userDetail.Photos = userDetail.Photourl ;
                         userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
+                    }
+                    if (userDetail.Avatarurl != null)
+                    {
+                        string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                        userDetail.Avatarurl = baseURL + "/Avatar/" + userDetail.Username + "/" + userDetail.Avatarurl;
                     }
                     return Ok(userDetail);
                 }
@@ -156,6 +163,20 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpPut("UpdateUserAvatar")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUserAvatar([FromForm] SignUpModel editmodal)
+        {
+            try
+            {   
+                var result = await accountRepo.UpdateAccountAsync(editmodal, ClaimTypes.NameIdentifier);
+                return Ok(result);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
 
 
         [HttpPost("SignUp")]

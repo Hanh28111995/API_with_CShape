@@ -9,6 +9,8 @@
 
         public string Fullname { get; set; }
 
+        public string Nickname { get; set; }
+
         public string Position { get; set; }
 
         public string Status { get; set; }

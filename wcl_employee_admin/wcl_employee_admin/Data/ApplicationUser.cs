@@ -6,8 +6,8 @@ public class ApplicationUser : IdentityUser
 {
 
     //public string UserName { get; set; }
-    
     public string Photourl { get; set; }
+    public string Avatarurl { get; set; }
     public string Fullname { get; set; }
     public string Passport { get; set; }
     public string Nickname { get; set; }

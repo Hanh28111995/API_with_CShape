@@ -7,6 +7,7 @@ namespace wcl_employee_admin.Models
     {
         public string UserName { get; set; }
         public IFormFile Photos { set; get; }
+        public IFormFile Avatar { set; get; }
         public string Fullname { get; set; }
         public string Passport { get; set; }
         public string Nickname { get; set; }

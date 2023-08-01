@@ -1,6 +1,22 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HahahaBa\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\HahahaBa\\avatar_default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HahahaBad\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\HahahaBad\\avatar_default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\Hahaha\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\Hahaha\\avatar_default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\meo.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\HanhT\\meo.jpg"
+    },
+    {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\man.png"
     },
@@ -15,6 +31,18 @@
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ChrisN\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\ChrisN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBa\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HahahaBa\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBad\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HahahaBad\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\Hahaha\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\Hahaha\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
