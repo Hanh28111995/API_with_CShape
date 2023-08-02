@@ -163,13 +163,13 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("UpdateUserAvatar")]
+        [HttpPut("UpdateUserAvatar/{ID}")]
         [Authorize]
-        public async Task<IActionResult> UpdateUserAvatar([FromForm] SignUpModel editmodal)
+        public async Task<IActionResult> UpdateAccountByID( IFormFile editURL, string ID)
         {
             try
-            {   
-                var result = await accountRepo.UpdateAccountAsync(editmodal, ClaimTypes.NameIdentifier);
+            {
+                var result = await accountRepo.UpdateAvatarUrlAsync(editURL, ID);
                 return Ok(result);
             }
             catch

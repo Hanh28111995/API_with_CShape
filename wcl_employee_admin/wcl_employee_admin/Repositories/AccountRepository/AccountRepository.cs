@@ -59,6 +59,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Role, user.Position),
                 new Claim(ClaimTypes.GroupSid, user.Department),
+
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 
@@ -204,6 +205,35 @@ namespace wcl_employee_admin.Repositories.AccountRepository
         }
 
 
+        public async Task<ResultFeedBack> UpdateAvatarUrlAsync(IFormFile editURL, string ID)
+        {
+            var form = await userManager.FindByIdAsync(ID);
+            
+            form.Avatarurl = editURL != null ? editURL.FileName : "avatar_default.jpg";
+
+            if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName)))
+            {
+                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName));
+            }
+
+            if (editURL != null)
+            {
+                Directory.Delete(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName), true);
+                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName));
+                FileUpload.FileUpload.SingleFileCurrentProject(editURL, _hostingEnvironment.WebRootPath, Path.Combine("Avatar", form.UserName, ""),editURL.FileName);
+            }
+            else
+            {
+                Directory.Delete(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName), true);
+                Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName));
+                var dfImg = "avatar_default.jpg";
+                var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", dfImg);
+                File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName, dfImg));
+            }
+            var result = await userManager.UpdateAsync(form);
+            return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
+        }
+
         public async Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string ID)
         {
             var form = await userManager.FindByIdAsync(ID);
@@ -257,6 +287,8 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 var pathDefault = Path.Combine(_hostingEnvironment.WebRootPath, "avatarDefault", genderImg);
                 File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName, genderImg));
             }
+
+           
             var result = await userManager.UpdateAsync(form);
             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
         }

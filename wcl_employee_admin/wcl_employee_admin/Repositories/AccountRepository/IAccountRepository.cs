@@ -15,6 +15,8 @@ namespace wcl_employee_admin.Repositories.AccountRepository
         public Task<List<GroupUserForm>> GetGroupAccountAsync(string Group);
         public Task<UserDetail> GetAccountAsync(string Username);
         public Task<ResultFeedBack> UpdateAccountAsync(SignUpModel model, string ID);
+        public Task<ResultFeedBack> UpdateAvatarUrlAsync(IFormFile editURL, string ID);
+
 
     }
 }

@@ -142,7 +142,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("addTimeSheet/addTimeSheetSubmitOff")] ////check
         [Authorize]
-        public async Task<IActionResult> AddNewFormOff(TimeOffFormModal model)
+        public async Task<IActionResult> AddNew_TS_Off(TimeOffFormModal model)
         {
             var newForm = new ResultFeedBack();
             var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
@@ -186,7 +186,7 @@ namespace wcl_employee_admin.Controllers
                                 TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
                                 TimeSheet_TimeOff_note = model.Note,
                             };
-                            newForm = await _formRepo.AddFormAsync(TimeSheetOff);                            
+                            newForm = await _formRepo.AddFormAsync(TimeSheetOff);
                         }
                     }
                     else
@@ -203,7 +203,7 @@ namespace wcl_employee_admin.Controllers
                             TimeSheet_TimeOff_noWork = ((model.PayType == "noWork") ? 1 : 0) * OffHour,
                             TimeSheet_TimeOff_note = model.Note,
                         };
-                        newForm = await _formRepo.AddFormAsync(TimeSheetOff);                        
+                        newForm = await _formRepo.AddFormAsync(TimeSheetOff);
                     }
                     return Ok();
                 }
@@ -214,6 +214,51 @@ namespace wcl_employee_admin.Controllers
             }
             return Ok();
         }
+
+        [HttpPost("addTimeSheet/addTimeSheetSubmitMissPunch")] //
+        [Authorize]
+        public async Task<IActionResult> AddNewFormMissPunch(MissPunchFormModal model)
+        {
+            var newForm = new ResultFeedBack();
+            var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
+            var TimeSheet_All = await _formRepo.getAllFormsAsync();
+            var checkExist = TimeSheet_All.Where(ts => ts.TimeSheet_Reference == ("TS" + model.PunchIn.Value.ToString("yyyyMMdd") + "MP") && ts.Username == UserNameClaim).ToList();
+
+            if (checkExist.Count == 0)
+            {
+
+                var filterByDate = TimeSheet_All.FirstOrDefault(ts => ts.Username == model.Username && ts.DateSubmit == model.PunchIn);
+
+                if (filterByDate != null)
+                {
+                    return NotFound();
+                }
+
+                try
+                {
+                    var TimeSheetMP = new TimeSheetModal
+                    {
+                        Username = model.Username,
+                        DateSubmit = model.PunchIn,
+                        TimeSheet_Department = User.FindFirst(ClaimTypes.GroupSid).Value,
+                        TimeSheet_Reference = "TS" + model.PunchIn.Value.ToString("yyyyMMdd") + "MP",
+                        TimeSheet_Start = model.PunchIn,
+                        TimeSheet_End = model.PunchOut,
+                        TimeSheet_Break_Start = model.LunchIn,
+                        TimeSheet_Break_End = model.LunchOut,
+                    };
+                    newForm = await _formRepo.AddFormAsync(TimeSheetMP);
+                    return Ok();
+                }
+                catch
+                {
+                    return BadRequest();
+                }
+            }
+            return Ok();
+        }
+
+
 
         [HttpPost("deleteTimeSheet/deleteTimeSheetRejectOff")] ////check
         [Authorize]
@@ -256,6 +301,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+
         [HttpPut("updateTimeSheetByPunch")]
         [Authorize]
         public async Task<IActionResult> UpdateFormByPunch(TimeSheetModal model)
@@ -268,7 +314,7 @@ namespace wcl_employee_admin.Controllers
                 if (UserNameClaim != null)
                 {
                     DateTime? Datesubmit = new DateTime();
-                    if (model.TimeSheet_Start != null)  Datesubmit = model.TimeSheet_Start;
+                    if (model.TimeSheet_Start != null) Datesubmit = model.TimeSheet_Start;
                     if (model.TimeSheet_Break_Start != null) Datesubmit = model.TimeSheet_Break_Start;
                     if (model.TimeSheet_Break_End != null) Datesubmit = model.TimeSheet_Break_End;
                     if (model.TimeSheet_End != null) Datesubmit = model.TimeSheet_End;
