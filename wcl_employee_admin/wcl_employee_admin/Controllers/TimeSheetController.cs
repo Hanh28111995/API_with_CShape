@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using wcl_employee_admin.Data;
 using System;
 using System.Reflection;
+using System.Linq;
 //using System.Data.Linq;
 //using System.Data.Linq.SqlClient;
 
@@ -62,6 +63,21 @@ namespace wcl_employee_admin.Controllers
                 {
                     var allforms = await _formRepo.getAllFormsAsync();
                     var userform = allforms.Where(model => model.Username == UserNameClaim).ToList();
+                    var ListMissPunch = userform.Where(model => model.TimeSheet_Reference.Contains("MP")).ToList();
+                    if (ListMissPunch != null)
+                    {
+                        List<string> newReference = ListMissPunch.Select(x => x.TimeSheet_Reference).ToList();
+                        List<string> newReferenceNoMP = newReference.Select(x => x.Replace("MP", "")).ToList();
+                        for(int i = 0;i < newReferenceNoMP.Count;i++)
+                        {
+                            for(int j = 0;j < userform.Count; j++)
+                            {
+                                if(userform[j].TimeSheet_Reference == newReferenceNoMP[i]) {
+                                    userform.RemoveAt(j);
+                                }
+                            }
+                        }
+                    }
                     return Ok(userform);
                 }
                 return NoContent();
@@ -72,20 +88,20 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        //[HttpGet("getVTOForm/{Reference}")]
-        //[Authorize]
-        //public async Task<IActionResult> GetFormbyId(int ID)
-        //{
-        //    try
-        //    {
-        //        var Forms = await _formRepo.getFormAsync(ID);
-        //        return Forms == null ? NotFound() : Ok(Forms);
-        //    }
-        //    catch
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
+        [HttpGet("getTimeSheet/{ID}")]
+        [Authorize]
+        public async Task<IActionResult> GetTimeSheetbyId(int ID)
+        {
+            try
+            {
+                var Forms = await _formRepo.getFormAsync(ID);
+                return Forms == null ? NotFound() : Ok(Forms);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
 
 
 
@@ -152,7 +168,7 @@ namespace wcl_employee_admin.Controllers
             if (checkExist.Count == 0)
             {
 
-                var filterByDate = TimeSheet_All.FirstOrDefault(ts => ts.Username == model.Username && ts.DateSubmit == model.TimeOffStart);
+                var filterByDate = TimeSheet_All.FirstOrDefault(ts => ts.Username == model.Username && ts.TimeSheet_Reference == ("TS" + model.TimeOffStart.Value.ToString("yyyyMMdd") + "OFF"));
 
                 if (filterByDate != null)
                 {
@@ -215,7 +231,7 @@ namespace wcl_employee_admin.Controllers
             return Ok();
         }
 
-        [HttpPost("addTimeSheet/addTimeSheetSubmitMissPunch")] //
+        [HttpPost("addTimeSheet/addTimeSheetSubmitMissPunch")] //check
         [Authorize]
         public async Task<IActionResult> AddNewFormMissPunch(MissPunchFormModal model)
         {
@@ -258,8 +274,6 @@ namespace wcl_employee_admin.Controllers
             return Ok();
         }
 
-
-
         [HttpPost("deleteTimeSheet/deleteTimeSheetRejectOff")] ////check
         [Authorize]
         public async Task<IActionResult> DeleteFormOff(TimeOffFormModal model)
@@ -276,9 +290,9 @@ namespace wcl_employee_admin.Controllers
                     {
                         dates[i] = model.TimeOffStart.Value.AddDays(i);
                     }
-                    var filterByDate = filterByUser.Where(ts => dates.Contains(ts.DateSubmit.Value)).ToList();
-
-                    foreach (var item in filterByDate)
+                    var filterByDate = filterByUser.Where(ts => (dates).Contains(ts.DateSubmit.Value)).ToList();
+                    var filterByOFF = filterByDate.Where(ts => ts.TimeSheet_Reference.Contains("OFF")).ToList();
+                    foreach (var item in filterByOFF)
                     {
                         await _formRepo.DeleteFormAsync(item.ID);
                     }
@@ -301,15 +315,34 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpPost("deleteTimeSheet/deleteTimeSheetRejectMissPunch")] ////check
+        [Authorize]
+        public async Task<IActionResult> DeleteFormMissPunch(MissPunchFormModal model)
+        {
+            var TimeSheet_All = await _formRepo.getAllFormsAsync();
+            var filterByUser = TimeSheet_All.Where(ts => ts.Username == model.Username).ToList();
+            try
+            {
+                var filterByDate = filterByUser.Where(ts => model.PunchIn.Value.ToString("yyyyMMdd") == ts.DateSubmit.Value.ToString("yyyyMMdd")).ToList();
+                var filterByMissPunch = filterByDate.Where(ts => ts.TimeSheet_Reference.Contains("MP")).ToList();
+                foreach (var item in filterByMissPunch)
+                {
+                    await _formRepo.DeleteFormAsync(item.ID);
+                }
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
 
-        [HttpPut("updateTimeSheetByPunch")]
+        [HttpPut("updateTimeSheetByPunch")]////check
         [Authorize]
         public async Task<IActionResult> UpdateFormByPunch(TimeSheetModal model)
         {
             try
             {
-
-
                 var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
                 if (UserNameClaim != null)
                 {
@@ -344,7 +377,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpPut("ediTimeSheet/{ReferenceID}")]
+        [HttpPut("ediTimeSheet/{ID}")]////check
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager")]
         public async Task<IActionResult> UpdateForm(TimeSheetModal model)
         {
@@ -364,7 +397,7 @@ namespace wcl_employee_admin.Controllers
         }
 
 
-        [HttpDelete("deleteTimeSheet/{ID}")]
+        [HttpDelete("deleteTimeSheet/{ID}")]////check
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> DeleteForm([FromRoute] int ID)
         {
