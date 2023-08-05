@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\Avatar\\avatar_default.jpg"
     },
     {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\congatrong\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\congatrong\\avatar_default.jpg"
+    },
+    {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\hannaTrinh\\avatar_default.jpg",
       "PackagePath": "staticwebassets\\Avatar\\hannaTrinh\\avatar_default.jpg"
     },
@@ -167,6 +171,10 @@
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\TrisT\\woman.png",
       "PackagePath": "staticwebassets\\ProfileImg\\TrisT\\woman.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\congatrong\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\congatrong\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",

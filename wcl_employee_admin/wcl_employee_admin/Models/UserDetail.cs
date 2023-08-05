@@ -27,6 +27,7 @@
         public DateTime? Birthday { get; set; }
         public string Marital { get; set; }
         public DateTime? Datestart { get; set; }
+        public DateTime? Datecreated { get; set; }
         public string Passport { get; set; }
         public int? Sha { get; set; } = 0;
         public int? Vha { get; set; } = 0;

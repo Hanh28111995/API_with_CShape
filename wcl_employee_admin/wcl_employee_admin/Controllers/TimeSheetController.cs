@@ -9,13 +9,6 @@ using wcl_employee_admin.Repositories.TimeSheetRepository;
 using wcl_employee_admin.Repositories.TimeOffRepository;
 using System.Text.RegularExpressions;
 using wcl_employee_admin.ViewModel;
-using Microsoft.AspNetCore.Identity;
-using wcl_employee_admin.Data;
-using System;
-using System.Reflection;
-using System.Linq;
-//using System.Data.Linq;
-//using System.Data.Linq.SqlClient;
 
 namespace wcl_employee_admin.Controllers
 {
@@ -68,11 +61,12 @@ namespace wcl_employee_admin.Controllers
                     {
                         List<string> newReference = ListMissPunch.Select(x => x.TimeSheet_Reference).ToList();
                         List<string> newReferenceNoMP = newReference.Select(x => x.Replace("MP", "")).ToList();
-                        for(int i = 0;i < newReferenceNoMP.Count;i++)
+                        for (int i = 0; i < newReferenceNoMP.Count; i++)
                         {
-                            for(int j = 0;j < userform.Count; j++)
+                            for (int j = 0; j < userform.Count; j++)
                             {
-                                if(userform[j].TimeSheet_Reference == newReferenceNoMP[i]) {
+                                if (userform[j].TimeSheet_Reference == newReferenceNoMP[i])
+                                {
                                     userform.RemoveAt(j);
                                 }
                             }
@@ -125,9 +119,11 @@ namespace wcl_employee_admin.Controllers
                 model.TimeSheet_Reference = "TS" + (model.TimeSheet_Start.Value).ToString("yyyyMMdd");
                 model.DateSubmit = convertDateToNoTime(model.TimeSheet_Start.Value);
 
+
                 ////check that if this timesheet-datesubmit has already exist, stop creating New Timesheet
                 var TimeSheet_All = await _formRepo.getAllFormsAsync();
                 var Count_TimeSheet = TimeSheet_All.Where(ts => ts.TimeSheet_Reference == model.TimeSheet_Reference && ts.Username == model.Username).ToList();
+
                 if (Count_TimeSheet.Count != 0)
                 {
                     return Ok(new ResultFeedBack() { Action_Result = true, Message = "TimeSheet has existed." });
@@ -136,7 +132,7 @@ namespace wcl_employee_admin.Controllers
                 ////check that if the off-timesheet (full time) has existed, stop creating New Timesheet
                 var Timeoff_All = await _formTimeOffRepo.getAllFormsAsync();
                 var filterByUser = Timeoff_All.Where(dayoff => (dayoff.Username == model.Username && dayoff.HRStatus == true)).ToList();
-                var filterByDate = filterByUser.Where(p => (DateTime.Compare(convertDateToNoTime(p.TimeOffStart), convertDateToNoTime(model.DateSubmit)) <= 0) && (DateTime.Compare(p.TimeOffEnd.Value, convertDateToNoTime(p.TimeOffStart)) >= 0)).ToList();
+                var filterByDate = filterByUser.Where(p => (DateTime.Compare(convertDateToNoTime(p.TimeOffStart), convertDateToNoTime(model.DateSubmit)) <= 0) && (DateTime.Compare(p.TimeOffEnd.Value, convertDateToNoTime(model.DateSubmit)) >= 0)).ToList();
                 if (filterByDate.Count() > 0)
                 {
                     if (filterByDate[0].ShiftDay == "Full Day")
@@ -364,7 +360,18 @@ namespace wcl_employee_admin.Controllers
                         if (model.TimeSheet_Start != null) TimeSheetList_Today.TimeSheet_Start = model.TimeSheet_Start;
                         if (model.TimeSheet_Break_Start != null) TimeSheetList_Today.TimeSheet_Break_Start = model.TimeSheet_Break_Start;
                         if (model.TimeSheet_Break_End != null) TimeSheetList_Today.TimeSheet_Break_End = model.TimeSheet_Break_End;
-                        if (model.TimeSheet_End != null) TimeSheetList_Today.TimeSheet_End = model.TimeSheet_End;
+                        if (model.TimeSheet_End != null)
+                        {
+                            TimeSheetList_Today.TimeSheet_End = model.TimeSheet_End;
+                            double breakTime = 0;
+                            if ((TimeSheetList_Today.TimeSheet_Break_End != null) && (TimeSheetList_Today.TimeSheet_Break_Start != null))
+                            {
+                                breakTime = (TimeSheetList_Today.TimeSheet_Break_End.Value - TimeSheetList_Today.TimeSheet_Break_Start.Value).TotalHours;
+                            }    
+                            
+                            TimeSheetList_Today.TotalTime = (TimeSheetList_Today.TimeSheet_End.Value - TimeSheetList_Today.TimeSheet_Start.Value).TotalHours - breakTime;
+                        }
+
                         var result = await _formRepo.UpdateFormAsync(TimeSheetList_Today);
                         return Ok(result);
                     }

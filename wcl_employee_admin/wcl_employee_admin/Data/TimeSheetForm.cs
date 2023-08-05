@@ -22,6 +22,7 @@ namespace wcl_employee_admin.Data
         public int TimeSheet_TimeOff_45Day { get; set; }
         public int TimeSheet_TimeOff_noWork { get; set; }
         public string TimeSheet_TimeOff_note { get; set; }
+        public double TotalTime { get; set; }
 
     }
 }
