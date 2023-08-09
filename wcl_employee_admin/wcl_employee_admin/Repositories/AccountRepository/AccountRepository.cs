@@ -69,7 +69,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var token = new JwtSecurityToken(
                 issuer: configuration["JWT:ValidIssuer"],
                 audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddMinutes(4 * 60),
+                expires: DateTime.UtcNow.AddMinutes(2),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authenKey, SecurityAlgorithms.HmacSha512Signature)
                 );
@@ -78,7 +78,8 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             {
                 Username = user.UserName,
                 Position = user.Position,
-                Department = user.Department
+                Department = user.Department,
+                ExpTokenDate = DateTime.UtcNow.AddMinutes(2).ToString("yyyy-MM-dd hh:mm:ss"),
             };
             var resultData = new ResultFeedBack()
             {
@@ -192,7 +193,14 @@ namespace wcl_employee_admin.Repositories.AccountRepository
 
         public async Task<List<GroupUserForm>> GetGroupAccountAsync(string Group)
         {
-            var forms = await userManager.Users.Where(u => u.Position == Group).ToListAsync();
+            var forms = await userManager.Users.Where(u => u.Department == Group).ToListAsync();
+            for (var i = 0; i<forms.Count; i++)
+            {
+                string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                forms[i].Avatarurl = baseURL + "/Avatar/" + forms[i].UserName + "/" + forms[i].Avatarurl;            
+
+            }
+
 
             return _mapper.Map<List<GroupUserForm>>(forms);
         }
