@@ -85,7 +85,12 @@ namespace wcl_employee_admin.Controllers
             try
             {
                 var list = await accountRepo.GetGroupAccountAsync(Group);
-                return Ok(list);
+                var groupEmployeesList = list.GroupBy(x => x.Department);
+                return Ok(groupEmployeesList.Select(dpm => new
+                {
+                    department = dpm.Key,
+                    user = dpm.ToList()
+                }));
             }
             catch
             {
@@ -102,15 +107,15 @@ namespace wcl_employee_admin.Controllers
                 var userDetail = await accountRepo.GetAccountAsync(Username);
                 if (userDetail.Photourl != null)
                 {
-                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;                    
-                    userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;                  
+                    string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                    userDetail.Photourl = baseURL + "/ProfileImg/" + userDetail.Username + "/" + userDetail.Photourl;
                 }
                 if (userDetail.Avatarurl != null)
                 {
                     string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
                     userDetail.Avatarurl = baseURL + "/Avatar/" + userDetail.Username + "/" + userDetail.Avatarurl;
                 }
-                    return Ok(userDetail);
+                return Ok(userDetail);
             }
             catch
             {
@@ -165,7 +170,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPut("UpdateUserAvatar/{ID}")]
         [Authorize]
-        public async Task<IActionResult> UpdateAccountByID( IFormFile editURL, string ID)
+        public async Task<IActionResult> UpdateAccountByID(IFormFile editURL, string ID)
         {
             try
             {

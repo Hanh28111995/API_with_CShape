@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NQKCtB5bp1MssbtKWKwmnxJaWsPVKQw6Re7IiIUy6h4=",
+  "Hash": "Q74HFU8K22ob4S8qvw7eL0C5QCuanLSwf2hMOv25QRA=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -10,17 +10,51 @@
     {
       "Name": "wcl_employee_admin\\wwwroot",
       "Source": "wcl_employee_admin",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\avatar_default.jpg",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\takeanap.gif",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "Avatar/AliceD/takeanap.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Avatar\\AliceD\\takeanap.gif"
+    },
+    {
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AnyaT\\takeanap.gif",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "Avatar/AnyaT/takeanap.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Avatar\\AnyaT\\takeanap.gif"
+    },
+    {
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\avatar_default.jpg",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "Avatar/avatar_default.jpg",
       "AssetKind": "All",
@@ -34,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\avatar_default.jpg"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\meo.jpg",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\meo.jpg",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "Avatar/HanhT/meo.jpg",
       "AssetKind": "All",
@@ -51,10 +85,44 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\HanhT\\meo.jpg"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\huyN\\meo.jpg",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "Avatar/huyN/meo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Avatar\\huyN\\meo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\khanhN\\sample_avatar.jpg",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "Avatar/khanhN/sample_avatar.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Avatar\\khanhN\\sample_avatar.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "avatarDefault/man.png",
       "AssetKind": "All",
@@ -68,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\avatarDefault\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "avatarDefault/woman.png",
       "AssetKind": "All",
@@ -85,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\avatarDefault\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/AliceD/woman.png",
       "AssetKind": "All",
@@ -102,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\AliceD\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/AnyaT/woman.png",
       "AssetKind": "All",
@@ -119,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\AnyaT\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ArthurN\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ArthurN\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/ArthurN/man.png",
       "AssetKind": "All",
@@ -136,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\ArthurN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ChrisN\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ChrisN\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/ChrisN/man.png",
       "AssetKind": "All",
@@ -153,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\ChrisN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\congatrong\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\congatrong\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/congatrong/man.png",
       "AssetKind": "All",
@@ -170,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\congatrong\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\Hahaha\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\Hahaha\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/Hahaha/man.png",
       "AssetKind": "All",
@@ -187,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\Hahaha\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBa\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBa\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/HahahaBa/man.png",
       "AssetKind": "All",
@@ -204,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\HahahaBa\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBad\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HahahaBad\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/HahahaBad/man.png",
       "AssetKind": "All",
@@ -221,12 +289,12 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\HahahaBad\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hanhT\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/HanhT/man.png",
+      "RelativePath": "ProfileImg/hanhT/man.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -235,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\HanhT\\man.png"
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\hanhT\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\hannaTrinh\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/hannaTrinh/woman.png",
       "AssetKind": "All",
@@ -255,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\hannaTrinh\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HenryM\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HenryM\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/HenryM/man.png",
       "AssetKind": "All",
@@ -272,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\HenryM\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\huyN\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\huyN\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/huyN/man.png",
       "AssetKind": "All",
@@ -289,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\huyN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\JimmyT\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\JimmyT\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/JimmyT/man.png",
       "AssetKind": "All",
@@ -306,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\JimmyT\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\khanhN\\meo.jpg",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\khanhN\\meo.jpg",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/khanhN/meo.jpg",
       "AssetKind": "All",
@@ -323,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\khanhN\\meo.jpg"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\KhanhN1\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\KhanhN1\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/KhanhN1/man.png",
       "AssetKind": "All",
@@ -340,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\KhanhN1\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\RobertM\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\RobertM\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/RobertM/man.png",
       "AssetKind": "All",
@@ -357,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\RobertM\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdasdasd\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdasdasd\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdasdasd/man.png",
       "AssetKind": "All",
@@ -374,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdasdasd\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfa\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfa\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdfa/man.png",
       "AssetKind": "All",
@@ -391,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfa\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasdfasdf\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasdfasdf\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdfasdfasdf/man.png",
       "AssetKind": "All",
@@ -408,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfasdfasdf\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasfsdf\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfasfsdf\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdfasfsdf/man.png",
       "AssetKind": "All",
@@ -425,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfasfsdf\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdf\\meo.jpg",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdf\\meo.jpg",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdfsdf/meo.jpg",
       "AssetKind": "All",
@@ -442,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfsdf\\meo.jpg"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdfsadasd\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\sdfsdfsadasd\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/sdfsdfsadasd/man.png",
       "AssetKind": "All",
@@ -459,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\sdfsdfsadasd\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ThomasN\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ThomasN\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/ThomasN/man.png",
       "AssetKind": "All",
@@ -476,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\ThomasN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\TraiN\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\TraiN\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/TraiN/man.png",
       "AssetKind": "All",
@@ -493,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\TraiN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\TrisT\\woman.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\TrisT\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/TrisT/woman.png",
       "AssetKind": "All",
@@ -510,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\TrisT\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\use_Demo\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\use_Demo\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/use_Demo/man.png",
       "AssetKind": "All",
@@ -527,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\use_Demo\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\user_demo\\man.png",
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\user_demo\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
       "RelativePath": "ProfileImg/user_demo/man.png",
       "AssetKind": "All",
