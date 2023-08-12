@@ -85,12 +85,7 @@ namespace wcl_employee_admin.Controllers
             try
             {
                 var list = await accountRepo.GetGroupAccountAsync(Group);
-                var groupEmployeesList = list.GroupBy(x => x.Department);
-                return Ok(groupEmployeesList.Select(dpm => new
-                {
-                    department = dpm.Key,
-                    user = dpm.ToList()
-                }));
+                return Ok(list);
             }
             catch
             {
