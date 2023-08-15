@@ -19,10 +19,11 @@
 
         public string Department { get; set; }
 
+        public string Contracttype { get; set; }
+
         public int? Dkp { get; set; } = 0;
         public int? Vha { get; set; } = 0;
-
-
-
+        public DateTime? Birthday { get; set; }
+        public DateTime? Datestart { get; set; }
     }
 }

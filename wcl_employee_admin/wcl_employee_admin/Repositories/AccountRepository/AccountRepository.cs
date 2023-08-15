@@ -273,7 +273,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             form.Datecreated = model.Datecreated;
             form.Note = model.Note ?? "";
             form.Photourl = model.Photos != null ? model.Photos.FileName : ((model.Gender == "Male") ? "man.png" : "woman.png");
-            form.Avatarurl = model.Avatar != null ? model.Avatar.FileName : "defaultAvatar.png";
+            form.Avatarurl = model.Avatar != null ? model.Avatar.FileName : "avatar_default.jpg";
 
             if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName)))
             {
