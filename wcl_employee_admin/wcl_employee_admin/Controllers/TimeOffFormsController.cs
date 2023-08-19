@@ -75,23 +75,6 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getTimeOffForm/CoWorker")]
-        [Authorize]
-        public async Task<IActionResult> GetAllCoWorkerForms()
-        {
-            try
-            {
-                var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
-                var TimeOffAll = await _formRepo.getAllFormsAsync();
-                var CoWorkerForms = TimeOffAll.Where(model => model.CoverWorker == UserNameClaim).ToList(); ; 
-                return Ok(CoWorkerForms);
-            }
-            catch
-            {
-                return BadRequest();
-            }
-        }
-
         [HttpGet("getTimeOffForm/All")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
 
@@ -106,6 +89,25 @@ namespace wcl_employee_admin.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet("getTimeOffForm/CoWorker")]
+        [Authorize]
+        public async Task<IActionResult> GetAllCoWorkerForms()
+        {
+            try
+            {
+                var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
+                var TimeOffAll = await _formRepo.getAllFormsAsync();
+                var CoWorkerForms = TimeOffAll.Where(model => model.CoverWorker == UserNameClaim).ToList(); 
+                return Ok(CoWorkerForms);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+      
 
         [HttpGet("getTimeOffForm/Manager")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
@@ -145,7 +147,7 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("getTimeOffForm/{Reference}")]
+        [HttpGet("getTimeOffForm/{ID}")]
         [Authorize]
         public async Task<IActionResult> GetFormbyId(int ID)
         {

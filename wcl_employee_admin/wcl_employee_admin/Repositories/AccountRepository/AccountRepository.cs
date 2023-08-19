@@ -79,6 +79,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 Username = user.UserName,
                 Position = user.Position,
                 Department = user.Department,
+                Avatarurl = user.Avatarurl,
                 ExpTokenDate = DateTime.UtcNow.AddMinutes(2).ToString("yyyy-MM-dd hh:mm:ss"),
             };
             var resultData = new ResultFeedBack()
@@ -185,19 +186,27 @@ namespace wcl_employee_admin.Repositories.AccountRepository
 
         }
 
-        public async Task<List<UserForm>> GetAllAccountAsync()
+        public async Task<List<UserDetail>> GetAllAccountAsync()
         {
             var forms = await userManager.Users.ToListAsync();
-            return _mapper.Map<List<UserForm>>(forms);
+            for (var i = 0; i < forms.Count; i++)
+            {
+                string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+                forms[i].Avatarurl = baseURL + "/Avatar/" + forms[i].UserName + "/" + forms[i].Avatarurl;
+                forms[i].Photourl = baseURL + "/ProfileImg/" + forms[i].UserName + "/" + forms[i].Photourl;
+            }
+
+
+            return _mapper.Map<List<UserDetail>>(forms);
         }
 
         public async Task<List<GroupUserForm>> GetGroupAccountAsync(string Group)
         {
             var forms = await userManager.Users.Where(u => u.Department == Group).ToListAsync();
-            for (var i = 0; i<forms.Count; i++)
+            for (var i = 0; i < forms.Count; i++)
             {
                 string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
-                forms[i].Avatarurl = baseURL + "/Avatar/" + forms[i].UserName + "/" + forms[i].Avatarurl;            
+                forms[i].Avatarurl = baseURL + "/Avatar/" + forms[i].UserName + "/" + forms[i].Avatarurl;
 
             }
 
@@ -216,7 +225,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
         public async Task<ResultFeedBack> UpdateAvatarUrlAsync(IFormFile editURL, string ID)
         {
             var form = await userManager.FindByIdAsync(ID);
-            
+
             form.Avatarurl = editURL != null ? editURL.FileName : "avatar_default.jpg";
 
             if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName)))
@@ -228,7 +237,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             {
                 Directory.Delete(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName), true);
                 Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "Avatar", form.UserName));
-                FileUpload.FileUpload.SingleFileCurrentProject(editURL, _hostingEnvironment.WebRootPath, Path.Combine("Avatar", form.UserName, ""),editURL.FileName);
+                FileUpload.FileUpload.SingleFileCurrentProject(editURL, _hostingEnvironment.WebRootPath, Path.Combine("Avatar", form.UserName, ""), editURL.FileName);
             }
             else
             {
@@ -296,7 +305,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 File.Copy(pathDefault, Path.Combine(_hostingEnvironment.WebRootPath, "ProfileImg", model.UserName, genderImg));
             }
 
-           
+
             var result = await userManager.UpdateAsync(form);
             return new ResultFeedBack() { Action_Result = result.Succeeded, Message = result.Succeeded ? "Edit User Success." : result.Errors.First().Description };
         }

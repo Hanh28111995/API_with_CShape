@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wcl_employee_admin.Data;
 
@@ -11,9 +12,10 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    partial class FormContextModelSnapshot : ModelSnapshot
+    [Migration("20230818231446_LCupdate")]
+    partial class LCupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -519,31 +521,61 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("Fullname")
+                    b.Property<string>("AccountNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("LunchCorrectionForgot")
+                    b.Property<string>("BodyAffected_Left")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BodyAffected_Right")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CareProvided")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CauseBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateOfAccident")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateSubmit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DesOfInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Doctor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LunchCorrection_date_overtime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("LunchCorrection_end")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("LunchCorrection_start")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Manager")
+                    b.Property<string>("Hospital")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Other_Reason")
+                    b.Property<DateTime?>("HrDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Insurance")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Reason")
+                    b.Property<string>("NatureOfInjury")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Reason_Options")
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherIncident")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInjury")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherInvolved")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReasonOccur")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")

@@ -8,6 +8,8 @@ using wcl_employee_admin.Models;
 using Microsoft.Extensions.Configuration;
 using wcl_employee_admin.Repositories.AccountRepository;
 using NuGet.Common;
+using wcl_employee_admin.Data;
+using wcl_employee_admin.ViewModel;
 
 namespace wcl_employee_admin.Controllers
 
@@ -31,6 +33,7 @@ namespace wcl_employee_admin.Controllers
 
 
 
+
         [HttpGet("GetUserList")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
         public async Task<IActionResult> GetAllAccount()
@@ -46,32 +49,29 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        [HttpGet("GetCoWorkerList")]
-        [Authorize]
-        public async Task<IActionResult> GetCoWorkerAccount()
-        {
-            try
-            {
-                var list = await accountRepo.GetAllAccountAsync();
-                var userList = list.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
-                return Ok(userList.OrderBy(ob => ob.username));
-            }
-            catch
-            {
-                return BadRequest();
-            }
-        }
 
-        [HttpGet("GetManagerList")]
+        [HttpGet("GetDefaultLists/{Group}")]
         [Authorize]
-        public async Task<IActionResult> GetManagerAccount()
+        public async Task<IActionResult> GetManagerAccount(string Group)
         {
             try
             {
                 var list = await accountRepo.GetAllAccountAsync();
-                var managerList = list.Where(model => model.Position == "CEO" || model.Position == "Operator" || model.Position == "Manager" || model.Position == "Lead").ToList();
-                var managerListCheck = managerList.Select((acc, index) => new { username = acc.Username, mail = acc.Email });
-                return Ok(managerListCheck.OrderBy(ob => ob.username));
+                var managerList = list.Where(model => model.Position == "CEO" || model.Position == "Operator" || model.Position == "Manager" || model.Position == "Lead").ToList();                
+                var managerListCheck = managerList.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
+                var CoworkerGroup = list.Where(model => model.Department == Group);
+                var CoworkerListCheck = CoworkerGroup.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
+                var allUserListCheck = list.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
+
+
+                return Ok(
+                    new 
+                    {
+                        managerListCheck = managerListCheck.OrderBy(ob => ob.username),
+                        CoworkerListCheck = CoworkerListCheck.OrderBy(ob => ob.username),
+                        allUserListCheck = allUserListCheck.OrderBy(ob => ob.username),
+                    }
+                );
             }
             catch
             {
@@ -85,6 +85,7 @@ namespace wcl_employee_admin.Controllers
             try
             {
                 var list = await accountRepo.GetGroupAccountAsync(Group);
+
                 return Ok(list);
             }
             catch
@@ -207,6 +208,8 @@ namespace wcl_employee_admin.Controllers
             {
                 return Unauthorized();
             }
+            string baseURL = configuration.GetSection("JWT").GetSection("ValidIssuer").Value;
+            result.dataUser.Avatarurl = baseURL + "/Avatar/" + result.dataUser.Username + "/" + result.dataUser.Avatarurl;
             return Ok(result);
         }
 
