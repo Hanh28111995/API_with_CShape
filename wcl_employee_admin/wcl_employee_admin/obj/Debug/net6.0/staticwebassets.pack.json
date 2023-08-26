@@ -1,36 +1,124 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\takeanap.gif",
-      "PackagePath": "staticwebassets\\Avatar\\AliceD\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\meo.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\AliceD\\meo.jpg"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AnyaT\\takeanap.gif",
-      "PackagePath": "staticwebassets\\Avatar\\AnyaT\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AnyaT\\woman.png",
+      "PackagePath": "staticwebassets\\Avatar\\AnyaT\\woman.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\avatar_default.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\HaiL\\avatar_default.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\ArthurN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\ArthurN\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
-      "PackagePath": "staticwebassets\\Avatar\\HanhT\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\ChrisN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\ChrisN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HahahaBa\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\HahahaBa\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HahahaBad\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\HahahaBad\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\Hahaha\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\Hahaha\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\HaiL\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\HanhT\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HenryM\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\HenryM\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\JimmyT\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\JimmyT\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\KhanhN1\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\KhanhN1\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\RobertM\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\RobertM\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\ThomasN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\ThomasN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\TraiN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\TraiN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\TrisT\\woman.png",
+      "PackagePath": "staticwebassets\\Avatar\\TrisT\\woman.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\avatar_default.jpg",
       "PackagePath": "staticwebassets\\Avatar\\avatar_default.jpg"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\huyN\\meo.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\huyN\\meo.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\congatrong\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\congatrong\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\khanhN\\sample_avatar.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\khanhN\\sample_avatar.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\hannaTrinh\\woman.png",
+      "PackagePath": "staticwebassets\\Avatar\\hannaTrinh\\woman.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\user-1\\avatar_default.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\user-1\\avatar_default.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\huyN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\huyN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\khanhN\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\khanhN\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdasdasd\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\sdasdasd\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdfa\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\sdfa\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdfasdfasdf\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\sdfasdfasdf\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdfasfsdf\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\sdfasfsdf\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdfsdf\\meo.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\sdfsdf\\meo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\sdfsdfsadasd\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\sdfsdfsadasd\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\use_Demo\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\use_Demo\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\user-1\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\user-1\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\user_demo\\man.png",
+      "PackagePath": "staticwebassets\\Avatar\\user_demo\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\meo.jpg",

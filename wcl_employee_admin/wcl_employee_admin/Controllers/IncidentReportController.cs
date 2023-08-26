@@ -34,6 +34,23 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+
+        [HttpGet("getIncidentReportForm/Manager")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+
+        public async Task<IActionResult> GetGroupForms()
+        {
+            try
+            {
+                var group = User.FindFirst(ClaimTypes.GroupSid)?.Value;
+                return Ok(await _formRepo.getGroupFormsAsync(group));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpGet("getIncidentReportForm/user")]
         [Authorize]
         public async Task<IActionResult> UserGetAllForms()

@@ -58,7 +58,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Role, user.Position),
-                new Claim(ClaimTypes.GroupSid, user.Department),
+                new Claim(ClaimTypes.GroupSid, user.Department),         
 
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
@@ -69,7 +69,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var token = new JwtSecurityToken(
                 issuer: configuration["JWT:ValidIssuer"],
                 audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.UtcNow.AddMinutes(60),
+                expires: DateTime.UtcNow.AddMinutes(5),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authenKey, SecurityAlgorithms.HmacSha512Signature)
                 );
@@ -80,7 +80,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 Position = user.Position,
                 Department = user.Department,
                 Avatarurl = user.Avatarurl,
-                ExpTokenDate = DateTime.UtcNow.AddMinutes(2).ToString("yyyy-MM-dd hh:mm:ss"),
+                ExpTokenDate = DateTime.Now.AddMinutes(5).ToString("yyyy-MM-dd hh:mm:ss"),
             };
             var resultData = new ResultFeedBack()
             {

@@ -36,5 +36,6 @@ public class ApplicationUser : IdentityUser
     public DateTime? Datecreated { get; set; }
     public string Note { get; set; }
     public string Password { get; set; }
+    public bool OnlineStatus { get; set; }
 
 }

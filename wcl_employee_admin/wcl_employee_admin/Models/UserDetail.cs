@@ -33,5 +33,7 @@
         public int? Vha { get; set; } = 0;
         public int? Dkp { get; set; } = 0;
         public string Departmentroles { get; set; }
+        public bool OnlineStatus { get; set; }
+
     }
 }

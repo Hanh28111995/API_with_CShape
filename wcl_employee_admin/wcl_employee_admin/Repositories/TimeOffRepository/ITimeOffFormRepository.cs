@@ -11,7 +11,6 @@ namespace wcl_employee_admin.Repositories.TimeOffRepository
 
         //public Task<List<TimeOffFormModal>> getCalendartEventAsync();
 
-
         public Task<List<TimeOffFormModal>> getGroupFormsAsync(string group);
 
         public Task<TimeOffFormModal> getFormAsync(int ID);

@@ -248,6 +248,9 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("OnlineStatus")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Passport")
                         .HasColumnType("nvarchar(max)");
 

@@ -8,6 +8,8 @@ namespace wcl_employee_admin.Repositories.IncidentReportRepository
 
     {
         public Task<List<IncidentReportFormModal>> getAllFormsAsync();
+
+        public Task<List<IncidentReportFormModal>> getGroupFormsAsync(string group);
         public Task<IncidentReportFormModal> getFormAsync(int ID);
         public Task<int> AddFormAsync(IncidentReportFormModal model);
         public Task<ResultFeedBack> UpdateFormAsync(IncidentReportFormModal model);

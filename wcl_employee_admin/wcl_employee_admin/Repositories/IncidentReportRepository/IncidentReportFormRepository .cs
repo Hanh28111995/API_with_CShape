@@ -23,6 +23,13 @@ namespace wcl_employee_admin.Repositories.IncidentReportRepository
             return _mapper.Map<IncidentReportFormModal>(form);
         }
 
+        public async Task<List<IncidentReportFormModal>> getGroupFormsAsync(string group)
+        {
+            var forms = await _context.IncidentReportForms!.ToListAsync();
+
+            return _mapper.Map<List<IncidentReportFormModal>>(forms);
+        }
+
         public async Task<List<IncidentReportFormModal>> getAllFormsAsync()
         {
             var forms = await _context.IncidentReportForms!.ToListAsync();
