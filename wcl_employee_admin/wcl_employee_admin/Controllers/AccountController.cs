@@ -35,7 +35,7 @@ namespace wcl_employee_admin.Controllers
 
 
         [HttpGet("GetUserList")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager" )]
         public async Task<IActionResult> GetAllAccount()
         {
             try
@@ -95,7 +95,7 @@ namespace wcl_employee_admin.Controllers
         }
 
         [HttpGet("GetUserDetail/{Username}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager")]
         public async Task<IActionResult> GetAccountByUsername(string Username)
         {
             try

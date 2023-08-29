@@ -69,7 +69,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
             var token = new JwtSecurityToken(
                 issuer: configuration["JWT:ValidIssuer"],
                 audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.UtcNow.AddMinutes(5),
+                expires: DateTime.UtcNow.AddMinutes(2),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authenKey, SecurityAlgorithms.HmacSha512Signature)
                 );
@@ -80,7 +80,7 @@ namespace wcl_employee_admin.Repositories.AccountRepository
                 Position = user.Position,
                 Department = user.Department,
                 Avatarurl = user.Avatarurl,
-                ExpTokenDate = DateTime.Now.AddMinutes(5).ToString("yyyy-MM-dd hh:mm:ss"),
+                ExpTokenDate = DateTime.Now.AddMinutes(2).ToString("yyyy-MM-dd hh:mm:ss"),
             };
             var resultData = new ResultFeedBack()
             {

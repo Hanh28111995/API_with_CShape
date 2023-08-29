@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9dSV8WFR2aetzzgZyWHYnLial3zPEg70IrHPA0bFw0I=",
+  "Hash": "IOKQIAz58djCG508O0Fe8Iyi6l2ldBG/epktSYjayQU=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -187,12 +187,12 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\HaiL\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "Avatar/HanhT/man.png",
+      "RelativePath": "Avatar/HanhT/takeanap.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,7 +201,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Avatar\\HanhT\\man.png"
+      "OriginalItemSpec": "wwwroot\\Avatar\\HanhT\\takeanap.gif"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\hannaTrinh\\woman.png",
