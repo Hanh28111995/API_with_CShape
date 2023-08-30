@@ -23,6 +23,13 @@ namespace wcl_employee_admin.Repositories.LunchCorrectionRepository
             return _mapper.Map<LunchCorrectionFormModal>(form);
         }
 
+        public async Task<List<LunchCorrectionFormModal>> getGroupFormsAsync(string group)
+        {
+            var forms = await _context.MissPunchForms!.ToListAsync();
+
+            return _mapper.Map<List<LunchCorrectionFormModal>>(forms);
+        }
+
         public async Task<List<LunchCorrectionFormModal>> getAllFormsAsync()
         {
             var forms = await _context.LunchCorrectionForms!.ToListAsync();

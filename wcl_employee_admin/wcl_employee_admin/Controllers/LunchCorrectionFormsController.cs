@@ -34,6 +34,22 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
+        [HttpGet("getLunchCorrectionForm/Manager")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
+
+        public async Task<IActionResult> GetGroupForms()
+        {
+            try
+            {
+                var group = User.FindFirst(ClaimTypes.GroupSid)?.Value;
+                return Ok(await _formRepo.getGroupFormsAsync(group));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpGet("getLunchCorrectionForm/user")]
         [Authorize]
         public async Task<IActionResult> UserGetAllForms()
@@ -84,6 +100,8 @@ namespace wcl_employee_admin.Controllers
 
                 var newForm = await _formRepo.AddFormAsync(model);
                 var form = await _formRepo.getFormAsync(newForm);
+
+
                 return form == null ? NotFound() : Ok(form);
             }
             catch
@@ -92,24 +110,6 @@ namespace wcl_employee_admin.Controllers
             }
         }
 
-        //[HttpPut("editLunchCorrectionForm/{ReferenceID}")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        //public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
-        //{
-        //    try
-        //    {
-        //        if (model.ID == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        var result = await _formRepo.UpdateFormAsync(model);
-        //        return Ok(result);
-        //    }
-        //    catch
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
 
         [HttpDelete("deleteLunchCorrectionForm/{ID}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
@@ -119,6 +119,25 @@ namespace wcl_employee_admin.Controllers
             {
                 await _formRepo.DeleteFormAsync(ID);
                 return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("editLunchCorrectionForm/{ReferenceID}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateForm(LunchCorrectionFormModal model)
+        {
+            try
+            {
+                if (model.ID == null)
+                {
+                    return NotFound();
+                }
+                var result = await _formRepo.UpdateFormAsync(model);
+                return Ok(result);
             }
             catch
             {

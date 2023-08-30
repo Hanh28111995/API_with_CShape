@@ -6,6 +6,7 @@ namespace wcl_employee_admin.Data
     [Table("Lunch Correction Forms")]
     public class LunchCorrectionForm
     {
+
         [Key]
         public int ID { get; set; }
         public string Reference { get; set; }
@@ -19,6 +20,11 @@ namespace wcl_employee_admin.Data
         public DateTime? LunchCorrection_date_overtime { get; set; }
         public string Reason_Options { get; set; }
         public string Other_Reason { get; set; }
+        public DateTime? DateSubmit { get; set; }
+        public bool? ManagerStatus { get; set; }
+        public DateTime? ManagerDate { get; set; }
+        public bool? HRStatus { get; set; }
+        public DateTime? HrDate { get; set; }
     }
 }
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wcl_employee_admin.Data;
 
@@ -11,9 +12,10 @@ using wcl_employee_admin.Data;
 namespace wcl_employee_admin.Migrations
 {
     [DbContext(typeof(FormContext))]
-    partial class FormContextModelSnapshot : ModelSnapshot
+    [Migration("20230829165535_LCfic13")]
+    partial class LCfic13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -528,12 +530,6 @@ namespace wcl_employee_admin.Migrations
                     b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("HRStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("HrDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool?>("LunchCorrectionForgot")
                         .HasColumnType("bit");
 
@@ -548,12 +544,6 @@ namespace wcl_employee_admin.Migrations
 
                     b.Property<string>("Manager")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ManagerDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("ManagerStatus")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Other_Reason")
                         .HasColumnType("nvarchar(max)");
