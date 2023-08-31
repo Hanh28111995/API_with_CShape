@@ -56,10 +56,12 @@ namespace wcl_employee_admin.Controllers
         {
             try
             {
+                var Username = User.FindFirst(ClaimTypes.Name)?.Value;
                 var list = await accountRepo.GetAllAccountAsync();
                 var managerList = list.Where(model => model.Position == "CEO" || model.Position == "Operator" || model.Position == "Manager" || model.Position == "Lead").ToList();                
+
                 var managerListCheck = managerList.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
-                var CoworkerGroup = list.Where(model => model.Department == Group);
+                var CoworkerGroup = list.Where(model => (model.Department == Group)&&(model.Username != Username));
                 var CoworkerListCheck = CoworkerGroup.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
                 var allUserListCheck = list.Select((acc, index) => new { username = acc.Username, nickName = acc.Nickname, mail = acc.Email });
 
