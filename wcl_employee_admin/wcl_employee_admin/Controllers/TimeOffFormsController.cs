@@ -96,9 +96,9 @@ namespace wcl_employee_admin.Controllers
         {
             try
             {
-                var UserNameClaim = User.FindFirst(ClaimTypes.Name)?.Value;
+                var UserMailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
                 var TimeOffAll = await _formRepo.getAllFormsAsync();
-                var CoWorkerForms = TimeOffAll.Where(model => model.CoverWorker == UserNameClaim).ToList(); 
+                var CoWorkerForms = TimeOffAll.Where(model => model.CoverWorker == UserMailClaim).ToList(); 
                 return Ok(CoWorkerForms);
             }
             catch
