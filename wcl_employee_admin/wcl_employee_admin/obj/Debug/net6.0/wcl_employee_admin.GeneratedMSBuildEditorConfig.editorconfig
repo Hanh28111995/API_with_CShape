@@ -15,3 +15,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\wcl\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/wcl/Desktop/workplace/API_with_CShape/wcl_employee_admin/wcl_employee_admin/Views/HelloWorld/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVsbG9Xb3JsZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

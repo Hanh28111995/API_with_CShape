@@ -2228,3 +2228,5 @@ C:\Users\Hanh\OneDrive\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_
 C:\Users\Hanh\OneDrive\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin\obj\Debug\net6.0\wcl_employee_admin.pdb
 C:\Users\Hanh\OneDrive\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin\obj\Debug\net6.0\wcl_employee_admin.genruntimeconfig.cache
 C:\Users\Hanh\OneDrive\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin\obj\Debug\net6.0\ref\wcl_employee_admin.dll
+C:\Users\wcl\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin\obj\Debug\net6.0\wcl_employee_admin.RazorAssemblyInfo.cache
+C:\Users\wcl\Desktop\workplace\API_with_CShape\wcl_employee_admin\wcl_employee_admin\obj\Debug\net6.0\wcl_employee_admin.RazorAssemblyInfo.cs
