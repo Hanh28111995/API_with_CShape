@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\meo.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\AliceD\\meo.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\takeanap.gif",
+      "PackagePath": "staticwebassets\\Avatar\\AliceD\\takeanap.gif"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AnyaT\\woman.png",
@@ -33,8 +33,8 @@
       "PackagePath": "staticwebassets\\Avatar\\HaiL\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
-      "PackagePath": "staticwebassets\\Avatar\\HanhT\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\Avatar\\HanhT\\avatar_default.jpg"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HenryM\\man.png",
@@ -121,8 +121,8 @@
       "PackagePath": "staticwebassets\\Avatar\\user_demo\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\meo.jpg",
-      "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\meo.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\takeanap.gif",
+      "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\takeanap.gif"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
@@ -153,8 +153,8 @@
       "PackagePath": "staticwebassets\\ProfileImg\\HaiL\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\takeanap.gif",
-      "PackagePath": "staticwebassets\\ProfileImg\\HanhT\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HanhT\\man.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HenryM\\man.png",
