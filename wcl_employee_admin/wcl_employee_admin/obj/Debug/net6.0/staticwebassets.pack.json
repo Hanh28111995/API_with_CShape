@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarDefault\\man.png",
+      "PackagePath": "staticwebassets\\AvatarDefault\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarDefault\\woman.png",
+      "PackagePath": "staticwebassets\\AvatarDefault\\woman.png"
+    },
+    {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\AliceD\\takeanap.gif",
       "PackagePath": "staticwebassets\\Avatar\\AliceD\\takeanap.gif"
     },
@@ -33,8 +41,8 @@
       "PackagePath": "staticwebassets\\Avatar\\HaiL\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\avatar_default.jpg",
-      "PackagePath": "staticwebassets\\Avatar\\HanhT\\avatar_default.jpg"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
+      "PackagePath": "staticwebassets\\Avatar\\HanhT\\takeanap.gif"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HenryM\\man.png",
@@ -121,8 +129,16 @@
       "PackagePath": "staticwebassets\\Avatar\\user_demo\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\takeanap.gif",
-      "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\takeanap.gif"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\findcolor.png",
+      "PackagePath": "staticwebassets\\PolicyFiles\\findcolor.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\log.png",
+      "PackagePath": "staticwebassets\\PolicyFiles\\log.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\woman.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
@@ -235,14 +251,6 @@
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\user_demo\\man.png",
       "PackagePath": "staticwebassets\\ProfileImg\\user_demo\\man.png"
-    },
-    {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
-      "PackagePath": "staticwebassets\\avatarDefault\\man.png"
-    },
-    {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
-      "PackagePath": "staticwebassets\\avatarDefault\\woman.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.wcl_employee_admin.props",

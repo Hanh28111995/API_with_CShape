@@ -20,6 +20,8 @@ namespace wcl_employee_admin.Data
         public DbSet<LunchCorrectionForm> LunchCorrectionForms { get; set; }
         public DbSet<EmployeeComplaintForm> employeeComplaintForms { get; set; }
         public DbSet<TimeSheetForm> timeSheetForm { get; set; }
+        
+
 
         #endregion
     }

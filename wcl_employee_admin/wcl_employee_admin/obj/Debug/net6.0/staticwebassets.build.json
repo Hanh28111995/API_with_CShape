@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w6Y5p64d0ttWjJHILaTaG74NyZsqD5thL0cKN29eWOw=",
+  "Hash": "uGNj8JiWkre6lUu2AyrBUE6wLCZ+/75s1rGLw1UPoFY=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -187,12 +187,12 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\HaiL\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\avatar_default.jpg",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "Avatar/HanhT/avatar_default.jpg",
+      "RelativePath": "Avatar/HanhT/takeanap.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,7 +201,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Avatar\\HanhT\\avatar_default.jpg"
+      "OriginalItemSpec": "wwwroot\\Avatar\\HanhT\\takeanap.gif"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\hannaTrinh\\woman.png",
@@ -527,12 +527,12 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\user-1\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarDefault\\man.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "avatarDefault/man.png",
+      "RelativePath": "AvatarDefault/man.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -541,15 +541,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\avatarDefault\\man.png"
+      "OriginalItemSpec": "wwwroot\\AvatarDefault\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\avatarDefault\\woman.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\AvatarDefault\\woman.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "avatarDefault/woman.png",
+      "RelativePath": "AvatarDefault/woman.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -558,15 +558,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\avatarDefault\\woman.png"
+      "OriginalItemSpec": "wwwroot\\AvatarDefault\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\takeanap.gif",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\findcolor.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/AliceD/takeanap.gif",
+      "RelativePath": "PolicyFiles/findcolor.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -575,7 +575,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\AliceD\\takeanap.gif"
+      "OriginalItemSpec": "wwwroot\\PolicyFiles\\findcolor.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\log.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "PolicyFiles/log.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\PolicyFiles\\log.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/AliceD/woman.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\AliceD\\woman.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
