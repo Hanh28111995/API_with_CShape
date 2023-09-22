@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uGNj8JiWkre6lUu2AyrBUE6wLCZ+/75s1rGLw1UPoFY=",
+  "Hash": "cGdDbC4M3yXPKOdNGfNhM0+p8eR4sd7xMTqhaHHduNQ=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -170,12 +170,12 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\HahahaBad\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\takeanap.gif",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "Avatar/HaiL/man.png",
+      "RelativePath": "Avatar/HaiL/takeanap.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -184,7 +184,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Avatar\\HaiL\\man.png"
+      "OriginalItemSpec": "wwwroot\\Avatar\\HaiL\\takeanap.gif"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
@@ -561,12 +561,12 @@
       "OriginalItemSpec": "wwwroot\\AvatarDefault\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\findcolor.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\DKP Policy.pdf",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "PolicyFiles/findcolor.png",
+      "RelativePath": "PolicyFiles/DKP Policy.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -575,15 +575,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\PolicyFiles\\findcolor.png"
+      "OriginalItemSpec": "wwwroot\\PolicyFiles\\DKP Policy.pdf"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\log.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\Holiday Policy.docx",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "PolicyFiles/log.png",
+      "RelativePath": "PolicyFiles/Holiday Policy.docx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -592,7 +592,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\PolicyFiles\\log.png"
+      "OriginalItemSpec": "wwwroot\\PolicyFiles\\Holiday Policy.docx"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\Time Off Policy.pdf",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "PolicyFiles/Time Off Policy.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\PolicyFiles\\Time Off Policy.pdf"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
@@ -612,12 +629,12 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\AliceD\\woman.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\sample_avatar.jpg",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/AnyaT/woman.png",
+      "RelativePath": "ProfileImg/AnyaT/sample_avatar.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -626,7 +643,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\AnyaT\\woman.png"
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\AnyaT\\sample_avatar.jpg"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ArthurN\\man.png",
@@ -731,12 +748,12 @@
       "OriginalItemSpec": "wwwroot\\ProfileImg\\HahahaBad\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HaiL\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HaiL\\abouus_replace.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "ProfileImg/HaiL/man.png",
+      "RelativePath": "ProfileImg/HaiL/abouus_replace.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -745,7 +762,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfileImg\\HaiL\\man.png"
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\HaiL\\abouus_replace.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",

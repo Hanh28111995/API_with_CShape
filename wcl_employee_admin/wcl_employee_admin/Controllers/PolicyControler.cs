@@ -16,7 +16,7 @@ namespace wcl_employee_admin.Controllers
         private readonly IConfiguration configuration;
 
         public PolicyControler(IWebHostEnvironment hostingEnvironment, IConfiguration configuration)
-        {        
+        {
             _hostingEnvironment = hostingEnvironment;
             this.configuration = configuration;
         }
@@ -24,7 +24,7 @@ namespace wcl_employee_admin.Controllers
 
         [HttpGet("getPolicyAllFile")]
 
-        public async Task<IActionResult> GetAllForms()
+        public async Task<IActionResult> GetAllFiles()
         {
             try
             {
@@ -34,8 +34,8 @@ namespace wcl_employee_admin.Controllers
 
                 return Ok(files.Select(item => new
                 {
-                    name = item.Replace(DirectURL+ "\\", "").Split('.')[0],
-                    url = baseURL + "/PolicyFiles/" + item.Replace(DirectURL+ "\\", ""),
+                    name = item.Replace(DirectURL + "\\", ""),
+                    url = baseURL + "/PolicyFiles/" + item.Replace(DirectURL + "\\", ""),
                 }));
             }
             catch
@@ -47,16 +47,35 @@ namespace wcl_employee_admin.Controllers
 
         [HttpPost("addPolicyFile")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
-        public async  Task<IActionResult> AddNewForm(IFormFile model)
+        public async Task<IActionResult> AddNewFile(IFormFile PolicyFile)
         {
 
             try
             {
-                if (!Directory.Exists(Path.Combine(_hostingEnvironment.WebRootPath, "PolicyFiles", model.FileName)))
+                var path = Path.Combine(_hostingEnvironment.WebRootPath, "PolicyFiles", PolicyFile.FileName);
+                if (!System.IO.File.Exists(path))
                 {
-                    //Directory.CreateDirectory(Path.Combine(_hostingEnvironment.WebRootPath, "PolicyFiles", model.FileName));
-                    FileUpload.FileUpload.SingleFileCurrentProject(model, _hostingEnvironment.WebRootPath, Path.Combine("PolicyFiles",""), model.FileName);                   
+                    FileUpload.FileUpload.SingleFileCurrentProject(PolicyFile, _hostingEnvironment.WebRootPath, Path.Combine("PolicyFiles", ""), PolicyFile.FileName);
                 }
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete("deletePolicyFile/{FileName}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR")]
+        public async Task<IActionResult> DeleteFile([FromRoute] string FileName)
+        {
+            try
+            {
+                var path = Path.Combine(_hostingEnvironment.WebRootPath, "PolicyFiles", FileName);
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(Path.Combine(_hostingEnvironment.WebRootPath, "PolicyFiles", FileName));        
+                }               
                 return Ok();
             }
             catch

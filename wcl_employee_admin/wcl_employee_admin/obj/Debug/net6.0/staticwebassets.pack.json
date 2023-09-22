@@ -37,8 +37,8 @@
       "PackagePath": "staticwebassets\\Avatar\\Hahaha\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\man.png",
-      "PackagePath": "staticwebassets\\Avatar\\HaiL\\man.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HaiL\\takeanap.gif",
+      "PackagePath": "staticwebassets\\Avatar\\HaiL\\takeanap.gif"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\HanhT\\takeanap.gif",
@@ -129,20 +129,24 @@
       "PackagePath": "staticwebassets\\Avatar\\user_demo\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\findcolor.png",
-      "PackagePath": "staticwebassets\\PolicyFiles\\findcolor.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\DKP Policy.pdf",
+      "PackagePath": "staticwebassets\\PolicyFiles\\DKP Policy.pdf"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\log.png",
-      "PackagePath": "staticwebassets\\PolicyFiles\\log.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\Holiday Policy.docx",
+      "PackagePath": "staticwebassets\\PolicyFiles\\Holiday Policy.docx"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\PolicyFiles\\Time Off Policy.pdf",
+      "PackagePath": "staticwebassets\\PolicyFiles\\Time Off Policy.pdf"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AliceD\\woman.png",
       "PackagePath": "staticwebassets\\ProfileImg\\AliceD\\woman.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\woman.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\AnyaT\\woman.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\AnyaT\\sample_avatar.jpg",
+      "PackagePath": "staticwebassets\\ProfileImg\\AnyaT\\sample_avatar.jpg"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\ArthurN\\man.png",
@@ -165,8 +169,8 @@
       "PackagePath": "staticwebassets\\ProfileImg\\Hahaha\\man.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HaiL\\man.png",
-      "PackagePath": "staticwebassets\\ProfileImg\\HaiL\\man.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HaiL\\abouus_replace.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\HaiL\\abouus_replace.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\HanhT\\man.png",
