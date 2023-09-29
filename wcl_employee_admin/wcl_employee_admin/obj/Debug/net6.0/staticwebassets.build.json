@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cGdDbC4M3yXPKOdNGfNhM0+p8eR4sd7xMTqhaHHduNQ=",
+  "Hash": "5/ISDMYToMgd/Q2hV+fgeF1De5JycoiFvBbVMU1b/0w=",
   "Source": "wcl_employee_admin",
   "BasePath": "_content/wcl_employee_admin",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Avatar\\ChrisN\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\concamap\\avatar_default.jpg",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "Avatar/concamap/avatar_default.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Avatar\\concamap\\avatar_default.jpg"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\congatrong\\man.png",
@@ -442,12 +459,12 @@
       "OriginalItemSpec": "wwwroot\\Avatar\\ThomasN\\man.png"
     },
     {
-      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\TraiN\\man.png",
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\TraiN\\contact_replace.png",
       "SourceId": "wcl_employee_admin",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
       "BasePath": "_content/wcl_employee_admin",
-      "RelativePath": "Avatar/TraiN/man.png",
+      "RelativePath": "Avatar/TraiN/contact_replace.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -456,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Avatar\\TraiN\\man.png"
+      "OriginalItemSpec": "wwwroot\\Avatar\\TraiN\\contact_replace.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\Avatar\\TrisT\\woman.png",
@@ -678,6 +695,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImg\\ChrisN\\man.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\concamap\\man.png",
+      "SourceId": "wcl_employee_admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\",
+      "BasePath": "_content/wcl_employee_admin",
+      "RelativePath": "ProfileImg/concamap/man.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\concamap\\man.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\workplace\\API_with_CShape\\wcl_employee_admin\\wcl_employee_admin\\wwwroot\\ProfileImg\\congatrong\\man.png",

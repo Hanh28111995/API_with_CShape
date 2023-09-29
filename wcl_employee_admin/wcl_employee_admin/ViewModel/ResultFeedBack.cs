@@ -16,4 +16,15 @@
         public string ExpTokenDate { get; set; }
 
     }
+    public class ObjectPending
+    {
+        public int CoWorkerPending { get; set; }
+        public int PendingTimeOff { get; set; }
+        public int PendingMissPunch { get; set; }
+        public int PendingLunchCorrection { get; set; }
+        public int PendingIncidentReport { get; set; }
+        public int PendingEmployeeComplaint { get; set; }
+        public int PendingVTO { get; set; }
+        public int PendingInjuryReport { get; set; }
+    }
 }

@@ -365,6 +365,91 @@ namespace wcl_employee_admin.Migrations
                     b.ToTable("Employee Complaint Forms");
                 });
 
+            modelBuilder.Entity("wcl_employee_admin.Data.EmpStartingInfoForm", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<DateTime?>("DateSend")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateWithNeed")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Datestart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ForManager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ForOffice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ForWareHouse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ITfeedbackStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ManagerEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagerPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PartTimeOrFullTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("SendITStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SupervisorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TeamMembers")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserRequest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WhoTraining")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkingAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkingHour")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("EmpStartingInfo Forms");
+                });
+
             modelBuilder.Entity("wcl_employee_admin.Data.IncidentReportForm", b =>
                 {
                     b.Property<int>("ID")

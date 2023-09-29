@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\PolicyRepository\" />
     <Folder Include="wwwroot\PolicyFiles\" />
     <Folder Include="wwwroot\ProfileImg\" />
   </ItemGroup>

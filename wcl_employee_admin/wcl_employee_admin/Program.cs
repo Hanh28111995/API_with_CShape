@@ -17,6 +17,8 @@ using wcl_employee_admin.Repositories.InjuryReportRepository;
 using wcl_employee_admin.Repositories.LunchCorrectionRepository;
 using wcl_employee_admin.Repositories.EmployeeComplaintRepository;
 using wcl_employee_admin.Repositories.TimeSheetRepository;
+using wcl_employee_admin.Repositories.EmpStartingInfoRepository;
+using wcl_employee_admin.Repositories.EmpStartingInforRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -82,6 +84,7 @@ builder.Services.AddScoped<IInjuryReportFormRepository, InjuryReportFormReposito
 builder.Services.AddScoped<ILunchCorrectionFormRepository, LunchCorrectionFormRepository>();
 builder.Services.AddScoped<IEmployeeComplaintRepository, EmployeeComplaintRepository>();
 builder.Services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
+builder.Services.AddScoped<IEmpStartingInfoFormRepository, EmpStartingInforFormRepository>();
 
 builder.Services.AddSwaggerGen(c =>
 {

@@ -35,7 +35,7 @@ namespace wcl_employee_admin.Controllers
 
 
         [HttpGet("GetUserList")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager" )]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "HR, Manager" )]
         public async Task<IActionResult> GetAllAccount()
         {
             try

@@ -9,8 +9,6 @@ namespace wcl_employee_admin.Data
         public FormContext(DbContextOptions<FormContext> options): base(options) 
         {
         }
-
-
         #region DBSet
         public DbSet<InjuryReportForm> InjuryReportForms { get; set; }
         public DbSet<IncidentReportForm> IncidentReportForms { get; set; }
@@ -20,8 +18,7 @@ namespace wcl_employee_admin.Data
         public DbSet<LunchCorrectionForm> LunchCorrectionForms { get; set; }
         public DbSet<EmployeeComplaintForm> employeeComplaintForms { get; set; }
         public DbSet<TimeSheetForm> timeSheetForm { get; set; }
-        
-
+        public DbSet<EmpStartingInfoForm> empStartingInfor { get; set; }
 
         #endregion
     }
