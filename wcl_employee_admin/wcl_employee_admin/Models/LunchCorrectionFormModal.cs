@@ -10,7 +10,8 @@ namespace wcl_employee_admin.Models
         public string Username { get; set; }
         public string Fullname { get; set; }
         public string Manager { get; set; }
-        public bool? LunchCorrectionForgot { get; set; }
+        public string Department { get; set; }
+        public bool? LunchCorrectionForgot { get; set; } = false;
         public DateTime? LunchCorrection_start { get; set; }
         public DateTime? LunchCorrection_end { get; set; }
         public string Reason { get; set; }
@@ -22,5 +23,7 @@ namespace wcl_employee_admin.Models
         public DateTime? ManagerDate { get; set; }
         public bool? HRStatus { get; set; }
         public DateTime? HrDate { get; set; }
+        public bool? ForgetPunchForLunchHours { get; set; } = false;
+        public bool? PayForOverLunchHour { get; set; } = false;
     }
 }

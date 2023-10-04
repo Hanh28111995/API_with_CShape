@@ -318,8 +318,14 @@ namespace wcl_employee_admin.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<DateTime?>("DateComplaint")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DescribeComment")
                         .HasColumnType("nvarchar(max)");
@@ -463,6 +469,12 @@ namespace wcl_employee_admin.Migrations
 
                     b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("HRStatus")
                         .HasColumnType("bit");
@@ -610,6 +622,12 @@ namespace wcl_employee_admin.Migrations
                     b.Property<DateTime?>("DateSubmit")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("ForgetPunchForLunchHours")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
@@ -642,6 +660,9 @@ namespace wcl_employee_admin.Migrations
 
                     b.Property<string>("Other_Reason")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("PayForOverLunchHour")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");
@@ -876,6 +897,9 @@ namespace wcl_employee_admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Request")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")

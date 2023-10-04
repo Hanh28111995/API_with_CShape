@@ -15,6 +15,7 @@ namespace wcl_employee_admin.Models
         public bool? ManagerStatus { get; set; }
         public DateTime? HrDate { get; set; }
         public bool? HRStatus { get; set; }
+        public string Request { get; set; }
         public string Note { get; set; }
     }
 }

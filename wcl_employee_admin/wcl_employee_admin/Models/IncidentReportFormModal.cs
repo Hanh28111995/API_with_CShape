@@ -8,6 +8,8 @@ namespace wcl_employee_admin.Models
         public int ID { get; set; }
         public string Reference { get; set; }
         public string Username { get; set; }
+        public string Fullname { get; set; }
+        public string Department { get; set; }
         public string Location { get; set; }
         public string Type { get; set; }
         public DateTime? DateOfIncident { get; set; }
@@ -20,5 +22,6 @@ namespace wcl_employee_admin.Models
         public bool? HRStatus { get; set; }
         public string Reason { get; set; }
         public string Note { get; set; }
+
     }
 }

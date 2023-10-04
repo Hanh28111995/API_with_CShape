@@ -12,6 +12,8 @@ namespace wcl_employee_admin.Data
         public int ID { get; set; }
         public string Reference { get; set; }
         public string Username { get; set; }
+        public string Fullname { get; set; }
+        public string Department { get; set; }
         public string Location { get; set; }
         public string Type { get; set; }
         public DateTime? DateOfIncident { get; set; }
